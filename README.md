@@ -1,4 +1,4 @@
-# 12月2日 | Clash Verge每天更新18.3M/S免费节点订阅链接  更新时间 2024-12-02 08:00:27
+# 12月3日 | Clash Verge每天更新19.7M/S免费节点订阅链接  更新时间 2024-12-03 05:32:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clash-verge.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clash-verge.github.io/uploads/2024/12/0-20241202.yaml
-- https://clash-verge.github.io/uploads/2024/12/1-20241202.yaml
-- https://clash-verge.github.io/uploads/2024/12/2-20241202.yaml
-- https://clash-verge.github.io/uploads/2024/12/3-20241202.yaml
-- https://clash-verge.github.io/uploads/2024/12/4-20241202.yml
+- https://clash-verge.github.io/uploads/2024/12/0-20241203.yaml
+- https://clash-verge.github.io/uploads/2024/12/1-20241203.yaml
+- https://clash-verge.github.io/uploads/2024/12/2-20241203.yaml
+- https://clash-verge.github.io/uploads/2024/12/3-20241203.yaml
+- https://clash-verge.github.io/uploads/2024/12/4-20241203.yml
 
 ### V2ray订阅链接
 
-- https://clash-verge.github.io/uploads/2024/12/0-20241202.txt
-- https://clash-verge.github.io/uploads/2024/12/1-20241202.txt
-- https://clash-verge.github.io/uploads/2024/12/2-20241202.txt
-- https://clash-verge.github.io/uploads/2024/12/3-20241202.txt
-- https://clash-verge.github.io/uploads/2024/12/4-20241202.txt
+- https://clash-verge.github.io/uploads/2024/12/0-20241203.txt
+- https://clash-verge.github.io/uploads/2024/12/1-20241203.txt
+- https://clash-verge.github.io/uploads/2024/12/2-20241203.txt
+- https://clash-verge.github.io/uploads/2024/12/3-20241203.txt
+- https://clash-verge.github.io/uploads/2024/12/4-20241203.txt
 
 ## 更多clash节点订阅 ：
 

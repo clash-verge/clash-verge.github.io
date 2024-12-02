@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-20554.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Spring按业务模块输出日志到不同的文件_在线工具</title>
+        <meta name="description" content="在我们开发的过程中，可能存在如下情况： 1、有些时候我们需要调用第三方的接口，一般情况下，调用接口，我们都会记录请求的入参和响应的。如果我们自己系统的日志和第三方的日志混合到一个日志文件中，那么可能查" />
+        <link rel="icon" href="__ADDON__/img/clash_verge/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>Spring按业务模块输出日志到不同的文件_在线工具</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				</h1> <p>在我们开发的过程中，可能存在如下情况：<br /> 1、<code>有些时候我们需要调用第三方的接口</code>，一般情况下，调用接口，我们都会记录请求的入参和响应的。如果我们自己系统的日志和第三方的日志混合到一个日志文件中，那么可能查找日志就比较麻烦了。<code>那么我们是否可以将第三方系统的日志单独放到另外的文件中呢？</code></p> <p>2、或者有些时候我们系统需要进行数据迁移，如果某条数据迁移失败了，<code>是否单独放到一个日志文件中比较清晰呢？</code></p> </h1> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220506/1c0fc481fcfae2c81f9fc4485664be25.jpg" alt="Spring按业务模块输出日志到不同的文件_在线工具"><br /> 从上图中可以看到我们的需求比较简单</p> <p>1、系统启动日志和 <code>login</code> 模块日志记录到 <code>springboot-spring.log</code> 文件中。<br /> 2、第三方业务(<code>QQ</code>)模块的日志记录到 <code>springboot-qq.log</code>文件中。<br /> 3、第三方业务(<code>QQ</code>)模块提供了一个<code>login(loginName)</code>方法，<code>方法的入参loginName</code>需要记录到<code>springboot-qqLoginName.log</code>文件中，模拟<code>一、背景</code>中提到的数据迁移失败，记录失败的数据到单独的日志文件中。</p> </h1> <h2 id="1采用的日志框架">1、采用的日志框架</h2> <p>此处使用<code>logback</code>来完成日志的记录，因为<code>SpringBoot</code>应用程序默认的就是采用的logback来记录日志。</p> <h2 id="2如果实现分模块分文件记录日志">2、如果实现分模块、分文件记录日志</h2> <h3 id="1-编写appender这个可以简单的理解日志需要输出到哪里">1、 编写<code>appender</code>，这个可以简单的理解日志需要输出到哪里。</h3> <p>比如：</p> <pre><code class="language-xml">&lt;!-- 此处定义的日志输出到控制台 --&gt; &lt;appender name="stdout" class="ch.qos.logback.core.ConsoleAppender"&gt;     &lt;encoder&gt;         &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [${PID:- }] [%thread] %-5level %logger{50}#%method:%L -%msg%n&lt;/pattern&gt;      &lt;/encoder&gt; &lt;/appender&gt;  &lt;!-- 此处定义日志输出到 springboot-qq-日期.第几个.log 文件中 --&gt; &lt;appender name="qqAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;     &lt;rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"&gt;         &lt;fileNamePattern&gt;logs/springboot-qq-%d{yyyy-MM-dd}-.%i.log&lt;/fileNamePattern&gt;     &lt;/rollingPolicy&gt;     &lt;/appender&gt; </code></pre> <h3 id="2如何实现模块输出日志">2、如何实现模块输出日志</h3> <p>此处就需要我们来配置 <code>logger</code>了。logger的<code>name</code>属性指定到具体的全包名，然后引用我们上面定义的<code>appender</code>即可。</p> <pre><code class="language-xml">&lt;!-- 在QQ这个包下的日志单独使用 qqAppender 来输出 --&gt; &lt;logger name="com.huan.springboot.qq" level="info" additivity="false"&gt;     &lt;appender-ref ref="qqAppender"/&gt;     &lt;appender-ref ref="stdout"/&gt; &lt;/logger&gt; </code></pre> <p>配置logger，logger的name为需要单独生成文件的那个包的全包名，然后在里面引用上面定义的appender</p> <h3 id="3如果实现将loginname输出到指定的文件">3、如果实现将loginName输出到指定的文件</h3> <p>其实还是使用 <code>logger</code> 来实现，logger的<code>name</code>需要和 <code>LoggerFactory.getLogger("此处写具体logger的name的值")</code><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220506/424b74b3629fec6486ac6a01971ab162.jpg" alt="Spring按业务模块输出日志到不同的文件_在线工具"><br /><strong>注意：</strong><br /> 此处可能有一个坑，就是可能会丢失类名，那么我们如何进行解决呢？可以通过<code>MDC</code>来解决。</p> <pre><code class="language-xml">.... %X{CLASSNAME}#%method:%L -%msg%n </code></pre> <pre><code class="language-java">MDC.put("CLASSNAME", QQService.class.getName()); qqLoginName.info("登录用户:[{}]", loginName); </code></pre> <p>即<code>xml</code>中使用<code>%X{CLASSNAME}</code>，在<code>java</code>代码中使用<code>MDC</code>存入<code>CLASSNAME</code>的值。</p> </h1> <h2 id="1编写xml日志文件">1、编写xml日志文件</h2> <h3 id="1编写appender">1、编写appender</h3> <h4 id="1输出日志到控制台">1、输出日志到控制台</h4> <pre><code class="language-xml">&lt;appender name="stdout" class="ch.qos.logback.core.ConsoleAppender"&gt;     &lt;encoder&gt;         &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [${PID:- }] [%thread] %-5level %logger{50}#%method:%L -%msg%n&lt;/pattern&gt;         &lt;charset&gt;UTF-8&lt;/charset&gt;     &lt;/encoder&gt; &lt;/appender&gt; </code></pre> <h4 id="2编写login模板的日志">2、编写<code>login</code>模板的日志</h4> <pre><code class="language-xml">&lt;appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;         &lt;rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"&gt;             &lt;fileNamePattern&gt;logs/springboot-spring-%d{yyyy-MM-dd}-.%i.log&lt;/fileNamePattern&gt;             &lt;maxHistory&gt;7&lt;/maxHistory&gt;             &lt;maxFileSize&gt;1MB&lt;/maxFileSize&gt;             &lt;totalSizeCap&gt;2GB&lt;/totalSizeCap&gt;         &lt;/rollingPolicy&gt;         &lt;encoder&gt;             &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [${PID:- }] [%thread] %-5level %logger{50}#%method:%L -%msg%n&lt;/pattern&gt;             &lt;charset&gt;UTF-8&lt;/charset&gt;         &lt;/encoder&gt;     &lt;/appender&gt; </code></pre> <h4 id="3编写qq模板的日志">3、编写<code>qq</code>模板的日志</h4> <pre><code class="language-xml">&lt;appender name="qqAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;         &lt;rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"&gt;             &lt;fileNamePattern&gt;logs/springboot-qq-%d{yyyy-MM-dd}-.%i.log&lt;/fileNamePattern&gt;             &lt;maxHistory&gt;7&lt;/maxHistory&gt;             &lt;maxFileSize&gt;1MB&lt;/maxFileSize&gt;             &lt;totalSizeCap&gt;2GB&lt;/totalSizeCap&gt;         &lt;/rollingPolicy&gt;         &lt;encoder&gt;             &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [${PID:- }] [%thread] %-5level %logger{50}#%method:%L -%msg%n&lt;/pattern&gt;             &lt;charset&gt;UTF-8&lt;/charset&gt;         &lt;/encoder&gt;     &lt;/appender&gt; </code></pre> <h4 id="4编写qq模块loginname单独输出到文件的日志">4、编写qq模块loginName单独输出到文件的日志</h4> <pre><code class="language-xml">&lt;appender name="qqLoginNameAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;         &lt;rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"&gt;             &lt;fileNamePattern&gt;logs/springboot-qqLoginName-%d{yyyy-MM-dd}-.%i.log&lt;/fileNamePattern&gt;             &lt;maxHistory&gt;7&lt;/maxHistory&gt;             &lt;maxFileSize&gt;1MB&lt;/maxFileSize&gt;             &lt;totalSizeCap&gt;2GB&lt;/totalSizeCap&gt;         &lt;/rollingPolicy&gt;         &lt;encoder&gt;             &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [${PID:- }] [%thread] %-5level %X{CLASSNAME}#%method:%L -%msg%n&lt;/pattern&gt;             &lt;charset&gt;UTF-8&lt;/charset&gt;         &lt;/encoder&gt;     &lt;/appender&gt; </code></pre> <h3 id="2配置日志输出到具体位置">2、配置日志输出到具体位置</h3> <h4 id="1配置login模块">1、配置login模块</h4> <pre><code class="language-xml">&lt;root level="INFO"&gt;     &lt;appender-ref ref="stdout"/&gt;     &lt;appender-ref ref="file"/&gt; &lt;/root&gt; </code></pre> <p><code>login</code>模块属于我们自己的系统模块，此处使用 <code>root</code>标签来配置。</p> <h4 id="2配置qq模块">2、配置qq模块</h4> <pre><code class="language-xml">&lt;!-- 在QQ这个包下的日志单独使用 qqAppender 来输出 --&gt; &lt;logger name="com.huan.springboot.qq" level="info" additivity="false"&gt;     &lt;appender-ref ref="qqAppender"/&gt;     &lt;appender-ref ref="stdout"/&gt; &lt;/logger&gt; </code></pre> <p>此处<code>name</code>的值直接指定到了<code>qq</code>的全包名路径。</p> <h4 id="3配置loginname单独输出到文件">3、配置loginName单独输出到文件</h4> <pre><code class="language-xml">&lt;!-- 将所有的QQ登录名防止在另外的文件中 --&gt; &lt;logger name="qqLoginName" level="info" additivity="false"&gt;     &lt;appender-ref ref="qqLoginNameAppender"/&gt;     &lt;appender-ref ref="stdout"/&gt; &lt;/logger&gt; </code></pre> <h2 id="2编写qq模块的代码">2、编写QQ模块的代码</h2> <pre><code class="language-java">@Component public class QQService {      private static final Logger log = LoggerFactory.getLogger(QQService.class);      // getLogger("qqLoginName") 里的 qqLoginName 需要和 logback-spring.xml 中 logger的name一致，才会应用     private static final Logger qqLoginName = LoggerFactory.getLogger("qqLoginName");      public void login(String loginName) {         log.info("QQ业务: 用户:[{}]开始使用QQ来登录系统", loginName);          MDC.put("CLASSNAME", QQService.class.getName());         qqLoginName.info("登录用户:[{}]", loginName);     } } </code></pre> <h2 id="3编写login模块的代码">3、编写login模块的代码</h2> <pre><code class="language-java">@RestController public class LoginController {      private static final Logger log = LoggerFactory.getLogger(LoginController.class);      @Resource     private QQService qqService;      @GetMapping("login/{loginName}")     public String login(@PathVariable("loginName") String loginName) {         log.info("自己业务：用户:[{}]进行登录", loginName);         qqService.login(loginName);         return "ok";     } } </code></pre> </h1> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220506/d385f7ff93445e2ea107f444d624a537.jpg" alt="Spring按业务模块输出日志到不同的文件_在线工具"><br /> 可以看到得到了我们期望的结果。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-logger-split-file"  target="_blank"  rel="nofollow">https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-logger-split-file</a></p> </h1> <p>在SpringBoot中，如果我们要覆盖默认的logback配置，推荐使用<code>logback-spring.xml</code>来配置。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220506/0b39cdd8382ecf1b88ef3d3802e9d03e.jpg" alt="Spring按业务模块输出日志到不同的文件_在线工具"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20553.htm">SpringCloud集成Sleuth和Zipkin</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-clash-verge-rev-nodes.htm" title="9月11日 | Clash Verge每天更新21.8M/S免费节点订阅链接">9月11日 | Clash Verge每天更新21.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" title="10月1日 | Clash Verge每天更新19M/S免费节点订阅链接">10月1日 | Clash Verge每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19180.htm" title="驱虫猫多少钱（驱虫药猫多少钱）">驱虫猫多少钱（驱虫药猫多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-node-share-links.htm" title="10月22日 | Clash Verge每天更新21.7M/S免费节点订阅链接">10月22日 | Clash Verge每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-5-free-subscribe-node.htm" title="8月5日 | Clash Verge每天更新19.6M/S免费节点订阅链接">8月5日 | Clash Verge每天更新19.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-14-node-share-links.htm" title="8月14日 | Clash Verge每天更新22M/S免费节点订阅链接">8月14日 | Clash Verge每天更新22M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日 | Clash Verge每天更新23M/S免费节点订阅链接">11月14日 | Clash Verge每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-4-free-node-subscribe.htm" title="9月4日 | Clash Verge每天更新18.2M/S免费节点订阅链接">9月4日 | Clash Verge每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-clash-verge-rev-nodes.htm" title="10月25日 | Clash Verge每天更新19.9M/S免费节点订阅链接">10月25日 | Clash Verge每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-10-node-share-links.htm" title="9月10日 | Clash Verge每天更新22.7M/S免费节点订阅链接">9月10日 | Clash Verge每天更新22.7M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
