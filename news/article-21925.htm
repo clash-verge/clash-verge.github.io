@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-21925.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>CompletableFuture的使用介绍, CompletableFuture与FutureTask的区别</title>
+        <meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompletableFuture实现了CompletionStage接口和Future接口，前者是对后" />
+        <link rel="icon" href="__ADDON__/img/clash_verge/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>CompletableFuture的使用介绍, CompletableFuture与FutureTask的区别</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				<div id="content_views" class="htmledit_views"> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompletableFuture实现了CompletionStage接口和Future接口，前者是对后者的一个扩展，增加了异步回调、流式处理、多个Future组合处理的能力，使Java在处理多任务的协同工作时更加顺畅便利。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 总的来说简洁了FutureTask与线程池的配合使用</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 没啥太大区别吧我觉得, 使用方法不一样, 多了一些方法 ???</p> </blockquote> <h2>futureTask 创建异步任务</h2> <pre><code class="language-java">        FutureTask&lt;String&gt; stringFutureTask = new FutureTask&lt;&gt;(() -&gt; {             return "aa";         });         executorService.execute(stringFutureTask);         System.out.println(stringFutureTask.get());          CompletableFuture&lt;String&gt; future1 = CompletableFuture.supplyAsync(() -&gt; {             return "aa";         }, executorService); // 不用手动提交了         System.out.println(future1.get());</code></pre> <blockquote> <p>&nbsp;还有很多异步回调, 组合处理</p> </blockquote> <h2>创建任务</h2> <h3>1. .supplyAsync</h3> <blockquote> <p>&nbsp;创建一个带返回值的任务</p> </blockquote> <h3>&nbsp;2. .runAsync</h3> <blockquote> <p>&nbsp;创建一个不带返回值的任务</p> </blockquote> <pre><code class="language-java">        ExecutorService executorService = Executors.newFixedThreadPool(1);          // 带返回值         CompletableFuture future = CompletableFuture.supplyAsync(() -&gt; {             try {                 System.out.println("future　" + new Date());                 Thread.sleep(2000);             } catch (InterruptedException e) {                 e.printStackTrace();             }             return "aaa";         }, executorService); // 推荐使用</code></pre> <p>&nbsp;以上两个方法都有两个构造方法, 默认不指定自定义线程池, 他会指定默认的提交任务的方法</p> <pre><code class="language-java">    // 查看cpu的核数是否大于1核     private static final boolean useCommonPool =         (ForkJoinPool.getCommonPoolParallelism() &gt; 1);      // 如果大于1核 则调用execute方法, 每次创建一个线程     private static final Executor asyncPool = useCommonPool ?         ForkJoinPool.commonPool() : new ThreadPerTaskExecutor();      static final class ThreadPerTaskExecutor implements Executor {         public void execute(Runnable r) { new Thread(r).start(); }     }</code></pre> <p>所以推荐自定义线程池的方式</p> <h2>异步回调</h2> <blockquote> <p>指的是 异步任务结束后调用的任务</p> </blockquote> <h3>1. .thenApply</h3> <blockquote> <p>带返回值的异步调用函数, 有入参, 有出参</p> </blockquote> <h3>2. .thenAccept</h3> <blockquote> <p>&nbsp;不带返回值的异步回调函数, 有入参</p> </blockquote> <pre><code class="language-java">         CompletableFuture future = CompletableFuture.supplyAsync(() -&gt; {             try {                 System.out.println("future　" + new Date());                 Thread.sleep(2000);             } catch (InterruptedException e) {                 e.printStackTrace();             }             return "aaa";         }, executorService);          // future执行完之后执行的异步任务         CompletableFuture&lt;String&gt; thenApply = future.thenApply((result) -&gt; {             System.out.println("future2　" +new Date());             System.out.println(result);             return "bbb" + result;         });</code></pre> <h3>3. .exceptionally</h3> <blockquote> <p>异步任务出现异常调用的回调方法</p> </blockquote> <pre><code class="language-java">        CompletableFuture future = CompletableFuture.supplyAsync(() -&gt; {             try {                 System.out.println("future　" + new Date());                 Thread.sleep(2000);                 int a = 1 / 0;             } catch (InterruptedException e) {                 e.printStackTrace();             }             return "aaa";         }, executorService);          CompletableFuture&lt;String&gt; exceptionally = future.exceptionally((result) -&gt; {             System.out.println("future3 " + result);             return "bbb" + result;         });                  // 出现异常则返回异常, 没异常则返回future的返回值         System.out.println(exceptionally.get());</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="97" src="http://img.555519.xyz/uploads/20230205/2b3c3225244a100b0684723621403945.jpg"></p> <p>&nbsp;去掉异常</p> <p><img decoding="async" alt="" height="81" src="http://img.555519.xyz/uploads/20230205/84b908a2b419f60edd6025b07503341d.jpg"></p> <h3>4. .whenComplete</h3> <blockquote> <p>&nbsp;当主任务出现异常时, 会终止任务,get的时候会抛出主任务的异常,&nbsp; 入参值为null, 否则正常运行</p> </blockquote> <pre><code class="language-java">        CompletableFuture future = CompletableFuture.supplyAsync(() -&gt; {             try {                 System.out.println("future　" + new Date());                 Thread.sleep(2000);                 int a = 1/0;             } catch (InterruptedException e) {                 e.printStackTrace();             }             return "aaa";         }, executorService);          CompletableFuture&lt;String&gt; exceptionally = future.whenComplete((result, error) -&gt; {             System.out.println("future3 " + result);             System.out.println("future3 " + error);         });         System.out.println(exceptionally.get());</code></pre> <p><img decoding="async" alt="" height="205" src="http://img.555519.xyz/uploads/20230205/8cc37a9e72120e09446d58af4195957c.jpg"></p> <p>&nbsp;去掉异常</p> <p><img loading="lazy" decoding="async" alt="" height="131" src="http://img.555519.xyz/uploads/20230205/cc41952905b50ae9e919ead674a0833d.jpg"></p> <h2 id="%E4%B8%89%E3%80%81%E7%BB%84%E5%90%88%E5%A4%84%E7%90%86">组合处理</h2> <p>....</p> <blockquote> <p>就是将多个任务组合起来执行, 时间原因, 这里我就不介绍了, 大家另行百度吧</p> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-21463.htm">HCNP Routing&amp;Switching之端口隔离</a></p>
+                                        <p>下一个：<a href="/news/article-21928.htm">@DateTimeFormat和@JsonFormat使用</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-node-share.htm" title="10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接">10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19638.htm" title="动物疫苗公司排名前十名是什么（国内动物疫苗龙头企业）">动物疫苗公司排名前十名是什么（国内动物疫苗龙头企业）</a></li>
+                        <li class="py-2"><a href="/news/article-21928.htm" title="@DateTimeFormat和@JsonFormat使用">@DateTimeFormat和@JsonFormat使用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-clash-verge-rev-node.htm" title="8月9日 | Clash Verge每天更新20.6M/S免费节点订阅链接">8月9日 | Clash Verge每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-clash-verge-rev-node-share.htm" title="11月12日 | Clash Verge每天更新21.4M/S免费节点订阅链接">11月12日 | Clash Verge每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-free-subscribe-node.htm" title="10月2日 | Clash Verge每天更新19.6M/S免费节点订阅链接">10月2日 | Clash Verge每天更新19.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" title="10月1日 | Clash Verge每天更新19M/S免费节点订阅链接">10月1日 | Clash Verge每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-node-subscribe.htm" title="9月30日 | Clash Verge每天更新20.1M/S免费节点订阅链接">9月30日 | Clash Verge每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21007.htm" title="Glance基础服务运维_在线工具Live2D">Glance基础服务运维_在线工具Live2D</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-latest-clash-verge-rev-node.htm" title="11月28日 | Clash Verge每天更新21.5M/S免费节点订阅链接">11月28日 | Clash Verge每天更新21.5M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
