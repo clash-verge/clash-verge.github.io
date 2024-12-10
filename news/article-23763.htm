@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-23763.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>超级详细的webpack Plugin讲解_javascript技巧_</title>
+        <meta name="description" content="目录  一、pulgin 的作用 二、pulgin 配置方式 三、pulgin 的本质 四、常见的 pulgin  4-1 html-webpack-plugin 4-2 clean-webpack-" />
+        <link rel="icon" href="__ADDON__/img/clash_verge/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>超级详细的webpack Plugin讲解_javascript技巧_</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">一、pulgin 的作用</a></li> <li><a href="#_label1" rel="nofollow">二、pulgin 配置方式</a></li> <li><a href="#_label2" rel="nofollow">三、pulgin 的本质</a></li> <li><a href="#_label3" rel="nofollow">四、常见的 pulgin</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_3_0" rel="nofollow">4-1 html-webpack-plugin</a></li> <li><a href="#_lab2_3_1" rel="nofollow">4-2 clean-webpack-plugin</a></li> <li><a href="#_lab2_3_2" rel="nofollow">4-3 mini-css-extract-plugin</a></li> <li><a href="#_lab2_3_3" rel="nofollow">4-4 DefinePlugin</a></li> <li><a href="#_lab2_3_4" rel="nofollow">4-5 copy-webpack-plugin</a></li> </ul> <li><a href="#_label4" rel="nofollow">总结</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>一、pulgin 的作用</h2> <ul> <li> <p>pulgin 就是“插件”的意思，主要目的就是解决 loader 无法实现的事情，loader 只是用作于将特定的模块进行转换，而 pulgin 可以用于执行更加广泛的任务，比如打包优化、资源管理、环境变量注入等</p> </li> <li> <p>pulgin 是贯穿 webpack 整个编译周期的，运行在 webpack 的不同阶段（钩子 / 生命周期）</p> </li> </ul> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/1b2d4e6b5f01ea184ec7a9a20007d0a1.jpg"></p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>二、pulgin 配置方式</h2> <p>通常情况下，pulgin 的配置都是通过 webpack.config.js 配置文件导出对象中 plugins 属性传入 new 实例对象</p> <div class="ay1code"> <pre class="brush:js;">const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装  const webpack = require('webpack'); // 访问内置的插件  module.exports = {    ...    // 配置 plugins    plugins: [      new webpack.ProgressPlugin(),      new HtmlWebpackPlugin({ template: './src/index.html' }),    ],  };</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>三、pulgin 的本质</h2> <p>pulgin 本质上是一个具有 apply 方法 javascript 对象，而他的这个 apply 方法会被 webpack compiler 阶段调用，并且在整个编译生命周期都可以访问 compiler 对象</p> <div class="ay1code"> <pre class="brush:js;">const pluginName = 'ConsoleLogOnBuildWebpackPlugin';    class ConsoleLogOnBuildWebpackPlugin {    apply(compiler) {      compiler.hooks.run.tap(pluginName, (compilation) =&gt; {        console.log('webpack 构建过程开始！');      });    }  }    module.exports = ConsoleLogOnBuildWebpackPlugin;</pre> </div> <p>关于整个编译生命周期钩子：</p> <ul> <li>entry-option ：初始化 option</li> <li>run</li> <li>compile： 真正开始的编译，在创建 compilation 对象之前</li> <li>compilation ：生成好了 compilation 对象</li> <li>make 从 entry 开始递归分析依赖，准备对每个模块进行 build</li> <li>after-compile： 编译 build 过程结束</li> <li>emit ：在将内存中 assets 内容写到磁盘文件夹之前</li> <li>after-emit ：在将内存中 assets 内容写到磁盘文件夹之后</li> <li>done： 完成所有的编译过程</li> <li>failed： 编译失败的时候</li> </ul> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>四、常见的 pulgin</h2> <p class="maodian"><a name="_lab2_3_0" rel="nofollow"></a></p> <h3>4-1 html-webpack-plugin</h3> <p>作用：</p> <ul> <li>利用 HtmlWebpackPlugin 插件自动生成 html 文件，并且对打包后的 js 文件做了一个引入</li> <li>HtmlWebpackPlugin 原理是通过自带默认的 ejs 模版去生成的，当然也可以自定义模版，在 html 模板中，可以通过 <code>&lt;%=htmlWebpackPlugin.options.XXX%&gt;</code> 的方式获取配置的值</li> </ul> <div class="ay1code"> <pre class="brush:js;">// webpack.config.js  const HtmlWebpackPlugin = require("html-webpack-plugin");  module.exports = {   ...    plugins: [       new HtmlWebpackPlugin({              title: "webpack案例",              template: "./public/index.html", // 指定生成的 html 模版          }),    ]  };</pre> </div> <p class="maodian"><a name="_lab2_3_1" rel="nofollow"></a></p> <h3>4-2 clean-webpack-plugin</h3> <p>作用：每次打包时候，CleanWebpackPlugin 插件就会自动把上一次打的包删除</p> <div class="ay1code"> <pre class="brush:js;">const {CleanWebpackPlugin} = require('clean-webpack-plugin');  module.exports = {   ...    plugins: [      new CleanWebpackPlugin()    ]  }</pre> </div> <p class="maodian"><a name="_lab2_3_2" rel="nofollow"></a></p> <h3>4-3 mini-css-extract-plugin</h3> <p>作用：提取 CSS 到一个单独的文件中</p> <div class="ay1code"> <pre class="brush:js;">const MiniCssExtractPlugin = require('mini-css-extract-plugin');  module.exports = {   ...,    module: {     rules: [      {       test: /.s[ac]ss$/,       use: [        {         loader: MiniCssExtractPlugin.loader       },            'css-loader',            'sass-loader'          ]     }     ]   },    plugins: [      ...,      new MiniCssExtractPlugin({       filename: '[name].css'      }),      ...    ]  }</pre> </div> <p class="maodian"><a name="_lab2_3_3" rel="nofollow"></a></p> <h3>4-4 DefinePlugin</h3> <p>作用：DefinePlugin 允许在编译时创建配置的全局常量，是一个 webpack 内置的插件（不需要单独安装）</p> <div class="ay1code"> <pre class="brush:js;">const { DefinePlugun } = require('webpack')    module.exports = {   ...      plugins:[          new DefinePlugin({              BASE_URL: '"./"' // 等价于 const BASE_URL = "./" 他的赋值方式有点奇葩          }),      ]  }</pre> </div> <p>这时候编译template模块的时候，就能通过下述形式获取全局对象</p> <div class="ay1code"> <pre class="brush:xhtml;">  &lt;!-- BASE_URL 是一个全局的常量，是通过 DefinePlugin 这个插件去定义的 --&gt;    &lt;link  href="&lt;%= BASE_URL %&gt;favicon.ico"  &gt;</pre> </div> <p class="maodian"><a name="_lab2_3_4" rel="nofollow"></a></p> <h3>4-5 copy-webpack-plugin</h3> <p>作用：CopyWebpackPlugin 是一个复制文件的插件，复制文件或者目录到指定区域，比如 vue 的打包过程中，如果我们将一些文件放到 public 的目录下，那么这个目录会被复制到 dist 文件夹中</p> <div class="ay1code"> <pre class="brush:js;">new CopyWebpackPlugin({              // 通过 CopyWebpackPlugin 插件将 public 中的文件复制到打包后的文件夹下              // patterns 是匹配的意思              patterns: [                  {                      from: "public", // 设置从哪一个源中开始复制                      to: "build" // 可以省略，默认是复制到打包输出的路径，会根据 output                       globOptions: {                          ignore: ['**/DS_Store', '**/index.html', '**/abc.txt'] // ** 表示的是 from 的文件夹                      }                      // globOptions：设置一些额外的选项，其中可以编写需要忽略的文件,                      //比如.DS_Store：mac目录下回自动生成的一个文件；.index.html：也不需要复制，因为我们已经通过HtmlWebpackPlugin完成了index.html的生成                  }              ]          })</pre> </div> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>总结</h2> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-23315.htm">动物疫苗概念的上市公司 动物疫苗上市公司龙头股</a></p>
+                                        <p>下一个：<a href="/news/article-23764.htm">猫咪领养回访多久可以结束（领养猫家访烦不烦）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-8-3-clash-verge-rev-github.htm" title="8月3日 | Clash Verge每天更新20.8M/S免费节点订阅链接">8月3日 | Clash Verge每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-clash-verge-rev-windows.htm" title="11月9日 | Clash Verge每天更新22.8M/S免费节点订阅链接">11月9日 | Clash Verge每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-clash-verge-rev-node-share.htm" title="10月28日 | Clash Verge每天更新20M/S免费节点订阅链接">10月28日 | Clash Verge每天更新20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-today-clash-verge-rev-node.htm" title="11月26日 | Clash Verge每天更新19.8M/S免费节点订阅链接">11月26日 | Clash Verge每天更新19.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-node-share-links.htm" title="11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接">11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-free-subscribe-node.htm" title="10月2日 | Clash Verge每天更新19.6M/S免费节点订阅链接">10月2日 | Clash Verge每天更新19.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-7-today-clash-verge-rev-node.htm" title="8月7日 | Clash Verge每天更新21.9M/S免费节点订阅链接">8月7日 | Clash Verge每天更新21.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-today-clash-verge-rev-node.htm" title="11月3日 | Clash Verge每天更新18.4M/S免费节点订阅链接">11月3日 | Clash Verge每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-clash-verge-rev-node-share.htm" title="11月15日 | Clash Verge每天更新21.6M/S免费节点订阅链接">11月15日 | Clash Verge每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-10-node-share-links.htm" title="9月10日 | Clash Verge每天更新22.7M/S免费节点订阅链接">9月10日 | Clash Verge每天更新22.7M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
