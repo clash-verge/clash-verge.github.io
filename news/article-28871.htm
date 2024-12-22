@@ -75,6 +75,7 @@
                   				  				  				<p>提到消息队列可能一些朋友经常听别人说起一些名词，比如：服务程序解耦，处理流量削峰，通过异步处理提升用户体验，缓冲批处理提高处理性能。笔者擅于白话解说，所以我就不用专业的术语去解释专业的问题了。<strong>我一直觉得消息队列的功能和快递柜的功能非常相似</strong>，怎么个相似法呢？让我来详细给你说说。</p> <h2 id="一白话消息队列">一、白话消息队列</h2> <p>我们来将快递柜与消息队列做一个对比</p> <ul> <li><strong>消息队列比作快递柜</strong>：有很多厂家生产快递柜，如：丰巢（apache kafka），速递易（alibaba RocketMQ），近邻宝（ActiveMQ）等等，反正常用的就这几个。快递柜负责临时保存邮件，消息队列负责临时保存消息数据。</li> <li><strong>快递员比作消息生产者</strong>：快递员负责向快递柜投递邮件，生产者负责向消息队列投递消息。异曲同工之妙啊！</li> <li><strong>消费者比作消息消费者</strong>： 可能是这个例子太贴切了，以至于这句怎么看都是废话。废话也还是要说，生活中的消费者取邮件，程序中的消费者取消息数据。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a0f8cb1966748201aea4ec917db7fffc.jpg" alt="消息队列与快递柜之间的奇妙关系"></p> <h2 id="二快递柜消息队列带来的好处">二、快递柜(消息队列)带来的好处</h2> <p>我们先回顾一下在<strong>没有快递柜的日子里是怎么度过的</strong>：某天早上突然接到快递员电话："兄弟，有你的快递啊"。心里想真糟糕：“你早不来晚不来，我马上就要上班了，你这个时候来。好吧，我等你一会”。结果有可能快递员很不靠谱，一会说堵车，一会说马上到，等来等去你上班迟到了。这种情况让你很崩溃！</p> <p>突然有一天，小区里突然出现了一个叫做快递柜的东西，这东西好啊。"兄弟，有你快递啊"，心想谁是你兄弟："啊，你放快递柜里面吧，我晚上下班回来取"。快递员愉快的把快递放入快递柜，开始打下一个电话，一早上10个邮件。如果每个都送上门快递员最少要半小时。现在好了，9个放快递柜，1个用户要求送上门，10分钟就搞定了。快递员觉得这个东东真的很好！</p> <p>快递员高兴了，消费者用户其实也很满意，有的购物狂一天有可能收10来个邮件。没有快递柜的时候，快递员来一个电话就去取一次（等一次）快递。有了快递柜，下班的时候就一起全都取了。上面的例子，体现了消息队列(快递柜)的几个优越性，请读者仔细品评：</p> <ul> <li>异步解耦：有了快递柜，消费者不用等待快递员，用户体验增强。消费者与生产者(快递员)之间解耦，不会因为对方的操作行为，影响自己独立处事的程序。用户不用疲于等待与接收事件阻塞耗时。</li> <li>流量削峰：我们假定一种极端的情况，你通过各个渠道买了1000本书，突然某一小时集中的给你打电话。你肯定不具备一个小时收1000个邮件的能力，所以你让快递员将邮件放入快递柜。所以你就可以按照自己的处理能力，按照自己的时间安排去取邮件。同样我们的消费者程序在面临多用户、高并发的请求情况下，将数据放入消息队列保存可以将流量数据削峰，按照程序能够处理的能力和资源进行数据消费。</li> <li>缓冲批处理：生产者批量投递，爽！消费者一次性取多个邮件，爽！</li> </ul> <h2 id="三引入快递柜带来的缺点">三、引入快递柜带来的缺点</h2> <p>说了这么多的优点，那么快递柜有没有缺点呢？当然有</p> <ol> <li> <p>引入复杂度。毫无疑问，快递柜(消息队列)这东西是多出来的，在原来的收取过程中是不存在的。所以需要地方放它，还需要防火、防盗防潮，需要去维护它。消息队列中间件也是一样的，你需要服务器区安装它，还要对它进行维护。</p> </li> <li> <p>会导致暂时的数据不一致。  如果没有快递柜，你收到了邮件件就是真的收到了。但是使用快递柜之后，你收到了"邮件放入快递柜的消息"，但是与你真的取到邮件这中间会有一定的延时。当然你最终还是会取到邮件，选择"消息队列"快递柜，就是要忍受暂时不一致，接受"最终一致性"。</p> </li> <li> <p>当然极端情况下，快递柜坏了，你要不可避免地接受"邮件可能会丢失"的事实，对于安保系数高的小区这几乎不会发生。</p> </li> </ol> <ul></ul> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-28869.htm">Centos7离线安装Nginx亲测版</a></p>
+                                        <p>下一个：<a href="/news/article-29336.htm">hadoop运行jar包处理文件一直处于Running job状态的解决方法</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -84,16 +85,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-4-latest-clash-verge-rev-node.htm" title="12月4日 | Clash Verge每天更新19.3M/S免费节点订阅链接">12月4日 | Clash Verge每天更新19.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-24-today-clash-verge-rev-node.htm" title="8月24日 | Clash Verge每天更新22M/S免费节点订阅链接">8月24日 | Clash Verge每天更新22M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-21-node-share-links.htm" title="8月21日 | Clash Verge每天更新18M/S免费节点订阅链接">8月21日 | Clash Verge每天更新18M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-clash-verge-rev-nodes.htm" title="9月26日 | Clash Verge每天更新19.1M/S免费节点订阅链接">9月26日 | Clash Verge每天更新19.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-10-free-high-speed-nodes.htm" title="8月10日 | Clash Verge每天更新20.7M/S免费节点订阅链接">8月10日 | Clash Verge每天更新20.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-node-subscribe-links.htm" title="11月23日 | Clash Verge每天更新23M/S免费节点订阅链接">11月23日 | Clash Verge每天更新23M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-6-clash-verge-rev-node-github.htm" title="9月6日 | Clash Verge每天更新19M/S免费节点订阅链接">9月6日 | Clash Verge每天更新19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-12-node-share.htm" title="10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接">10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-7-today-clash-verge-rev-node.htm" title="8月7日 | Clash Verge每天更新21.9M/S免费节点订阅链接">8月7日 | Clash Verge每天更新21.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-verge-rev-github.htm" title="11月16日 | Clash Verge每天更新21.8M/S免费节点订阅链接">11月16日 | Clash Verge每天更新21.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-clash-verge-rev-node.htm" title="8月9日 | Clash Verge每天更新20.6M/S免费节点订阅链接">8月9日 | Clash Verge每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24229.htm" title="中国宠物粮之乡工业园区（中国最大的宠物粮食企业）">中国宠物粮之乡工业园区（中国最大的宠物粮食企业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-21-node-share-links.htm" title="9月21日 | Clash Verge每天更新22.7M/S免费节点订阅链接">9月21日 | Clash Verge每天更新22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-node-share-links.htm" title="12月22日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址">12月22日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-clash-verge-rev-node.htm" title="12月2日 | Clash Verge每天更新22M/S免费节点订阅链接">12月2日 | Clash Verge每天更新22M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23314.htm" title="宠物猫疫苗费用多少（宠物猫疫苗费用多少钱）">宠物猫疫苗费用多少（宠物猫疫苗费用多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日 | Clash Verge每天更新23M/S免费节点订阅链接">11月14日 | Clash Verge每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-18-free-clash-verge-rev-node.htm" title="8月18日 | Clash Verge每天更新18.6M/S免费节点订阅链接">8月18日 | Clash Verge每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19179.htm" title="成都免费领养宠物的网站（成都正规免费领养宠物）">成都免费领养宠物的网站（成都正规免费领养宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-22843.htm" title="猫三联疫苗需要多少钱（猫三联疫苗多少钱?）">猫三联疫苗需要多少钱（猫三联疫苗多少钱?）</a></li>
                     </ul>
     </div>
 </div>
@@ -105,7 +106,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
