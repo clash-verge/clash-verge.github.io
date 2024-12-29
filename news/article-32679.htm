@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-32679.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>eureka server配置_程序员笔记|详解Eureka 缓存机制</title>
+        <meta name="description" content="引言 Eureka是Netflix开源的、用于实现服务注册和发现的服务。Spring Cloud Eureka基于Eureka进行二次封装，增加了更人性化的UI，使用更为方便。但是由于Eureka本身" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>eureka server配置_程序员笔记|详解Eureka 缓存机制</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="text-align:center;"></div> <h2><b>引言</b></h2> <p>Eureka是Netflix开源的、用于实现服务注册和发现的服务。Spring Cloud Eureka基于Eureka进行二次封装，增加了更人性化的UI，使用更为方便。但是由于Eureka本身存在较多缓存，服务状态更新滞后，最常见的状况是：服务下线后状态没有及时更新，服务消费者调用到已下线的服务导致请求失败。<b>本文基于Spring Cloud Eureka 1.4.4.RELEASE，在默认region和zone的前提下，介绍Eureka的缓存机制。</b></p> <h2><b>一、AP特性</b></h2> <p>从CAP理论看，Eureka是一个AP系统，优先保证可用性(A)和分区容错性(P)，不保证强一致性(C)，只保证最终一致性，因此在架构中设计了较多缓存。</p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/502df436670129d28964f0a2b1d421cd.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div><figcaption>   Eureka高可用架构</figcaption><h2><b>二、服务状态</b></h2> <p>Eureka服务状态enum类：<code>com.netflix.appinfo.InstanceInfo.InstanceStatus</code></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/de3841daa80c6b2437c57716ea2d7ae8.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <h2><b>三、Eureka Server</b></h2> <p>在Eureka高可用架构中，Eureka Server也可以作为Client向其他server注册，多节点相互注册组成Eureka集群，集群间相互视为peer。Eureka Client向Server注册、续约、更新状态时，接受节点更新自己的服务注册信息后，逐个同步至其他peer节点。</p> <p><b>【注意】</b>如果server-A向server-B节点单向注册，则server-A视server-B为peer节点，server-A接受的数据会同步给server-B，但server-B接受的数据不会同步给server-A。</p> <h3><b>3.1 缓存机制</b></h3> <p>Eureka Server存在三个变量：(<b>registry、readWriteCacheMap、readOnlyCacheMap</b>)保存服务注册信息，默认情况下定时任务每30s将readWriteCacheMap同步至readOnlyCacheMap，每60s清理超过90s未续约的节点，Eureka Client每30s从readOnlyCacheMap更新服务注册信息，而UI则从registry更新服务注册信息。</p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/fec592f60237672450bc48a49b85eed6.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>三级缓存</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/82634bd7bed60079eb53615f3d47c2e7.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>缓存相关配置</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/4e36b7167b815be570716b93334bcf42.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>关键类</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/69bdae1b247bc876b4418422c2875f48.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <h2><b>四、Eureka Client</b></h2> <p>Eureka Client存在两种角色：<b>服务提供者</b>和<b>服务消费者</b>，作为服务消费者一般配合Ribbon或Feign（Feign内部使用Ribbon）使用。Eureka Client启动后，作为服务提供者立即向Server注册，默认情况下每30s续约(renew)；作为服务消费者立即向Server全量更新服务注册信息，默认情况下每30s增量更新服务注册信息；Ribbon延时1s向Client获取使用的服务注册信息，默认每30s更新使用的服务注册信息，只保存状态为UP的服务。</p> <p><b>二级缓存</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/6fdad8591e31b63d2de74b0319fa9431.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>缓存相关配置</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/30fe536a31a42b42972721be9ae2be41.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>关键类</b></p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/e2a4d590514252c967d45f161e89b1dd.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <h2><b>五、默认配置下服务消费者最长感知时间</b></h2> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/0378ad3ef582900ea794829129b772a3.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <p><b>考虑如下情况</b></p> <ul> <li>0s时服务未通知Eureka Client直接下线；</li> <li>29s时第一次过期检查evict未超过90s；</li> <li>89s时第二次过期检查evict未超过90s；</li> <li>149s时第三次过期检查evict未续约时间超过了90s，故将该服务实例从registry和readWriteCacheMap中删除；</li> <li>179s时定时任务从readWriteCacheMap更新至readOnlyCacheMap;</li> <li>209s时Eureka Client从Eureka Server的readOnlyCacheMap更新；</li> <li>239s时Ribbon从Eureka Client更新。</li> </ul> <p>因此，极限情况下服务消费者最长感知时间将无限趋近240s。</p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/274cfce539a7ab604ab0432c0302e4e6.jpg" alt="eureka server配置_程序员笔记|详解Eureka 缓存机制"></div> <h2><b>六、应对措施</b></h2> <p>服务注册中心在选择使用Eureka时说明已经接受了其优先保证可用性(A)和分区容错性(P)、不保证强一致性(C)的特点。如果需要优先保证强一致性(C)，则应该考虑使用ZooKeeper等CP系统作为服务注册中心。分布式系统中一般配置多节点，单个节点服务上线的状态更新滞后并没有什么影响，这里主要考虑服务下线后状态更新滞后的应对措施。</p> <h3><b>6.1 Eureka Server</b></h3> <ul> <li>1.<b>缩短readOnlyCacheMap更新周期</b>。缩短该定时任务周期可减少滞后时间。</li> </ul> <div class="has"> <pre class="has"><code>eureka.server.responsecCacheUpdateIntervalMs: 10000  # Eureka Server readOnlyCacheMap更新周期</code></pre> </div> <ul> <li>2.<b>关闭readOnlyCacheMap</b>。中小型系统可以考虑该方案，Eureka Client直接从readWriteCacheMap更新服务注册信息。</li> </ul> <div class="has"> <pre class="has"><code>eureka.server.useReadOnlyResponseCache: false        # 是否使用readOnlyCacheMap</code></pre> </div> <h3><b>6.2 Eureka Client</b></h3> <ul> <li>1.<b>服务消费者使用容错机制</b>。如Spring Cloud Retry和Hystrix，Ribbon、Feign、Zuul都可以配置Retry，服务消费者访问某个已下线节点时一般报ConnectTimeout，这时可以通过Retry机制重试下一个节点。</li> <li>2.<b>服务消费者缩短更新周期</b>。Eureka Client和Ribbon二级缓存影响状态更新，缩短这两个定时任务周期可减少滞后时间，例如配置：</li> </ul> <div class="has"> <pre class="has"><code>eureka.client.registryFetchIntervalSeconds: 5        # Eureka Client更新周期 ribbon.ServerListRefreshInterval: 2000               # Ribbon更新周期</code></pre> </div> <ul> <li>3.<b>服务提供者保证服务正常下线</b>。服务下线时使用kill或kill -15命令，避免使用kill -9命令，kill或kill -15命令杀死进程时将触发Eureka Client的shutdown()方法，主动删除Server的registry和readWriteCacheMap中的注册信息，不必依赖Server的evict清除。</li> <li>4.<b>服务提供者延迟下线</b>。服务下线之前先调用接口使Eureka Server中保存的服务状态为DOWN或OUT_OF_SERVICE后再下线，二者时间差根据缓存机制和配置决定，比如默认情况下调用接口后延迟90s再下线服务即可保证服务消费者不会调用已下线服务实例。</li> </ul> <h2><b>七、网关实现服务下线实时感知</b></h2> <p>在软件工程中，没有一个问题是中间层解决不了的，而网关是服务提供者和服务消费者的中间层。以Spring Cloud Zuul网关为例，网关作为Eureka Client保存了服务注册信息，服务消费者通过网关将请求转发给服务提供者，只需要做到服务提供者下线时通知网关在自己保存的服务列表中使该服务失效。为了保持网关的独立性，可实现一个独立服务接收下线通知并协调网关集群。<b>下篇文章将详细介绍网关如何实现服务下线实时感知</b>，敬请期待！</p> <p>作者：冯永彪</p> <p>内容来源：</p> <p> 宜信技术学院college.creditease.cn</p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-32214.htm">宠物领养协议书怎么写范本 宠物领养协议书怎么写范本图片</a></p>
+                                        <p>下一个：<a href="/news/article-32680.htm">东北农大动物医院价目表最新图片（东北农大兽医院）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-latest-clash-verge-rev-node.htm" title="12月4日 | Clash Verge每天更新19.3M/S免费节点订阅链接">12月4日 | Clash Verge每天更新19.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-clash-verge-rev-node-github.htm" title="12月17日 | Clash Verge每天更新22.9M/S免费节点订阅链接">12月17日 | Clash Verge每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24694.htm" title="分布式服务请求报错：Read timed out executing POST http://businessApi/app/app/login">分布式服务请求报错：Read timed out executing POST http://businessApi/app/app/login</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-node-share-links.htm" title="11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接">11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-clash-verge-rev-windows.htm" title="9月22日 | Clash Verge每天更新19.8M/S免费节点订阅链接">9月22日 | Clash Verge每天更新19.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-high-speed-nodes.htm" title="12月1日 | Clash Verge每天更新18.5M/S免费节点订阅链接">12月1日 | Clash Verge每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23764.htm" title="猫咪领养回访多久可以结束（领养猫家访烦不烦）">猫咪领养回访多久可以结束（领养猫家访烦不烦）</a></li>
+                        <li class="py-2"><a href="/news/article-29810.htm" title="宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）">宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-latest-clash-verge-rev-node.htm" title="11月25日 | Clash Verge每天更新20.2M/S免费节点订阅链接">11月25日 | Clash Verge每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31744.htm" title="宠物粮加工厂原料有哪些呢 宠物粮加工厂原料有哪些呢图片">宠物粮加工厂原料有哪些呢 宠物粮加工厂原料有哪些呢图片</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
