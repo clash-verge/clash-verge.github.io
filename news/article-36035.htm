@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://clash-verge.github.io/news/article-35681.htm" />
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-36035.htm" />
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Spring Cloud 集成 Sleuth+Zipkin+Mysql</title>
-        <meta name="description" content="1 配置 Zipkin-Server 现在的版本（2.23.16）已经可以直接运行官方提供的jar，不需要单独去写这个服务了，下载地址 a.官网提供了两种运行方案：1 直接下载可执行jar 2 下载源" />
+    <title>vscode配置基于maven的Javaweb开发</title>
+        <meta name="description" content="得益于vscode的便捷性，并且不是很吃电脑性能，所以得到越来越多的青睐，vscode在编写脚本语言比如python上非常好用，但是如果开发大型项目，其实还是有些麻烦的，所以这里给出一个教程，来配置一" />
         <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -57,7 +57,7 @@
         <section class="breadcrumbs">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h1>Spring Cloud 集成 Sleuth+Zipkin+Mysql</h1>
+                    <h1>vscode配置基于maven的Javaweb开发</h1>
                     <ol>
                         <li><a href="/">首页</a></li>
                         <li><a href="/news/">新闻资讯</a></li>
@@ -72,10 +72,10 @@
                 <div class="row">
                     <div class="col-md-9">
                                         <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>1 配置 Zipkin-Server 现在的版本（2.23.16）已经可以直接运行官方提供的jar，不需要单独去写这个服务了，下载地址</p> <p><a class="link-info" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://zipkin.io/"  title="a.官网提供了两种运行方案：1 直接下载可执行jar 2 下载源代码自己打包运行" rel="nofollow">a.官网提供了两种运行方案：1 直接下载可执行jar 2 下载源代码自己打包运行</a></p> <p>b.从源代码中找到mysql初始化脚本</p> <p>c.执行jar：</p> <p>STORAGE_TYPE=mysql MYSQL_HOST=127.0.0.1 MYSQL_TCP_PORT=3306 MYSQL_DB=db_zipkin_log MYSQL_USER=root MYSQL_PASS=root nohup java -jar -Xms512m -Xmx1024m zipkin-server-2.23.16-exec.jar&gt;&gt; zipkin.log &amp;</p> <p>2 需要收集日志的服务增加依赖和Zipkin服务地址配置</p> <p> 依赖：</p> <p>compile 'org.springframework.cloud:spring-cloud-starter-sleuth'</p> <p>compile 'org.springframework.cloud:spring-cloud-starter-zipkin'</p> <p>配置：</p> <pre>zipkin:   base-url: http://127.0.0.1:9411 sleuth:   sampler:     percentage: 0.1 （样本采集比例 10%）</pre> <p>Zipkin 简单介绍：</p> <p>Zipkin Server主要包括四个模块：<br /> （1）Collector 接收或收集各应用传输的数据<br /> （2）Storage 存储接受或收集过来的数据，当前支持Memory，MySQL，Cassandra，ElasticSearch等，默认存储在内存中。<br /> （3）API（Query） 负责查询Storage中存储的数据，提供简单的JSON API获取数据，主要提供给web UI使用</p> <p>（4）Web 提供简单的web界面</p> <p>流程图：</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221201/dc316ce25577f1b3c4d48bb5833f4b66.jpg"></p> </div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> </h1> <p>得益于vscode的便捷性，并且不是很吃电脑性能，所以得到越来越多的青睐，vscode在编写脚本语言比如python上非常好用，但是如果开发大型项目，其实还是有些麻烦的，所以这里给出一个教程，来配置一个能够结合maven开发javawen的项目，并且后续会加入调试等内容。</p> <p>在配置之前，你要有开发过Java web项目的经验，要不然可能很多东西都不知道为什么。</p> <h2><a id="_9" rel="nofollow"></a>事前准备</h2> <p>主要就是配置Java环境、maven环境、tomcat环境，这三个都是解压即可，主要是注意配置环境变量<code>JAVA_HOME</code> 、<code>MAVEN_HOME</code>以及<code>CATALINA_HOME</code>，然后将他们加入到path里面，最后path里面多了这四条:</p> <pre><code>%MAVEN_HOME%\bin %JAVA_HOME%\bin %CATALINA_HOME%\lib %CATALINA_HOME%\bin</code></pre> <p>并且你在命令行输入<code>java -version</code><code>mvn -v</code><code>catalina version</code>都ok，说明开发环境都配置好了。 其实到了这个地方，如果你是大佬，你就可以基于记事本来开发了，更何况vscode，其实IDE主要就相当于润滑剂，能够更加简单的用这些工具，不用你输很多命令。而vscode介于二者之间。</p> <h2><a id="vscode_20" rel="nofollow"></a>vscode插件</h2> <p>vscode之所以好用，就是里面有了很多的插件，能够起到润滑剂作用，帮助你更方便的开发。这里需要的插件有:</p> <pre><code>Language Support for Java(TM) by Red Hat Debugger for Java Java Extension Pack Maven for Java Tomcat for Java MySQL</code></pre> <p>安装完插件，主要就是配置了。这里主要配置一下maven即可，在File-&gt;Preferences-&gt;Settings里面，你可以搜索一下maven，配置如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221201/14c43e1fe5c2be313372dcf6e63c1ff0.jpg" alt="vscode配置基于maven的Javaweb开发"></p> <p>这样就能找到maven的配置了。tomcat也可以配置一下workspace，你可以自行在设置里搜索然后更改，其作用主要是修改一下我们运行web时的位置。</p> <h2><a id="mavenweb_42" rel="nofollow"></a>maven构建web项目</h2> <p>其实这里和之前学习maven构建项目一样，只不过安装了插件，你可以不通过命令了，而是通过鼠标点来点去即可。首先ctrl+shif+p<code>打开vscode的命令面板，输入</code>&gt;maven: Create Maven Project<code>,回车，然后选择</code>web app`版本1.4，然后等待建立maven骨架，这里会需要输入group<br /> Id，这里我输入了com.demo1，以及artifactId，我输入了demo，其他的回车用默认即可。</p> <p>然后你发现目录下面会多了一个demo的目录，并且demo下面还有一个pom.xml，这个时候就说明建立成功了，你用vscode打开这个demo文件夹即可（因为建立后，好像vscode不会自动打开）。</p> <p>构建完成后，我们需要部署到tomcat上面，这里现增加一个tomcat服务器，你当前的工作区应该如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221201/3b00797b90b05b8d648d204131566aad.jpg" alt="vscode配置基于maven的Javaweb开发"></p> <p>你点击TOMCAT SERVERS右边的小加号，然后会弹出来选择目录的，你就选择你tomcat的安装目录即可（就是下面有bin的那个），如果没问题，那么就会在下面多一个服务器，然后你可以右键，选择start即可。等到开启完成，你再点击open in browse即可在浏览器里面看到tomcat的界面（与原版tomcat有一点不同，vscode插件做了一点定制）。</p> <p>我们在终端输入<code>mvn clean package</code> 就可以将项目打成war包，在Demo\target\demo.war,r 然后你在上面右键，即可出现Run on tomcat server, 这就会将其部署到tomcat上面，你在浏览器里面刷新一下，会发现多了一个项目，你点击就可以进去，或者直接地址栏输入<code>http://localhost:8080/demo/</code>。</p> <p>p.s. 可能你也注意到了如果右键在webapp这个目录上的话，也有Run on tomcat server并且能够运行，但是这个仅限于静态项目，我试了在spring mvc下，对servlet访问就不行了，所以建议还是用<code>mvn clean package</code> ，如果觉得麻烦，后续会继续讲其他方案。</p> <p>到此为止，通过vscode结合maven构建项目就完成了。</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-35031.htm">动物医院属于医疗机构吗知乎 动物医院属于医疗机构吗知乎</a></p>
-                                        <p>下一个：<a href="/news/article-35682.htm">宠物粮食品牌前十名有哪些呢图片大全集（宠物粮食排行榜）</a></p>
+                                        <p>上一个：<a href="/news/article-35682.htm">宠物粮食品牌前十名有哪些呢图片大全集（宠物粮食排行榜）</a></p>
+                                        <p>下一个：<a href="/news/article-36036.htm">宠物领养网站html模板大全（宠物领养在哪个网站发布比较好）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -85,16 +85,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-25-latest-clash-verge-rev-node.htm" title="12月25日 | Clash Verge每天更新18.4M/S免费节点订阅链接地址">12月25日 | Clash Verge每天更新18.4M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-25160.htm" title="动物疫苗的生产工艺流程 动物疫苗的生产工艺流程图">动物疫苗的生产工艺流程 动物疫苗的生产工艺流程图</a></li>
-                        <li class="py-2"><a href="/news/article-19179.htm" title="成都免费领养宠物的网站（成都正规免费领养宠物）">成都免费领养宠物的网站（成都正规免费领养宠物）</a></li>
-                        <li class="py-2"><a href="/news/article-21008.htm" title="动物疫苗有哪几种类型图片及名称（动物疫苗有哪几种类型图片及名称及价格）">动物疫苗有哪几种类型图片及名称（动物疫苗有哪几种类型图片及名称及价格）</a></li>
-                        <li class="py-2"><a href="/news/article-28871.htm" title="消息队列与快递柜之间的奇妙关系">消息队列与快递柜之间的奇妙关系</a></li>
-                        <li class="py-2"><a href="/news/article-28409.htm" title="国考公务员2021年报名公告（2021年国考公务员报考公告）">国考公务员2021年报名公告（2021年国考公务员报考公告）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-node-subscribe.htm" title="12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址">12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-20092.htm" title="宠物粮食在哪里进货好呢知乎文章（宠物粮在哪里批发）">宠物粮食在哪里进货好呢知乎文章（宠物粮在哪里批发）</a></li>
-                        <li class="py-2"><a href="/news/article-19180.htm" title="驱虫猫多少钱（驱虫药猫多少钱）">驱虫猫多少钱（驱虫药猫多少钱）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-node-share.htm" title="10月18日 | Clash Verge每天更新20.7M/S免费节点订阅链接">10月18日 | Clash Verge每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31197.htm" title="动物医院技术院长（动物医院技术院长招聘）">动物医院技术院长（动物医院技术院长招聘）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-clash-verge-rev-windows.htm" title="11月13日 | Clash Verge每天更新21.7M/S免费节点订阅链接">11月13日 | Clash Verge每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32679.htm" title="eureka server配置_程序员笔记|详解Eureka 缓存机制">eureka server配置_程序员笔记|详解Eureka 缓存机制</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-today-clash-verge-rev-node.htm" title="12月14日 | Clash Verge每天更新20.7M/S免费节点订阅链接">12月14日 | Clash Verge每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-subscribe-node.htm" title="11月2日 | Clash Verge每天更新19.5M/S免费节点订阅链接">11月2日 | Clash Verge每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-clash-verge-rev-nodes.htm" title="11月29日 | Clash Verge每天更新20.7M/S免费节点订阅链接">11月29日 | Clash Verge每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20090.htm" title="vue3搭配pinia的踩坑实战记录_vue.js">vue3搭配pinia的踩坑实战记录_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-clash-verge-rev-node-github.htm" title="10月21日 | Clash Verge每天更新21.4M/S免费节点订阅链接">10月21日 | Clash Verge每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-verge-rev-github.htm" title="11月7日 | Clash Verge每天更新22.9M/S免费节点订阅链接">11月7日 | Clash Verge每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-high-speed-nodes.htm" title="10月11日 | Clash Verge每天更新20.4M/S免费节点订阅链接">10月11日 | Clash Verge每天更新20.4M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
