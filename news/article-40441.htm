@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-40441.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>记一次Spring|项目启动耗时超级长的优化</title>
+        <meta name="description" content="起因: 手上的一个spring项目启动耗时超级长，启动后查看花费的时间，一共花了426849毫秒，换算近7.11415分钟。  1，观察日志初步排查问题，发现系统卡在此处不动了。。。  2，继续等待日" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>记一次Spring|项目启动耗时超级长的优化</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>起因: 手上的一个spring项目启动耗时超级长，启动后查看花费的时间，一共花了426849毫秒，换算近7.11415分钟。</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/416be95e3cf5594d6ad7b98448cad03f.jpg"></p> <p><strong>1，观察日志初步排查问题，发现系统卡在此处不动了。。。</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/131b2595ffe4a89c2e41e9de4f67ebe0.jpg"></p> <p><strong>2，继续等待日志，发现在启动过程中加载阿里数据库连接池DruidDataSource耗时近4分钟。</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/327aaf2334a86c45806bd780a005e204.jpg"></p> <p><strong>3，由此怀疑是连接池配置问题，去除所有初始化的参数，保留连接信息(driverClassName,url,username,password)，启动耗时39282毫秒, 0.6547 分</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/54f96ad8c388eb2bbd9fd7b90f347e80.jpg"></p> <p><strong>4，继续排查连接池配置，放出几个初始化参数，再重新启动服务，发现耗时又出现将近7分钟，由此可发现问题出现在此。</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/d2838a45580f83ae9a296225d99e1131.jpg"></p> <p><strong>5，查看Druid的官方文档，配置推荐<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE"  title="DruidDataSource配置 · alibaba/druid Wiki · GitHub" rel="nofollow">DruidDataSource配置 · alibaba/druid Wiki · GitHub</a></strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/d75419081c92bdb8bd5ed6e591006314.jpg"></p> <pre>&lt;property name="initialSize" value="500" /&gt;   //此处配置的值问题很大。</pre> <p>查询官网文档：<br /> initialSize&nbsp;&nbsp; &nbsp; 默认值是0&nbsp; 初始化时建立物理连接的个数，初始化发生在显示调用init方法，或者第一次getConnection时</p> <p>初始化配置了500的个数，Spring启动过程就需要花费大量的时间去初始化创建连接，导致系统启动超级的慢。</p> <p><strong>准确定位到初始化参数问题，导致项目启动耗时如此之长久。&nbsp;&nbsp; &nbsp;</strong></p> <p><strong>原先&lt;property name="initialSize" value="500" /&gt;<br /> 修改后&lt;property name="initialSize" value="50" /&gt;</strong></p> <p><strong>此次优化效果如下：<br /> 系统启动性能优化（前后耗时对比）：</strong><br /> 优化前：spring项目启动耗时426849毫秒，大约7分钟。<br /> 优化后：spring项目启动耗时185613毫秒，大约3分钟，启动性能提升2倍多。<br /> 极致情况下，开发人员本地启动服务，可直接删掉initialSize参数配置，启动性能还可在原基础上提升20秒左右。<br /> 启动这个项目，一次可提速近3分钟。</p> <p><strong>将近3分钟的启动时长，对于项目来说还是太长了，继续深度优化。</strong></p> <p><strong>6，监控日志发现加载线程池出现耗时将近（从18s到27s）10秒</strong></p> <p>2022-03-01 16:47:<strong>18</strong> [RMI TCP Connection(5)-127.0.0.1] INFO &nbsp;bs2.xxxxxxxxx.orm.core.SQLExecutor &nbsp;- 2441 query select &nbsp;from `xxxxxxx` &nbsp;<br /> 2022-03-01 16:47:<strong>27</strong> [RMI TCP Connection(5)-127.0.0.1] INFO &nbsp;org.springframework.xxxxx.concurrent.ThreadPoolTaskExecutor &nbsp;- Initializing 'txxxxkxecutor'</p> <p><strong>定位到系统使用xml配置线程池，在初始化的时候直接加载，导致耗时增加，于是修改加载为lazy-init</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/3ea30caecf636d527aba11997fad4589.jpg"></p> <p><strong>7，继续监控日志，在webApplication初始化时停留了一分多钟。</strong><br /> 16:33:40.811 [NettyClientSelector_1] DEBUG i.n.u.i.JavassistTypeParameterMatcherGenerator - Generated: io.netty.util.internal.__matchers__.com.alibaba.xxxxxmq.remoting.protocol.RemotingCommandMatcher<br /> 2022-03-01 <strong>16:34:48</strong> [RMI TCP Connection(3)-127.0.0.1] INFO &nbsp;org.springframework.web.context.ContextLoader &nbsp;- Root WebApplicationContext: initialization completed in 104988 ms<br /> 2022-03-01<strong> 16:34:52 </strong>[RMI TCP Connection(3)-127.0.0.1] INFO&nbsp; rsLog &nbsp;- com.baison.bap.resource.StringResourceLoader starting load</p> <p><strong>8，定位到是由于spring的bean加载，启动过程中加载了大量的bean类，于是在bean.xml文件中，进行懒加载配置。</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/cba4f565256234a9b5f5c4cef34f5950.jpg"></p> <p> 优化后，耗时已经到1分多钟了，这下启动起来瞬间就爽了。</p> <p><strong>此次优化效果如下：<br /> 系统启动性能优化（前后耗时对比）：</strong><br /><strong>优化前：spring项目启动耗时426849毫秒，大约7分钟。<br /> 优化后：spring项目启动耗时99505毫秒，大约1分半，启动性能提升将近5倍。</strong><br /> 启动这个项目，一次可提速近5分钟，平均下来用在这些项目启动的时间上面，每天可以节省几十分钟。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39952.htm">动物疫苗经营许可证怎么申请办理（动物疫苗经营许可证怎么申请办理手续）</a></p>
+                                        <p>下一个：<a href="/news/article-40442.htm">centos离线安装nginx详细教程</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-clash-verge-rev-node-github.htm" title="10月26日 | Clash Verge每天更新22.3M/S免费节点订阅链接">10月26日 | Clash Verge每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-today-clash-verge-rev-node.htm" title="12月20日 | Clash Verge每天更新18.5M/S免费节点订阅链接">12月20日 | Clash Verge每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-free-subscribe-node.htm" title="12月23日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址">12月23日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25618.htm" title="防疫站猫疫苗（猫咪防疫站）">防疫站猫疫苗（猫咪防疫站）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-clash-verge-rev-github.htm" title="1月6日 | Clash Verge每天更新22M/S免费节点订阅链接地址">1月6日 | Clash Verge每天更新22M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-today-clash-verge-rev-node.htm" title="1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址">1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-node-share-links.htm" title="10月22日 | Clash Verge每天更新21.7M/S免费节点订阅链接">10月22日 | Clash Verge每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26544.htm" title="动物疫苗上市企业有哪些股票 动物疫苗上市企业有哪些股票代码">动物疫苗上市企业有哪些股票 动物疫苗上市企业有哪些股票代码</a></li>
+                        <li class="py-2"><a href="/news/article-27011.htm" title="正规免费领养宠物平台（正规免费领养宠物平台）">正规免费领养宠物平台（正规免费领养宠物平台）</a></li>
+                        <li class="py-2"><a href="/news/article-30772.htm" title="unity 编辑器扩展简单入门">unity 编辑器扩展简单入门</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
