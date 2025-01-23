@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-44909.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>@RequestBody总结相关</title>
+        <meta name="description" content="提示：建议一定要看后面的@RequestBody的核心逻辑源码以及六个重要结论！本文前半部分的内容都是一些基 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;本知识常" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-44909.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="@RequestBody总结相关" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/605e1bbaf9653b313876c096e82ee6bd.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:40:41" />
+    <meta property="og:updated_time" content="2025-01-23T10:40:41" />
+        <meta property="og:description" content="提示：建议一定要看后面的@RequestBody的核心逻辑源码以及六个重要结论！本文前半部分的内容都是一些基 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;本知识常" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="@RequestBody总结相关">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>@RequestBody总结相关</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>提示：</strong><strong>建议一定要看后面的@RequestBody的核心逻辑源码以及六个重要结论！</strong>本文前半部分的内容都是一些基<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;本知识常识，可选择性跳过。</p> <p><strong>声明：</strong>本文是基于SpringBoot，进行的演示说明。</p> <hr/> <h3>基础知识介绍：</h3> <p>&nbsp; &nbsp; &nbsp; &nbsp; @RequestBody主要用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)；GET方式无请求体，所以使用@RequestBody接收数据时，前端不能使用GET方式提交数据，而是用POST方式进行提交。在后端的同一个接收方法里，@RequestBody与@RequestParam()可以同时使用，@RequestBody最多只能有一个，而@RequestParam()可以有多个。</p> <p>注：一个请求，只有一个RequestBody；一个请求，可以有多个RequestParam。</p> <p>注：当同时使用@RequestParam（）和@RequestBody时，@RequestParam（）指定的参数可以是普通元素、<br /> &nbsp; &nbsp; &nbsp; &nbsp;数组、集合、对象等等(即:当，@RequestBody 与@RequestParam()可以同时使用时，原SpringMVC接收<br /> &nbsp; &nbsp; &nbsp; &nbsp;参数的机制不变，只不过RequestBody 接收的是请求体里面的数据；而RequestParam接收的是key-value<br /> &nbsp; &nbsp; &nbsp; &nbsp;里面的参数，所以它会被切面进行处理从而可以用普通元素、数组、集合、对象等接收)。<br /> &nbsp; &nbsp; &nbsp; &nbsp;即：如果参数时放在请求体中，传入后台的话，那么后台要用@RequestBody才能接收到；如果不是放在<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 请求体中的话，那么后台接收前台传过来的参数时，要用@RequestParam来接收，或则形参前<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 什么也不写也能接收。</p> <p>注：如果参数前写了@RequestParam(xxx)，那么前端必须有对应的xxx名字才行(不管其是否有值，当然可以通<br /> &nbsp; &nbsp; &nbsp; &nbsp;过设置该注解的required属性来调节是否必须传)，如果没有xxx名的话，那么请求会出错，报400。</p> <p>注：如果参数前不写@RequestParam(xxx)的话，那么就前端可以有可以没有对应的xxx名字才行，如果有xxx名<br /> &nbsp; &nbsp; &nbsp; &nbsp;的话，那么就会自动匹配；没有的话，请求也能正确发送。<br /> &nbsp; &nbsp; &nbsp; &nbsp;追注：这里与feign消费服务时不同；feign消费服务时，如果参数前什么也不写，那么会被默认是<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @RequestBody的。</p> <p>如果后端参数是一个对象，且该参数前是以@RequestBody修饰的，那么前端传递json参数时，必须满足以下要求：</p> <ul> <li> <p>后端@RequestBody注解对应的类在将HTTP的输入流(含请求体)装配到目标类(即：@RequestBody后面的类)时，会根据json字符串中的key来匹配对应实体类的属性，如果匹配一致且json中的该key对应的值符合(或可转换为)，这一条我会在下面详细分析，其他的都可简单略过，但是<strong><strong>本文末的核心逻辑代码以及几个结论一定要看！</strong></strong>&nbsp;实体类的对应属性的类型要求时,会调用实体类的setter方法将值赋给该属性。</p> </li> <li> <p>json字符串中，如果value为""的话，后端对应属性如果是String类型的，那么接受到的就是""，如果是后端属性的类型是Integer、Double等类型，那么接收到的就是null。</p> </li> <li> <p>json字符串中，如果value为null的话，后端对应收到的就是null。</p> </li> <li> <p>如果某个参数没有value的话，在传json字符串给后端时，要么干脆就不把该字段写到json字符串中；要么写value时，&nbsp;必须有值，null&nbsp; 或""都行。千万不能有类似"stature":，这样的写法，如:</p> </li> </ul> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/6e5400c354a54585366bff49fcc25a2a.jpg"></p> <p>注：关于@RequestParam()的用法，这里就不再一一说明了，可详见 《程序员成长笔记(一)》中的相关章节。</p> <hr/> <h3><strong>示例详细说明：</strong></h3> <p>先给出两个等下要用到的实体类</p> <p>User实体类：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/d628ccf0e94f9e80024936d4bea62c10.jpg"></p> <p>Team实体类：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/c0545ff0cd3779488d9bb399c56b53b9.jpg"></p> <p><strong>@RequestBody直接以String接收前端传过来的json数据：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/615dcafdfceb2b0501da8cac8951c62d.jpg"></p> <p>使用PostMan测试：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/b725114997663502719ac562b5c5c35f.jpg"></p> <p><strong>@RequestBody以简单对象接收前端传过来的json数据：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/8e6c8ff9bae0642a2f357610ee0ff980.jpg"></p> <p>使用PostMan测试：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/d2fbecaab90efca1175536ea7514d729.jpg"></p> <p><strong>@RequestBody以复杂对象接收前端传过来的json数据：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/1bd22a49cc7070144b0b62a55e30aa4c.jpg"></p> <p>使用PostMan测试：</p> <p><img fetchpriority="high" decoding="async" alt="" height="287" src="http://img.555519.xyz/uploads/20230108/8f2db0c99d06b6c6ab1cafb7e6552174.jpg"></p> <p><strong>@RequestBody与简单的@RequestParam()同时使用：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" height="259" src="http://img.555519.xyz/uploads/20230108/e14cedf3b0205b9eea4796e179e10831.jpg"></p> <p>使用PostMan测试：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/b2e642318c00a5694320d9334c7bc0ca.jpg"></p> <p><strong>@RequestBody与复杂的@RequestParam()同时使用：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" height="379" src="http://img.555519.xyz/uploads/20230108/6c52961834fbe568887fb2b6ec90b7a2.jpg"></p> <p>使用PostMan测试：</p> <p><img loading="lazy" decoding="async" alt="" height="430" src="http://img.555519.xyz/uploads/20230108/d3566e05f67f34656766c425782c3a8d.jpg"></p> <p><strong>@RequestBody接收请求体中的json数据；不加注解接收URL中的数据并组装为对象：</strong></p> <p>后端对应的Controller：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/40dbf09a0bb474328fc1d08b17bc2383.jpg"></p> <p>使用PostMan测试：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/138a2d2f64c53d4a56c98b0d0cce69e4.jpg"></p> <p>注：如果在后端方法参数前，指定了@RequestParam()的话，那么前端必须要有对应字段才行(当然可以通过设置<br /> &nbsp; &nbsp; &nbsp; &nbsp;该注解的required属性来调节是否必须传)，否者会报错；如果参数前没有任何该注解，那么前端可以传，也可<br /> &nbsp; &nbsp; &nbsp; &nbsp;以不传，如：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/9e4d70743ddc6da67dab3863228dbc81.jpg"></p> <p>上图中，如果我们传参中没有指定token，那么请求能正常进去，但是token为null；如果在String token前指定了@RequestParam(“token”)，那么前端必须要有token这个键时，请求才能正常进去，否者报400错误。</p> <hr/> <h3>@RequestBody与前端传过来的json数据的匹配规则</h3> <p>声明：根据不同的Content-Type等情况,Spring-MVC会采取不同的HttpMessageConverter实现来进行信息转换解析。<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 下面介绍的是最常用的：前端以Content-Type 为application/json,传递json字符串数据;后端以@RequestBody<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 模型接收数据的情况。</p> <p><strong>解析json数据大体流程概述</strong><strong>：</strong><br /><strong>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><strong>Http传递请求体信息，最终会被封装进com.fasterxml.jackson.core.json.UTF8StreamJsonParser中(提示：Spring采用CharacterEncodingFilter设置了默认编码为UTF-8)，然后在public&nbsp;class&nbsp;BeanDeserializer&nbsp;extends&nbsp;BeanDeserializerBase&nbsp;implements&nbsp;java.io.Serializable中，通过&nbsp;public&nbsp;Object deserializeFromObject(JsonParser&nbsp;p, DeserializationContext&nbsp;ctxt)&nbsp;throws&nbsp;IOException方法</strong><strong>进行解析</strong>。</p> <h3>核心逻辑分析示例：</h3> <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;假设前端传的json串是这样的：&nbsp;<strong>{"name1":"邓沙利文","age":123,"mot":"我是一只小小小小鸟~"}</strong><strong>&nbsp;</strong>后端的模型只有name和age属性，以及对应的setter/getter方法；给出一般用到的deserializeFromObject(JsonParser&nbsp;p, DeserializationContext&nbsp;ctxt)方法的<strong>核心逻辑：</strong></p> <p><img loading="lazy" decoding="async" alt="" height="361" src="http://img.555519.xyz/uploads/20230108/80996194b1ff36f1ff1e899bfc3b8761.jpg"></p> <hr/> <h3>小技巧之指定模型中的属性对应什么key</h3> <p>这里简单介绍，更多的可参考：</p> <p><strong><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;public</strong></strong>&nbsp;<strong><strong>class</strong></strong>&nbsp;BeanPropertyMap&nbsp;<strong><strong>implements</strong></strong>&nbsp;Iterable&lt;SettableBeanProperty&gt;,java.io.Serializable</p> <p>给出Controller中的测试类:</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/10ddcf92668f2f35f3308f4dc7334a0c.jpg"></p> <p>给出模型中的属性(setter/getter方法没截出来)：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/6715aa29670aa5f0e0817cb528af4263.jpg"></p> <p>使用postman测试一下，示例：</p> <p><img loading="lazy" decoding="async" alt="" height="416" src="http://img.555519.xyz/uploads/20230108/462528bdf2a2c663e0a7f53958492791.jpg"></p> <p>上图简单测试了一下，但是测得并不全面,这里就不带大家一起测试了，直接给出。</p> <hr/> <h3> <strong>全面的结论</strong>：</h3> <p><strong><strong>结论</strong></strong><strong><strong>①</strong>：</strong><strong>@JsonAlias</strong>注解，实现:json转模型时，使json中的特定key能转化为特定的模型属性;但是模型转json时，<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;对应的转换后的key仍然与属性名一致，见：上图示例中的name字段的请求与响应。<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;以下图进一步说明：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/74f9d7311b41e50a1df7eef396ad4f5c.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 此时，json字符串转换为模型时，<u><u>j</u></u>son中key为Name或为name123或为name的都能识别。</p> <p><strong><strong>结论</strong></strong><strong><strong>②</strong>：</strong><strong>@JsonProperty</strong>注解，实现：json转模型时，使json中的特定key能转化为指定的模型属性；同样的，模<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;型转json时，对应的转换后的key为指定的key，见：示例中的motto字段的请求与响应。<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;以下图进一步说明：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230108/361db6e24cb57c5330c787886e0866e3.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;此时，json字符串转换为模型时，key为MOTTO的能识别，但key为motto的不能识别。</p> <p><strong><strong>结论</strong></strong><strong><strong>③</strong><strong>：</strong></strong>@JsonAlias注解需要依赖于setter、getter，而@JsonProperty注解不需要。</p> <p><strong><strong>结论</strong></strong><strong><strong>④</strong>：</strong>在不考虑上述两个注解的一般情况下，key与属性匹配时,默认大小写敏感。</p> <p><strong><strong>结论</strong></strong><strong><strong>⑤</strong>：</strong>有多个相同的key的json字符串中，转换为模型时，会以相同的几个key中，排在最后的那个key的值给模<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;型属性复制，因为setter会覆盖原来的值。见示例中的gender属性。</p> <p><strong><strong>结论</strong></strong><strong><strong>⑥</strong><strong>：</strong></strong>后端@RequestBody注解对应的类在将HTTP的输入流(含请求体)装配到目标类(即:@RequestBody后面<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;的类)时，会根据json字符串中的key来匹配对应实体类的属性，如果匹配一致且json中的该key对应的值<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;符合(或可转换为)实体类的对应属性的类型要求时，会调用实体类的setter方法将值赋给该属性。</p> <p>&nbsp;</p> <h3>^_^&nbsp;如有不当之处，欢迎指正</h3> <h3>^_^&nbsp;代码托管链接<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/JustryDeng/PublicRepository/tree/master/Abc_RequestBodyAndRequestParam"  rel="nofollow">https://github.com/JustryDeng...RequestBody.</a>..</h3> <h3>&nbsp;</h3> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44908.htm">Android 弹窗设计规范</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27946.htm" title="开动物诊所挣钱吗（开动物诊所需要什么条件）">开动物诊所挣钱吗（开动物诊所需要什么条件）</a></li>
+                        <li class="py-2"><a href="/news/article-23764.htm" title="猫咪领养回访多久可以结束（领养猫家访烦不烦）">猫咪领养回访多久可以结束（领养猫家访烦不烦）</a></li>
+                        <li class="py-2"><a href="/news/article-43936.htm" title="C语言 模拟实现strlen函数详解_C 语言">C语言 模拟实现strlen函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/news/article-31745.htm" title="猫打疫苗是打几针（猫打疫苗打几针,多少钱）">猫打疫苗是打几针（猫打疫苗打几针,多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-40441.htm" title="记一次Spring|项目启动耗时超级长的优化">记一次Spring|项目启动耗时超级长的优化</a></li>
+                        <li class="py-2"><a href="/news/article-29336.htm" title="hadoop运行jar包处理文件一直处于Running job状态的解决方法">hadoop运行jar包处理文件一直处于Running job状态的解决方法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-clash-verge-rev-node-github.htm" title="10月16日 | Clash Verge每天更新19.9M/S免费节点订阅链接">10月16日 | Clash Verge每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26065.htm" title="领养宠物狗是什么意思呀怎么写文案（领养宠物狗是什么意思呀怎么写文案呢）">领养宠物狗是什么意思呀怎么写文案（领养宠物狗是什么意思呀怎么写文案呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share.htm" title="11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接">11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30295.htm" title="从线上环境摘取了四个代码优化记录分享给大家">从线上环境摘取了四个代码优化记录分享给大家</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

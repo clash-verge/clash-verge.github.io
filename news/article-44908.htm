@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-44908.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Android 弹窗设计规范</title>
+        <meta name="description" content="Android 弹窗又叫弹框、弹出层等，指代所有从界面中弹出的临时存在的窗口。它是我们在Android APP中常见的交互组件，用作提醒、做决定、处理某个任务。通过查找Android开发者指南中的一些" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-44908.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="Android 弹窗设计规范" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/498b2c0ef8012602c4b92739ddb20f53.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:40:41" />
+    <meta property="og:updated_time" content="2025-01-23T10:40:41" />
+        <meta property="og:description" content="Android 弹窗又叫弹框、弹出层等，指代所有从界面中弹出的临时存在的窗口。它是我们在Android APP中常见的交互组件，用作提醒、做决定、处理某个任务。通过查找Android开发者指南中的一些" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android 弹窗设计规范">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>Android 弹窗设计规范</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>Android 弹窗又叫弹框、弹出层等，指代所有从界面中弹出的临时存在的窗口。它是我们在Android APP中常见的交互组件，用作提醒、做决定、处理某个任务。通过查找Android开发者指南中的一些官方规范（https://developer.android.com/guide/topics/ui）,它分为Toasts吐司提示、SnackBars底部提示框、Pickers选择器、Menus菜单、Dialogs对话框等。</p> <p>首先，普及一个有关组件性质的概念，模态（modal）和非模态（nonmodal/modeless）情境。模态是用户必须通过点击相关按钮或其他方式来退出之后才能进行其他操作，也即模态情境会打断用户的操作。反之，非模态是不会阻断用户的操作，用户可以继续之前的交互，不对其进行回应。通常，用户可以点击非模态窗口之外的其他位置来关闭它或等它自动消失。</p> <p>接下来依次讲一下各类弹框组件：</p> <p>1.Toast&nbsp;</p> <p>在业界绝大多数APP中，是非模态的，出现在屏幕底部，纯文字显示的，并且不支持交互的系统弹窗。使用方法如下：</p> <p>//第一个参数是上下文，第二个是需要显示的内容，第三个是显示时间(也可为Toast.LENGTH_SHORT) ，两个默认时长分别为 2s 和 3.5s。</p> <p>Toast.makeText(this,"我是文本显示内容",Toast.LENGTH_LONG);</p> <p>另外，也出现了各种打破规范的 Toasts ，比如模态的、带图标的、可交互的等，我们的应用不涉及这些，所以此处不做阐述，只使用非模态的那种方式，遵循系统默认字体和样式规范：</p> <p><strong>•&nbsp;</strong>一次只显示一个 Toast。</p> <p><strong>•&nbsp;</strong>纯文本的 Toasts 一般不超过 14 个字。</p> <p><strong>•&nbsp;</strong>0~10个字符显示时长用Toast.LENGTH_SHORT，超过10个字用Toast.LENGTH_LONG。</p> <p>【贴图】</p> <p>2.SnackBars&nbsp;</p> <p>Snackbars 是 Android 平台的控件，跟 Toasts 非常相似。两者的区别在于，Snackbars 可以包含一个操作，是可以交互的。并且是支持主动滑动关闭的。</p> <p>虽然现在的 Material Design 里已经找不到 Toasts，Snackbars 也可以取代 Toasts，但在实际运用中，还是 Toasts 用得比较多，Snackbars仅是安卓规范样式，这里不做介绍。</p> <p>【贴图】</p> <p>3.Pickers</p> <p>选择器展示了一组值，用户可以从中进行选择其中一个选项，常用于表单。</p> <p><strong>•&nbsp; </strong>显示在内容视图中，通常是嵌入表单中或出现在屏幕底部。</p> <p><strong>•&nbsp; </strong>内容通常包括一组值。</p> <p><strong>•&nbsp;&nbsp;</strong>当前选中的值在中间，以深色标识。</p> <p><strong>•&nbsp;&nbsp;</strong>选中选项后，再次点击触发控件或界面中其他位置，关闭选择器，选择成功。</p> <p><strong>•&nbsp;&nbsp;</strong>再次点击触发控件时，控件上一般包含「取消」和「确定」按钮，点击「确定」按钮，选择成功，同时关闭选择器。直接点击「取消」按钮或点击遮罩层可关闭选择器。</p> <p>【贴图】</p> <p>4.Menus</p> <p>主要介绍Pop Menus 气泡菜单和<strong>&nbsp;</strong>Bottom Menus 底部菜单</p> <p>（1） Pop Menus 气泡菜单&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p> <p><strong>•&nbsp;</strong>以 “小型气泡浮层” 的形式承载菜单功能。</p> <p><strong>•&nbsp;</strong>通常包含一个箭头，指向浮层出现的位置（有时候也不包含箭头）。</p> <p><strong>•&nbsp;&nbsp;</strong>选中某个菜单项后，自动关闭气泡浮层。</p> <p><strong>•&nbsp;</strong>一般是模态的。可在气泡浮层下显示遮罩层，也可不显示。点击遮罩层或界面中其他区域，可关闭浮层。（比较特别的是，像微信和 QQ，弹出气泡浮层后，界面中其他元素均不可点击，但仍可切换底部 tab。）</p> <p>（2）Bottom Menus 底部菜单</p> <p><strong>•&nbsp;&nbsp;</strong>以 “底部模态面板” 的形式承载菜单功能。从底部向上滑动出现的面板，可承载的菜单项较多。</p> <p><strong>•&nbsp;</strong>一般可以采用官方控件，向下滑动面板、点击「关闭」、「取消」按钮或遮罩层关闭面板。</p> <p><strong>•&nbsp;</strong>Action Sheets 和 Activity Views 可以看作一种特定的底部菜单。</p> <p><strong>•&nbsp;&nbsp;</strong>底部菜单用于筛选内容时：</p> <p><strong>① 单个筛选条件：</strong>选中选项后，自动关闭面板。</p> <p><strong>② 多个筛选条件：</strong>一般包含「重置」和「确定」按钮，选择菜单项后，点击「确定」才关闭面板，点击「重置」可清空所有已选条件。</p> <p>【贴图】</p> <p>5.Dialogs</p> <p>阐述一下，贴fttr的图，然后加上CCB里面的使用方法</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/asdasdasd23451/article/details/127655525?spm=1001.2101.3001.6650.8&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-127655525-blog-111194091.pc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-127655525-blog-111194091.pc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=15"  title="移动端弹窗设计规范总结（二）_laoyang520的博客-CSDN博客_移动端弹框实现" rel="nofollow">移动端弹窗设计规范总结（二）_laoyang520的博客-CSDN博客_移动端弹框实现</a>，有相关介绍</p> <p>-------------------</p> <p>本文部分内容参考：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/asdasdasd23451/article/details/127634266?spm=1001.2101.3001.6650.9&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-127634266-blog-111194091.pc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-127634266-blog-111194091.pc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=16"  title="移动端弹窗设计规范总结（一）_laoyang520的博客-CSDN博客_弹窗设计规范" rel="nofollow">移动端弹窗设计规范总结（一）_laoyang520的博客-CSDN博客_弹窗设计规范</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.uisdc.com/app-popup-ui-system"  title="实用干货！UI设计师需要了解的 APP弹窗体系 - 优设网 - 学设计上优设" rel="nofollow">实用干货！UI设计师需要了解的 APP弹窗体系 - 优设网 - 学设计上优设</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44406.htm">宠物粮食利润 宠物粮食利润大吗</a></p>
+                                        <p>下一个：<a href="/news/article-44909.htm">@RequestBody总结相关</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-node-share.htm" title="10月18日 | Clash Verge每天更新20.7M/S免费节点订阅链接">10月18日 | Clash Verge每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40944.htm" title="linux设置自动获取ip命令,详解如何设置CentOS 7开机自动获取IP地址">linux设置自动获取ip命令,详解如何设置CentOS 7开机自动获取IP地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-subscribe-node.htm" title="1月16日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址">1月16日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21928.htm" title="@DateTimeFormat和@JsonFormat使用">@DateTimeFormat和@JsonFormat使用</a></li>
+                        <li class="py-2"><a href="/news/article-24228.htm" title="is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
+                        <li class="py-2"><a href="/news/article-18768.htm" title="动物防疫站周末上班吗（动物疫病预防控制中心周末上班吗）">动物防疫站周末上班吗（动物疫病预防控制中心周末上班吗）</a></li>
+                        <li class="py-2"><a href="/news/article-37965.htm" title="附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）">附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）</a></li>
+                        <li class="py-2"><a href="/news/article-26065.htm" title="领养宠物狗是什么意思呀怎么写文案（领养宠物狗是什么意思呀怎么写文案呢）">领养宠物狗是什么意思呀怎么写文案（领养宠物狗是什么意思呀怎么写文案呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-node-share.htm" title="10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接">10月12日 | Clash Verge每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-latest-clash-verge-rev-node.htm" title="10月29日 | Clash Verge每天更新20.3M/S免费节点订阅链接">10月29日 | Clash Verge每天更新20.3M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
