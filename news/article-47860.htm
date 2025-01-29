@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-47860.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>C语言实现随机抽签</title>
+        <meta name="description" content="C语言随机抽签程序 //BME1班抽签器// #include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; #include&lt;time.h&gt; #defi" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-47860.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="C语言实现随机抽签" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/605e1bbaf9653b313876c096e82ee6bd.webp" />
+        <meta property="og:release_date" content="2025-01-29T10:27:14" />
+    <meta property="og:updated_time" content="2025-01-29T10:27:14" />
+        <meta property="og:description" content="C语言随机抽签程序 //BME1班抽签器// #include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; #include&lt;time.h&gt; #defi" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言实现随机抽签">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>C语言实现随机抽签</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>C语言随机抽签程序<br /> //BME1班抽签器//</p> <pre><code class="prism language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">define</span> CLASSMATE_NUM 62</span>  <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">[</span>CLASSMATE_NUM<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{<!-- --></span> <span class="token string">"白天"</span><span class="token punctuation">,</span> <span class="token string">"邱创辰"</span><span class="token punctuation">,</span> <span class="token string">"罗杨林"</span><span class="token punctuation">,</span> <span class="token string">"蔡慕天"</span><span class="token punctuation">,</span> <span class="token string">"杨爽"</span><span class="token punctuation">,</span> <span class="token string">"陈章武"</span><span class="token punctuation">,</span> <span class="token string">"陈卓"</span><span class="token punctuation">,</span> <span class="token string">"邓贵锋"</span><span class="token punctuation">,</span> <span class="token string">"黄河翔"</span><span class="token punctuation">,</span> <span class="token string">"黄俊泓"</span><span class="token punctuation">,</span> <span class="token string">"蒋佳辰"</span><span class="token punctuation">,</span> <span class="token string">"蓝荣熙"</span><span class="token punctuation">,</span> <span class="token string">"林天予"</span><span class="token punctuation">,</span> <span class="token string">"刘庆彬"</span><span class="token punctuation">,</span> <span class="token string">"刘岩"</span><span class="token punctuation">,</span> <span class="token string">"卢冠霖"</span><span class="token punctuation">,</span> <span class="token string">"魏坚锐"</span><span class="token punctuation">,</span> <span class="token string">"温钦正"</span><span class="token punctuation">,</span> <span class="token string">"巫烨力"</span><span class="token punctuation">,</span> <span class="token string">"伍浩然"</span><span class="token punctuation">,</span> <span class="token string">"周胤宏"</span><span class="token punctuation">,</span> <span class="token string">"庄承一"</span><span class="token punctuation">,</span> <span class="token string">"艾熠恒"</span><span class="token punctuation">,</span> <span class="token string">"胡文智"</span><span class="token punctuation">,</span> <span class="token string">"花正荣"</span><span class="token punctuation">,</span>  <span class="token string">"金家臣"</span><span class="token punctuation">,</span> <span class="token string">"李煦徽"</span><span class="token punctuation">,</span> <span class="token string">"潘昊宇"</span><span class="token punctuation">,</span> <span class="token string">"王云彪"</span><span class="token punctuation">,</span> <span class="token string">"谭晓鹏"</span><span class="token punctuation">,</span> <span class="token string">"汪远洋"</span><span class="token punctuation">,</span> <span class="token string">"游若飞"</span><span class="token punctuation">,</span> <span class="token string">"余辉阳"</span><span class="token punctuation">,</span> <span class="token string">"张彬彬"</span><span class="token punctuation">,</span> <span class="token string">"张鹏程"</span><span class="token punctuation">,</span> <span class="token string">"蔡致宁"</span><span class="token punctuation">,</span> <span class="token string">"陈丽盈"</span><span class="token punctuation">,</span> <span class="token string">"陈敏"</span><span class="token punctuation">,</span> <span class="token string">"陈燕华"</span><span class="token punctuation">,</span> <span class="token string">"纪嘉蒞"</span><span class="token punctuation">,</span> <span class="token string">"邓静雯"</span><span class="token punctuation">,</span> <span class="token string">"陈亿彤"</span><span class="token punctuation">,</span> <span class="token string">"韩楚欣"</span><span class="token punctuation">,</span> <span class="token string">"庞昕"</span><span class="token punctuation">,</span> <span class="token string">"阮柔"</span><span class="token punctuation">,</span> <span class="token string">"申信"</span><span class="token punctuation">,</span> <span class="token string">"石颖"</span><span class="token punctuation">,</span> <span class="token string">"袁雨柔"</span><span class="token punctuation">,</span> <span class="token string">"张碧昀"</span><span class="token punctuation">,</span> <span class="token string">"张嘉轩"</span><span class="token punctuation">,</span> <span class="token string">"张靖宜"</span><span class="token punctuation">,</span> <span class="token string">"程金玉"</span><span class="token punctuation">,</span> <span class="token string">"龚晨曦"</span><span class="token punctuation">,</span> <span class="token string">"张怡馨"</span><span class="token punctuation">,</span> <span class="token string">"孟楠欣"</span><span class="token punctuation">,</span> <span class="token string">"欧阳嫣然"</span><span class="token punctuation">,</span> <span class="token string">"林梦露"</span><span class="token punctuation">,</span> <span class="token string">"彭佳瑾"</span><span class="token punctuation">,</span> <span class="token string">"杨思思"</span><span class="token punctuation">,</span> <span class="token string">"李加林"</span><span class="token punctuation">,</span> <span class="token string">"姚佳妹"</span><span class="token punctuation">,</span> <span class="token string">"姚怡然"</span><span class="token punctuation">}</span> <span class="token punctuation">;</span> <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> numbers_now<span class="token punctuation">,</span>numbers_needed<span class="token punctuation">,</span>id<span class="token punctuation">,</span>i<span class="token punctuation">,</span>count<span class="token punctuation">;</span>     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"****************************\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"BME1班大家庭专属班级活动抽签器\n\n\n\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入本次抽签需要抽出的人数:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>numbers_needed<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token keyword">if</span><span class="token punctuation">(</span>numbers_needed<span class="token operator">&gt;</span>CLASSMATE_NUM<span class="token punctuation">)</span>     <span class="token punctuation">{<!-- --></span>     	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Not so many classmates!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     	<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span>     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"本次抽签结果为:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\t人数\t班级排号\t姓名\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token keyword">int</span> list<span class="token punctuation">[</span>numbers_needed<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>     <span class="token keyword">for</span><span class="token punctuation">(</span>numbers_now<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>numbers_now<span class="token operator">&lt;=</span>numbers_needed<span class="token punctuation">;</span><span class="token punctuation">)</span>     <span class="token punctuation">{<!-- --></span>     	<span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	    id<span class="token operator">=</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span>CLASSMATE_NUM<span class="token punctuation">;</span>         <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>         <span class="token punctuation">{<!-- --></span>         	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>numbers_now<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>         	<span class="token punctuation">{<!-- --></span>         		<span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token operator">!=</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>         			count<span class="token operator">++</span><span class="token punctuation">;</span> 			<span class="token punctuation">}</span> 			<span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token operator">==</span>numbers_now<span class="token punctuation">)</span> 			<span class="token punctuation">{<!-- --></span> 				list<span class="token punctuation">[</span>numbers_now<span class="token punctuation">]</span><span class="token operator">=</span>id<span class="token punctuation">;</span> 				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\t%d\t%d\t\t%s\n\n"</span><span class="token punctuation">,</span>numbers_now<span class="token punctuation">,</span>id<span class="token punctuation">,</span>name<span class="token punctuation">[</span>id<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 				numbers_now<span class="token operator">++</span><span class="token punctuation">;</span> 			<span class="token punctuation">}</span> 		<span class="token punctuation">}</span>     <span class="token punctuation">}</span>     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"抽签结束,恭喜以上同学参加活动!!!\n\n\n\n"</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>      <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span>  </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47362.htm">中国农大动物医院预约（中国农大动物医院的咨询电话）</a></p>
+                                        <p>下一个：<a href="/news/article-47861.htm">上海宠物领养网点 上海宠物领养网点地址</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-latest-clash-verge-rev-node.htm" title="1月27日 | Clash Verge每天更新20.8M/S免费节点订阅链接地址">1月27日 | Clash Verge每天更新20.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share.htm" title="11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接">11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44909.htm" title="@RequestBody总结相关">@RequestBody总结相关</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-latest-clash-verge-rev-node.htm" title="12月10日 | Clash Verge每天更新22.2M/S免费节点订阅链接">12月10日 | Clash Verge每天更新22.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-39951.htm" title="宠物粮食供应商真的赚钱吗知乎（宠物粮食利润大吗）">宠物粮食供应商真的赚钱吗知乎（宠物粮食利润大吗）</a></li>
+                        <li class="py-2"><a href="/news/article-38459.htm" title="公务员2021国考报名人数统计 公务员2021国考报名人数统计表">公务员2021国考报名人数统计 公务员2021国考报名人数统计表</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-latest-clash-verge-rev-node.htm" title="10月7日 | Clash Verge每天更新19.1M/S免费节点订阅链接">10月7日 | Clash Verge每天更新19.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37965.htm" title="附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）">附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-node-subscribe.htm" title="12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址">12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28869.htm" title="Centos7离线安装Nginx亲测版">Centos7离线安装Nginx亲测版</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
