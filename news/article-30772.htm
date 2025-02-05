@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clash-verge.github.io/news/article-30772.htm" />
@@ -8,16 +8,44 @@
     <title>unity 编辑器扩展简单入门</title>
         <meta name="description" content="通过使用编辑器扩展，我们可以对一些机械的操作实现自动化，而不用使用额外的环境，将工具与开发环境融为一体；并且，编辑器扩展也提供GUI库，来实现可视化操作；编辑器扩展甚至也可以“补充”IDE缺失的一些内" />
         <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-30772.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="unity 编辑器扩展简单入门" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/f0f04ed525d45ce3c8737b7fe219571d.webp" />
+        <meta property="og:release_date" content="2024-12-25T09:38:06" />
+    <meta property="og:updated_time" content="2024-12-25T09:38:06" />
+        <meta property="og:description" content="通过使用编辑器扩展，我们可以对一些机械的操作实现自动化，而不用使用额外的环境，将工具与开发环境融为一体；并且，编辑器扩展也提供GUI库，来实现可视化操作；编辑器扩展甚至也可以“补充”IDE缺失的一些内" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="unity 编辑器扩展简单入门">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="__ADDON__/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -85,16 +113,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-10-latest-clash-verge-rev-node.htm" title="12月10日 | Clash Verge每天更新22.2M/S免费节点订阅链接">12月10日 | Clash Verge每天更新22.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-28871.htm" title="消息队列与快递柜之间的奇妙关系">消息队列与快递柜之间的奇妙关系</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-high-speed-nodes.htm" title="12月1日 | Clash Verge每天更新18.5M/S免费节点订阅链接">12月1日 | Clash Verge每天更新18.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-14-node-share-links.htm" title="8月14日 | Clash Verge每天更新22M/S免费节点订阅链接">8月14日 | Clash Verge每天更新22M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-6-node-share.htm" title="11月6日 | Clash Verge每天更新21.9M/S免费节点订阅链接">11月6日 | Clash Verge每天更新21.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-19-clash-verge-rev-node-share.htm" title="8月19日 | Clash Verge每天更新19.4M/S免费节点订阅链接">8月19日 | Clash Verge每天更新19.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-node-share-links.htm" title="11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接">11月10日 | Clash Verge每天更新21.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-high-speed-nodes.htm" title="10月11日 | Clash Verge每天更新20.4M/S免费节点订阅链接">10月11日 | Clash Verge每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-subscribe-node.htm" title="11月2日 | Clash Verge每天更新19.5M/S免费节点订阅链接">11月2日 | Clash Verge每天更新19.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-25616.htm" title="三国杀所有技能详解（三国杀里面的技能是什么）">三国杀所有技能详解（三国杀里面的技能是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share.htm" title="11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接">11月11日 | Clash Verge每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-node-share-links.htm" title="2月1日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">2月1日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-node-share.htm" title="1月19日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址">1月19日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-clash-verge-rev-windows.htm" title="11月30日 | Clash Verge每天更新22.7M/S免费节点订阅链接">11月30日 | Clash Verge每天更新22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44909.htm" title="@RequestBody总结相关">@RequestBody总结相关</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-clash-verge-rev-nodes.htm" title="1月12日 | Clash Verge每天更新21.2M/S免费节点订阅链接地址">1月12日 | Clash Verge每天更新21.2M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21007.htm" title="Glance基础服务运维_在线工具Live2D">Glance基础服务运维_在线工具Live2D</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-today-clash-verge-rev-node.htm" title="1月15日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址">1月15日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20553.htm" title="SpringCloud集成Sleuth和Zipkin">SpringCloud集成Sleuth和Zipkin</a></li>
+                        <li class="py-2"><a href="/news/article-36496.htm" title="分享两个实用的shell脚本">分享两个实用的shell脚本</a></li>
                     </ul>
     </div>
 </div>
@@ -106,22 +134,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

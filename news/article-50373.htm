@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-50373.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>vue 实现excel本地预览</title>
+        <meta name="description" content="&nbsp;安装npm依赖 npm i xlsx -S &nbsp; &nbsp;1、点击button 打开上传文件页面  &nbsp;2、解析数据  &nbsp;3、完整代码 &lt;templat" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-50373.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="vue 实现excel本地预览" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/cc8f88c3ac81be45a2ed9270900affca.webp" />
+        <meta property="og:release_date" content="2025-02-03T09:25:57" />
+    <meta property="og:updated_time" content="2025-02-03T09:25:57" />
+        <meta property="og:description" content="&nbsp;安装npm依赖 npm i xlsx -S &nbsp; &nbsp;1、点击button 打开上传文件页面  &nbsp;2、解析数据  &nbsp;3、完整代码 &lt;templat" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue 实现excel本地预览">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>vue 实现excel本地预览</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>&nbsp;安装npm依赖</h2> <pre><code>npm i xlsx -S</code></pre> <h3>&nbsp; &nbsp;1、点击button 打开上传文件页面</h3> <p><img fetchpriority="high" decoding="async" alt="" height="605" src="http://img.555519.xyz/uploads3/20220606/e16cfc8d0c7c5ac7fadeb691a6b557c7.jpg"></p> <h3>&nbsp;2、解析数据</h3> <p><img decoding="async" alt="" height="920" src="http://img.555519.xyz/uploads3/20220606/b7d3285fa8457174a9943011cac554e8.jpg"></p> <h3>&nbsp;3、完整代码</h3> <pre><code>&lt;template&gt;   &lt;div class="excel-wrapper"&gt;      &lt;!-- 上传按钮 --&gt;     &lt;input class="input-file"            type="file"            @change="exportData"            style="display:none"            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /&gt;     &lt;el-button type="success"                size="small"                @click="btnClick"&gt;上传excel&lt;/el-button&gt;     &lt;!-- END --&gt;      &lt;!-- 表格 --&gt;     &lt;el-table :data="tableData"               style="width: 100%"               height="450"               size="mini"&gt;       &lt;el-table-column :prop="item"                        :label="item"                        width="140"                        v-for="(item,index) in checkboxTableColumn"                        :key="'column'+index"&gt;       &lt;/el-table-column&gt;     &lt;/el-table&gt;     &lt;!-- END --&gt;      &lt;!-- 分页 --&gt;     &lt;el-pagination v-if="excelData != 0"                    @size-change="handleSizeChange"                    @current-change="CurrentChange"                    :current-page="currentPage"                    :page-sizes="[10, 20, 30,40,50,100,200,500]"                    :page-size="pageSize"                    layout="total, sizes, prev, pager, next, jumper"                    :total="total"&gt;     &lt;/el-pagination&gt;     &lt;!-- END --&gt;    &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; import * as XLSX from 'xlsx' export default {   data() {     return {       //所有键的值       columnHeader: [],        // 导入的excel的数据       excelData: [],        // 表格显示列       checkboxTableColumn: [],        //表格数据       tableData: [],        // 当前分页       currentPage: 1,        // 每页显示数量       pageSize: 10,        // 数据总数       total: 0,     }   },    methods: {     // 将上传input框点击事件改为按钮     btnClick() {       document.querySelector('.input-file').click()     },      // 解析excel     exportData(event) {       if (!event.currentTarget.files.length) {         return       }       const that = this       // 拿取文件对象       let f = event.currentTarget.files[0]       //这里已经拿到了excel的file文件，若是项目需求，可直接$emit丢出文件       // that.$emit('getMyExcelData',f);       // 用FileReader来读取       let reader = new FileReader()       // 重写FileReader上的readAsBinaryString方法       // FileReader.prototype.readAsBinaryString = function(f) {       //   let binary = "";       //   let wb; // 读取完成的数据       //   let outdata; // 你需要的数据       //   let reader = new FileReader();       reader.onload = function (e) {         // 读取成Uint8Array，再转换为Unicode编码（Unicode占两个字节）         // let bytes = new Uint8Array(reader.result);         // let length = bytes.byteLength;         // for (let i = 0; i &lt; length; i++) {         //   binary += String.fromCharCode(bytes[i]);         // }         var data = e.target.result         // 接下来就是xlsx         var wb = XLSX.read(data, {           type: 'buffer',         })         var outdata = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])         // 导出格式为json，{表数据：[]}         console.log(outdata)         that.excelData = outdata         that.tableData = outdata.slice(0, 10)         that.total = outdata.length          // 获取数据的key         var importDataThead = Array.from(Object.keys(outdata[0])).map(           (item) =&gt; {             return item           }         )          that.columnHeader = importDataThead         that.checkboxTableColumn = importDataThead.slice(0, 9)         console.log(importDataThead)       }       reader.readAsArrayBuffer(f)       // };       // reader.readAsBinaryString(f);     },      // 分页切换     CurrentChange(val) {       this.currentPage = val        this.tableData = this.excelData.slice(         (val - 1) * this.pageSize,         val * this.pageSize - 1       )     },     // 每页显示数量改变     handleSizeChange(val) {       this.pageSize = val       this.tableData = this.excelData.slice(         (this.currentPage - 1) * val,         this.currentPage * val - 1       )     },   }, } &lt;/script&gt; &lt;style  scoped&gt; .excel-wrapper {   /* height: 100vh; */   /* width: 600px; */   overflow: scroll;   background: rgb(226, 226, 226);   padding: 20px; } &lt;/style&gt;</code></pre> <p></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49865.htm">海贼王455（海贼王45-5）</a></p>
+                                        <p>下一个：<a href="/news/article-50374.htm">宠物粮怎么做才好吃（宠物粮怎么做才好吃视频）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29811.htm" title="动物注射疫苗简报（动物注射疫苗简报怎么写）">动物注射疫苗简报（动物注射疫苗简报怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-34588.htm" title="仓鼠背部脱毛露出红色的皮能自愈吗（仓鼠背上脱毛怎么办）">仓鼠背部脱毛露出红色的皮能自愈吗（仓鼠背上脱毛怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-clash-verge-rev-node-github.htm" title="11月27日 | Clash Verge每天更新22.3M/S免费节点订阅链接">11月27日 | Clash Verge每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-verge-rev-windows.htm" title="12月7日 | Clash Verge每天更新19.4M/S免费节点订阅链接">12月7日 | Clash Verge每天更新19.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日 | Clash Verge每天更新23M/S免费节点订阅链接">11月14日 | Clash Verge每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48866.htm" title="深圳宠物领养网点（深圳市领养宠物中心）">深圳宠物领养网点（深圳市领养宠物中心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-node-share.htm" title="2月4日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址">2月4日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-clash-verge-rev-node.htm" title="2月3日 | Clash Verge每天更新21.4M/S免费节点订阅链接地址">2月3日 | Clash Verge每天更新21.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41428.htm" title="动物疫苗价格查询表图片高清大全（动物疫苗价格查询表图片高清大全及价格）">动物疫苗价格查询表图片高清大全（动物疫苗价格查询表图片高清大全及价格）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-clash-verge-rev-nodes.htm" title="12月15日 | Clash Verge每天更新19.4M/S免费节点订阅链接">12月15日 | Clash Verge每天更新19.4M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
