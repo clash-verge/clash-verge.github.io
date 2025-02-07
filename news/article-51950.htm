@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-51950.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>数据库事务四大特性以及四大隔离级别</title>
+        <meta name="description" content="1.数据库事务四大特性ACID &nbsp; &nbsp; 原子性；Atomicity &nbsp; &nbsp; 一致性；Consistency &nbsp; &nbsp; 隔离性；Isolatio" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-51950.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="数据库事务四大特性以及四大隔离级别" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/498b2c0ef8012602c4b92739ddb20f53.webp" />
+        <meta property="og:release_date" content="2025-02-06T05:28:34" />
+    <meta property="og:updated_time" content="2025-02-06T05:28:34" />
+        <meta property="og:description" content="1.数据库事务四大特性ACID &nbsp; &nbsp; 原子性；Atomicity &nbsp; &nbsp; 一致性；Consistency &nbsp; &nbsp; 隔离性；Isolatio" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="数据库事务四大特性以及四大隔离级别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>数据库事务四大特性以及四大隔离级别</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1.数据库事务四大特性ACID</p> <p>&nbsp; &nbsp; 原子性；Atomicity</p> <p>&nbsp; &nbsp; 一致性；Consistency</p> <p>&nbsp; &nbsp; 隔离性；Isolation</p> <p>&nbsp; &nbsp; 持久性；Durability</p> <p>原子性：失误包含的操作要么全部成功，要么全部失败回滚，回滚的事务操作不能对事物有任何影响</p> <p>一致性：</p> <p>其中AID都是数据库的特征，也就是依赖数据库的的具体实现，唯独这个C依赖于应用层，也就是开发者，这里的一致性指系统从一个正确的状态迁移到另一个正确的状态。当前的状态满足预定的约束就叫正确的状态，而事务里的一致性就是通过事务的AID来保证我们的一致性。C是目的，AID都是手段</p> <p>隔离性：将多个事务隔离开，每个事务不会访问到其他事务操作过程中的状态</p> <p>持久性：事务的操作，一旦提交，对数据库中的数据的改变是永久性的</p> <p>当没有数据库隔离性时，多用户并发操作，可能会发生一些问题比如：</p> <p>1.脏读</p> <p>2.幻读（虚读）</p> <p>3.不可重复读</p> <p>脏读：一个事务读取了另一个未提交事务执行过程中的数据，会导致读取到的数据并非是最终持久化之后的数据，这个数据就是脏数据</p> <p>不可重复读：对于数据库中的某个数据，一个事务执行过程中返回不同结果，就是在这个事务进行过程中这个数据被其他事务修改了</p> <p>幻读：幻读是事务非独立进行时发生的一种现象，当事务A对一列值为1修改为2时，事务B新插入了一条该列为1的数据，此时事务A查看刚刚完成的操作的数据，发现还有一条没完成，其实这条是事务B刚刚插入的，这就是幻读。</p> <p>幻读与不可重复读都是读取了另一已提交的事务，不同的是，不可重复读查询的都是同一数据项，幻读针对的是一批数据整体</p> <p>M四大隔离级别</p> <p>低级别的隔离一般支持更高的并发处理，并且拥有更低的系统开销</p> <p>1.可重复读Repeatable Read</p> <p>2.读取提交内容Read Commited</p> <p>3.读取未提交内容Read Uncommitted</p> <p>4.可串行化Serializable</p> <p>Repeatable Read：MySQL默认的隔离级别。该级别解决了Read Uncommitted导致的的问题。他保证同一事务在执行时会看到同样的数据行，不过会导致幻读。InnoDB和Falcon存储引擎通过多版本并发控制机制解决了万都问题</p> <p>Read Commited：大多数数据库系统默认的隔离级别（sqlserver，oracle），满足了隔离的简单定义。一个事务开始时，只能看到已提交事务所做的改变。一个事务从开始到提交前所有的改变都是不可见的除非提交。这种隔离级别会发生不可重复读。</p> <p>Read Uncommitted：所有用户都能看到未提交事务的执行结果—&gt;脏读</p> <p>Serializable：最高级别。通过强制事务排序，使之不可能相互冲突，从而解决幻读的问题。即，给每个读的数据上加锁。在这个级别，可能导致大量的超时Time Out和锁竞争Lock Contention现象。</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="416" src="http://img.555519.xyz/uploads3/20220819/8e1bd3b910191bbd7b999a25ce92796c.jpg"><img decoding="async" alt="" class="has" height="230" src="http://img.555519.xyz/uploads3/20220819/430867da2df501a79d36906e8dc8756c.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51418.htm">初中毕业能上兽医学校河南内的（有没有从初中直接上兽医专业的学校）</a></p>
+                                        <p>下一个：<a href="/news/article-51951.htm">昆明免费领养猫咪（昆明免费领养猫咪在哪里）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-34588.htm" title="仓鼠背部脱毛露出红色的皮能自愈吗（仓鼠背上脱毛怎么办）">仓鼠背部脱毛露出红色的皮能自愈吗（仓鼠背上脱毛怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-latest-clash-verge-rev-node.htm" title="11月25日 | Clash Verge每天更新20.2M/S免费节点订阅链接">11月25日 | Clash Verge每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28409.htm" title="国考公务员2021年报名公告（2021年国考公务员报考公告）">国考公务员2021年报名公告（2021年国考公务员报考公告）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-high-speed-nodes.htm" title="1月25日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址">1月25日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-18768.htm" title="动物防疫站周末上班吗（动物疫病预防控制中心周末上班吗）">动物防疫站周末上班吗（动物疫病预防控制中心周末上班吗）</a></li>
+                        <li class="py-2"><a href="/news/article-26544.htm" title="动物疫苗上市企业有哪些股票 动物疫苗上市企业有哪些股票代码">动物疫苗上市企业有哪些股票 动物疫苗上市企业有哪些股票代码</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-latest-clash-verge-rev-node.htm" title="2月6日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址">2月6日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27947.htm" title="国产洗衣液的品牌有哪些牌子(国产洗衣液的品牌有哪些好)">国产洗衣液的品牌有哪些牌子(国产洗衣液的品牌有哪些好)</a></li>
+                        <li class="py-2"><a href="/news/article-49350.htm" title="南京宠物领养日要钱吗（南京宠物领养机构）">南京宠物领养日要钱吗（南京宠物领养机构）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-node-subscribe.htm" title="11月5日 | Clash Verge每天更新18.7M/S免费节点订阅链接">11月5日 | Clash Verge每天更新18.7M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
