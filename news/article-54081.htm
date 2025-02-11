@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-54081.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>如何在Android sqlite中删除表？</title>
+        <meta name="description" content="在进入示例之前，我们应该知道android中的sqlite数据库是什么。SQLite是一个开放源代码SQL数据库，可将数据存储到设备上的文本文件中。Android内置了内置的SQLite数据库实现。S" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-54081.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="如何在Android sqlite中删除表？" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/047da209d5204a2f1a58ae903aa061df.webp" />
+        <meta property="og:release_date" content="2025-02-10T07:37:21" />
+    <meta property="og:updated_time" content="2025-02-10T07:37:21" />
+        <meta property="og:description" content="在进入示例之前，我们应该知道android中的sqlite数据库是什么。SQLite是一个开放源代码SQL数据库，可将数据存储到设备上的文本文件中。Android内置了内置的SQLite数据库实现。S" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如何在Android sqlite中删除表？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>如何在Android sqlite中删除表？</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<p>在进入示例之前，我们应该知道android中的sqlite数据库是什么。SQLite是一个开放源代码SQL数据库，可将数据存储到设备上的文本文件中。Android内置了内置的SQLite数据库实现。SQLite支持所有关系数据库功能。为了访问该数据库，您不需要为其建立任何类型的连接，例如JDBC，ODBC等。</p> <p>本示例演示了如何在Android sqlite中删除表。</p> <p><strong>步骤1-</strong>在Android Studio中创建一个新项目，转到File⇒New Project并填写所有必需的详细信息以创建一个新项目。</p> <p><strong>步骤2-</strong>将以下代码添加到res / layout / activity_main.xml。</p> <pre>&lt;?xml&nbsp;version&nbsp;=&nbsp;"1.0"&nbsp;encoding&nbsp;=&nbsp;"utf-8"?&gt; &lt;LinearLayout&nbsp;xmlns:android&nbsp;=&nbsp;"http://schemas.android.com/apk/res/android" &nbsp;&nbsp;&nbsp;xmlns:tools&nbsp;=&nbsp;"http://schemas.android.com/tools" &nbsp;&nbsp;&nbsp;android:layout_width&nbsp;=&nbsp;"match_parent" &nbsp;&nbsp;&nbsp;android:layout_height&nbsp;=&nbsp;"match_parent" &nbsp;&nbsp;&nbsp;tools:context&nbsp;=&nbsp;".MainActivity" &nbsp;&nbsp;&nbsp;android:orientation&nbsp;=&nbsp;"vertical"&gt; &nbsp;&nbsp;&nbsp;&lt;EditText &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id&nbsp;=&nbsp;"@+id/name" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width&nbsp;=&nbsp;"match_parent" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:hint&nbsp;=&nbsp;"Enter&nbsp;Name" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height&nbsp;=&nbsp;"wrap_content"&nbsp;/&gt; &nbsp;&nbsp;&nbsp;&lt;EditText &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id&nbsp;=&nbsp;"@+id/salary" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width&nbsp;=&nbsp;"match_parent" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:inputType&nbsp;=&nbsp;"numberDecimal" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:hint&nbsp;=&nbsp;"Enter&nbsp;Salary" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height&nbsp;=&nbsp;"wrap_content"&nbsp;/&gt; &nbsp;&nbsp;&nbsp;&lt;Button &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id&nbsp;=&nbsp;"@+id/save" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text&nbsp;=&nbsp;"Save" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width&nbsp;=&nbsp;"wrap_content" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height&nbsp;=&nbsp;"wrap_content"&nbsp;/&gt; &lt;/LinearLayout&gt;</pre> <p>在上面的代码中，我们将姓名和薪水作为“编辑”文本，当用户单击“保存”按钮时，会将数据存储到sqlite数据库中。</p> <p><strong>步骤3-</strong>将以下代码添加到src / MainActivity.java</p> <pre>package&nbsp;com.example.andy.myapplication; import&nbsp;android.os.Bundle; import&nbsp;android.support.v7.app.AppCompatActivity; import&nbsp;android.view.View; import&nbsp;android.widget.Button; import&nbsp;android.widget.EditText; import&nbsp;android.widget.Toast; public&nbsp;class&nbsp;MainActivity&nbsp;extends&nbsp;AppCompatActivity&nbsp;{ &nbsp;&nbsp;&nbsp;Button&nbsp;save; &nbsp;&nbsp;&nbsp;EditText&nbsp;name,&nbsp;salary; &nbsp;&nbsp;&nbsp;@Override &nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;onCreate(Bundle&nbsp;readdInstanceState)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(readdInstanceState); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;DatabaseHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;DatabaseHelper(this); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;findViewById(R.id.name); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salary&nbsp;=&nbsp;findViewById(R.id.salary); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;findViewById(R.id.save).setOnClickListener(new&nbsp;View.OnClickListener()&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;onClick(View&nbsp;v)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!name.getText().toString().isEmpty()&nbsp;&amp;&amp;&nbsp;!salary.getText().toString().isEmpty())&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(helper.insert(name.getText().toString(),&nbsp;salary.getText().toString()))&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toast.makeText(MainActivity.this,&nbsp;"Inserted",&nbsp;Toast.LENGTH_LONG).show(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toast.makeText(MainActivity.this,&nbsp;"NOT&nbsp;Inserted",&nbsp;Toast.LENGTH_LONG).show(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name.setError("Enter&nbsp;NAME"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salary.setError("Enter&nbsp;Salary"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}); &nbsp;&nbsp;&nbsp;} }</pre> <p><strong>步骤4-</strong>将以下代码添加到src / DatabaseHelper.java</p> <pre>package&nbsp;com.example.andy.myapplication; import&nbsp;android.content.ContentValues; import&nbsp;android.content.Context; import&nbsp;android.database.sqlite.SQLiteDatabase; import&nbsp;android.database.sqlite.SQLiteException; import&nbsp;android.database.sqlite.SQLiteOpenHelper; import&nbsp;java.io.IOException; class&nbsp;DatabaseHelper&nbsp;extends&nbsp;SQLiteOpenHelper&nbsp;{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;DATABASE_NAME&nbsp;=&nbsp;"salaryDatabase3"; &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;CONTACTS_TABLE_NAME&nbsp;=&nbsp;"SalaryDetails"; &nbsp;&nbsp;&nbsp;public&nbsp;DatabaseHelper(Context&nbsp;context)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(context,DATABASE_NAME,null,1); &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;@Override &nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;onCreate(SQLiteDatabase&nbsp;db)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.execSQL( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"create&nbsp;table&nbsp;"+&nbsp;CONTACTS_TABLE_NAME&nbsp;+"(id&nbsp;INTEGER&nbsp;PRIMARY&nbsp;KEY,&nbsp;name&nbsp;text,salary&nbsp;text&nbsp;)" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(SQLiteException&nbsp;e)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;IOException(e); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(IOException&nbsp;e1)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e1.printStackTrace(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;@Override &nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;onUpgrade(SQLiteDatabase&nbsp;db,&nbsp;int&nbsp;oldVersion,&nbsp;int&nbsp;newVersion)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.execSQL("DROP&nbsp;TABLE&nbsp;IF&nbsp;EXISTS&nbsp;"+CONTACTS_TABLE_NAME); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onCreate(db); &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;insert(String&nbsp;s,&nbsp;String&nbsp;s1)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQLiteDatabase&nbsp;db&nbsp;=&nbsp;this.getWritableDatabase(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ContentValues&nbsp;contentValues&nbsp;=&nbsp;new&nbsp;ContentValues(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentValues.put("name",&nbsp;s); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentValues.put("salary",&nbsp;s1); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.insert(CONTACTS_TABLE_NAME,&nbsp;null,&nbsp;contentValues); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true; &nbsp;&nbsp;&nbsp;} }</pre> <p>要删除，请使用以下代码–</p> <pre>db.execSQL("DROP&nbsp;TABLE&nbsp;IF&nbsp;EXISTS&nbsp;"+CONTACTS_TABLE_NAME);</pre> <p></p> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53540.htm">动物防疫站电话咨询电话号码（动物防疫所电话）</a></p>
+                                        <p>下一个：<a href="/news/article-54082.htm">猫咪的三针疫苗（猫咪的3针疫苗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-node-share.htm" title="12月19日 | Clash Verge每天更新21.1M/S免费节点订阅链接">12月19日 | Clash Verge每天更新21.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20090.htm" title="vue3搭配pinia的踩坑实战记录_vue.js">vue3搭配pinia的踩坑实战记录_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-clash-verge-rev-windows.htm" title="1月29日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址">1月29日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32214.htm" title="宠物领养协议书怎么写范本 宠物领养协议书怎么写范本图片">宠物领养协议书怎么写范本 宠物领养协议书怎么写范本图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-node-subscribe.htm" title="12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址">12月27日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-clash-verge-rev-github.htm" title="1月7日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">1月7日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-clash-verge-rev-github.htm" title="2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址">2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-node-share.htm" title="2月4日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址">2月4日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23763.htm" title="超级详细的webpack Plugin讲解_javascript技巧_">超级详细的webpack Plugin讲解_javascript技巧_</a></li>
+                        <li class="py-2"><a href="/news/article-54646.htm" title="动物疫苗的作用有哪些种类图片大全（动物疫苗注射方法）">动物疫苗的作用有哪些种类图片大全（动物疫苗注射方法）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">32</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
