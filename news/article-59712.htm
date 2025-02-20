@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-59712.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>go web 处理文件上传</title>
+        <meta name="description" content="go&nbsp;web中怎样实现文件上传，下面一一道来。 要使表单能够上传文件，第一步就是要添加 form 的 enctype 属性，enctype 属性有如下三种情况。  application/x" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-59712.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="go web 处理文件上传" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/9c5f0b78125b32a63611b6c1b5e3574c.webp" />
+        <meta property="og:release_date" content="2025-02-20T09:55:40" />
+    <meta property="og:updated_time" content="2025-02-20T09:55:40" />
+        <meta property="og:description" content="go&nbsp;web中怎样实现文件上传，下面一一道来。 要使表单能够上传文件，第一步就是要添加 form 的 enctype 属性，enctype 属性有如下三种情况。  application/x" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="go web 处理文件上传">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>go web 处理文件上传</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>go&nbsp;web中怎样实现文件上传，下面一一道来。</p> <p>要使表单能够上传文件，第一步就是要添加 form 的 enctype 属性，enctype 属性有如下三种情况。</p> <ul> <li>application/x-www-form-urlencoded：表示在发送前编码所有字符（默认）。</li> <li>multipart/form-data：不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。</li> <li>text/plain：空格转换为"+"加号，但不对特殊字符编码。</li> </ul> </h1> <h2>1&nbsp;前端代码</h2> <p>创建新的表单 html 文件，命名为 upload.html</p> <pre><code class="language-html">&lt;html&gt; &lt;head&gt;     &lt;title&gt;上传文件&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;form enctype="multipart/form-data" action="/upload" method="post"&gt;   &lt;input type="file" name="uploadfile" /&gt;   &lt;input type="hidden" name="token" value="{<!-- -->{.}}"/&gt;   &lt;input type="submit" value="upload" /&gt; &lt;/form&gt; &lt;/body&gt; &lt;/html&gt;</code></pre> <h2>2&nbsp;服务器端代码</h2> <pre><code class="language-Go">package main  import (    "crypto/md5"    "fmt"    "html/template"    "io"    "log"    "net/http"    "os"    "strconv"    "time" )  // 上传文件逻辑 func upload(w http.ResponseWriter, r *http.Request) {    fmt.Println("method:", r.Method) // 获取请求的方法    if r.Method == "GET" {       crutime := time.Now().Unix()       h := md5.New()       io.WriteString(h, strconv.FormatInt(crutime, 10))       token := fmt.Sprintf("%x", h.Sum(nil))       t, _ := template.ParseFiles("src\\goweb\\demo6\\upload.html")       t.Execute(w, token)    } else {       r.ParseMultipartForm(32 &lt;&lt; 20)       file, handler, err := r.FormFile("uploadfile")       if err != nil {          fmt.Println(err)          return       }       defer file.Close()       fmt.Fprintf(w, "%v", handler.Header)       f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666) // test目录放在 GOPATH 目录下       if err != nil {          fmt.Println(err)          return       }       defer f.Close()       io.Copy(f, file)    } }  func main() {    http.HandleFunc("/upload", upload)       // 设置访问的路由    err := http.ListenAndServe(":9090", nil) // 设置监听的端口    if err != nil {       log.Fatal("ListenAndServe: ", err)    } }</code></pre> <h2>3&nbsp;说明</h2> <p>处理文件上传需要调用 r.ParseMultipartForm，它的参数表示 maxMemory，调用 ParseMultipartForm 之后，上传的文件存储在 maxMemory 大小的内存里面，如果文件大小超过了 maxMemory，那么剩下的部分将存储在系统的临时文件中。</p> <p>通过 r.FormFile 获取文件句柄，</p> <p>通过 io.Copy 来存储文件。</p> <p>获取其他非文件字段信息的时候就不需要调用 r.ParseForm，因为在需要的时候 Go 自动会去调用。</p> <p>ParseMultipartForm 调用一次之后，后面再次调用不会再有效果。</p> <h2>4&nbsp;小结</h2> <p>上传文件三步曲：</p> <p><strong>a&nbsp;前端表单中增加 enctype="multipart/form-data"。</strong></p> <p><strong>b 服务端调用 r.ParseMultipartForm，把上传的文件存储在内存和临时文件中。</strong></p> <p><strong>c 使用 r.FormFile 获取文件句柄，然后对文件进行存储处理。</strong></p> <p>文件 handler 是 multipart.FileHeader&nbsp;结构</p> <blockquote> <p>type FileHeader struct {<!-- --></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;Filename string</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;Header&nbsp;&nbsp;&nbsp;textproto.MIMEHeader</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;// contains filtered or unexported fields</p> <p>}</p> </blockquote> <h2>5&nbsp;测试结果</h2> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220905/601c7850518e46ceba32f53ae601f2c3.jpg"></p> </h1> <p>Go 支持模拟客户端表单功能支持文件上传。</p> <h2>1&nbsp;代码</h2> <pre><code class="language-Go">package main  import (    "bytes"    "fmt"    "io"    "io/ioutil"    "mime/multipart"    "net/http"    "os" )  // 模拟客户端表单功能支持文件上传 func postFile(filename string, targetUrl string) error {    bodyBuf := &amp;bytes.Buffer{}    bodyWriter := multipart.NewWriter(bodyBuf)    // 操作源文件    fileWriter, err := bodyWriter.CreateFormFile("uploadfile", filename)    if err != nil {       fmt.Println("error writing to buffer")       return err    }     // 打开文件句柄操作    fh, err := os.Open(filename)    if err != nil {       fmt.Println("error opening file")       return err    }    defer fh.Close()     // iocopy    _, err = io.Copy(fileWriter, fh)    if err != nil {       return err    }     contentType := bodyWriter.FormDataContentType()    bodyWriter.Close()     resp, err := http.Post(targetUrl, contentType, bodyBuf)    if err != nil {       return err    }    defer resp.Body.Close()    resp_body, err := ioutil.ReadAll(resp.Body)    if err != nil {       return err    }    fmt.Println(resp.Status)    fmt.Println(string(resp_body))    return nil }  // 测试 func main() {    target_url := "http://localhost:9090/upload"    filename := "a.txt"    postFile(filename, target_url) }</code></pre> <h2>2&nbsp;测试</h2> <p>客户端打印如下：</p> <blockquote> <p>200 OK</p> <p>map[Content-Disposition:[form-data; name="uploadfile"; filename="a.txt"] Content-Type:[application/octet-stream]]</p> </blockquote> <h2>3&nbsp;上传效果</h2> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220905/d0237661ed287810ebdef047c54ddf68.jpg"></p> <h2>4&nbsp;说明</h2> <p>该例子展示了客户端如何向服务器上传一个文件的例子，客户端通过 multipart.Write 把文件的文本流写入一个缓存中，然后调用 http 的 Post 方法把缓存传到服务器。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59140.htm">河南狗粮品牌大全（河南省狗粮加工机械）</a></p>
+                                        <p>下一个：<a href="/news/article-59713.htm">中国兽药十大厂家（国内前十名的兽药厂家）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-clash-verge-rev-github.htm" title="2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址">2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-56294.htm" title="@RequestBody接受参数报415错误">@RequestBody接受参数报415错误</a></li>
+                        <li class="py-2"><a href="/news/article-33628.htm" title="动物医院看病贵吗多少钱一天（动物医院价目表）">动物医院看病贵吗多少钱一天（动物医院价目表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-clash-verge-rev-node-github.htm" title="12月17日 | Clash Verge每天更新22.9M/S免费节点订阅链接">12月17日 | Clash Verge每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-58650.htm" title="动物打疫苗人还打吗多少钱一次（动物打疫苗人还打吗多少钱一次啊）">动物打疫苗人还打吗多少钱一次（动物打疫苗人还打吗多少钱一次啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-clash-verge-rev-nodes.htm" title="1月12日 | Clash Verge每天更新21.2M/S免费节点订阅链接地址">1月12日 | Clash Verge每天更新21.2M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27947.htm" title="国产洗衣液的品牌有哪些牌子(国产洗衣液的品牌有哪些好)">国产洗衣液的品牌有哪些牌子(国产洗衣液的品牌有哪些好)</a></li>
+                        <li class="py-2"><a href="/news/article-46382.htm" title="做宠物粮食（做宠物粮食需要什么手续）">做宠物粮食（做宠物粮食需要什么手续）</a></li>
+                        <li class="py-2"><a href="/news/article-23314.htm" title="宠物猫疫苗费用多少（宠物猫疫苗费用多少钱）">宠物猫疫苗费用多少（宠物猫疫苗费用多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-48866.htm" title="深圳宠物领养网点（深圳市领养宠物中心）">深圳宠物领养网点（深圳市领养宠物中心）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-59139.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>pyspark从hive导出数据到clickhouse</title>
+        <meta name="description" content="需求 从hive导出数据到clickhouse 大概有两百个字段，两千多万数据，30G左右  实现 采用pyspark导入，先上代码 #_*_ coding=UTF-8 _*_ import os i" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-59139.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="pyspark从hive导出数据到clickhouse" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/5aae7a5ba8613462accfdd102d4117c4.webp" />
+        <meta property="og:release_date" content="2025-02-19T06:36:00" />
+    <meta property="og:updated_time" content="2025-02-19T06:36:00" />
+        <meta property="og:description" content="需求 从hive导出数据到clickhouse 大概有两百个字段，两千多万数据，30G左右  实现 采用pyspark导入，先上代码 #_*_ coding=UTF-8 _*_ import os i" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pyspark从hive导出数据到clickhouse">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>pyspark从hive导出数据到clickhouse</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>需求</h2> <p>从hive导出数据到clickhouse 大概有两百个字段，两千多万数据，30G左右</p> <h2> <a id="_4" rel="nofollow"></a>实现</h2> <p>采用pyspark导入，先上代码</p> <pre><code class="prism language-python"><span class="token comment">#_*_ coding=UTF-8 _*_</span> <span class="token keyword">import</span> os <span class="token keyword">import</span> sys <span class="token keyword">from</span> pyspark<span class="token punctuation">.</span>sql <span class="token keyword">import</span> SparkSession   <span class="token keyword">def</span> <span class="token function">sparksession_read_hive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># .master("local[*]")</span>     spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span>builder<span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">'bi_pharaoh_mkt_lead_detail_to_clickhouse'</span><span class="token punctuation">)</span>\         <span class="token punctuation">.</span>enableHiveSupport<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>     hive_df <span class="token operator">=</span> spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span><span class="token triple-quoted-string string">"""select       place_type                  ,sub_place_type                       from  dm.test where pt = 20220314     """</span><span class="token punctuation">)</span>      <span class="token keyword">print</span><span class="token punctuation">(</span>hive_df<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sparkcontext_read_hive读取完毕，开始准备写入'</span><span class="token punctuation">)</span>     properties <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token string">'driver'</span><span class="token punctuation">:</span> <span class="token string">'ru.yandex.clickhouse.ClickHouseDriver'</span><span class="token punctuation">,</span>                   <span class="token string">"socket_timeout"</span><span class="token punctuation">:</span> <span class="token string">"300000"</span><span class="token punctuation">,</span>                   <span class="token string">"rewriteBatchedStatements"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>                   <span class="token string">"batchsize"</span><span class="token punctuation">:</span> <span class="token string">"1000000"</span><span class="token punctuation">,</span>                   <span class="token string">"numPartitions"</span><span class="token punctuation">:</span> <span class="token string">"8"</span><span class="token punctuation">,</span>                   <span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>                   <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">'pass'</span><span class="token punctuation">,</span>                   <span class="token string">'isolationLevel'</span><span class="token punctuation">:</span> <span class="token string">'NONE'</span>                   <span class="token punctuation">}</span>      hive_df<span class="token punctuation">.</span>write<span class="token punctuation">.</span>jdbc<span class="token punctuation">(</span>url<span class="token operator">=</span><span class="token string">'jdbc:clickhouse://{url}:8123/analysis'</span><span class="token punctuation">,</span>                        table<span class="token operator">=</span><span class="token string">'test_table'</span><span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'append'</span><span class="token punctuation">,</span> properties<span class="token operator">=</span>properties<span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sparksession_read_hive写入完成'</span><span class="token punctuation">)</span>     spark<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token keyword">def</span> <span class="token function">spark_te</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span>builder<span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">'clickhouse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>     properties <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token string">"driver"</span><span class="token punctuation">:</span> <span class="token string">"ru.yandex.clickhouse.ClickHouseDriver"</span><span class="token punctuation">,</span>                   <span class="token string">"socket_timeout"</span><span class="token punctuation">:</span> <span class="token string">"300000"</span><span class="token punctuation">,</span>                   <span class="token string">"rewriteBatchedStatements"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>                   <span class="token string">"batchsize"</span><span class="token punctuation">:</span> <span class="token string">"1000000"</span><span class="token punctuation">,</span>                   <span class="token string">"numPartitions"</span><span class="token punctuation">:</span> <span class="token string">"8"</span><span class="token punctuation">,</span>                   <span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>                   <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">'pass'</span><span class="token punctuation">}</span>     df <span class="token operator">=</span> spark<span class="token punctuation">.</span>read<span class="token punctuation">.</span>jdbc<span class="token punctuation">(</span>url<span class="token operator">=</span><span class="token string">'jdbc:clickhouse://{url}:8123/analysis'</span><span class="token punctuation">,</span>                          table<span class="token operator">=</span><span class="token string">'bi_pharaoh_mkt_lead_detail_da'</span><span class="token punctuation">,</span> properties<span class="token operator">=</span>properties<span class="token punctuation">)</span>     <span class="token comment"># spark.read.jdbc(properties=properties)</span>     <span class="token comment"># print(spark.sql('select * from default.test'))</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     sparksession_read_hive<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># spark_te()</span> </code></pre> <h2> <a id="1_PySpark_63" rel="nofollow"></a>1 PySpark简介</h2> <p>Apache Spark是用Scala编程语言编写的。为了用Spark支持Python，Apache Spark社区发布了一个工具PySpark。使用PySpark，您也可以使用Python编程语言处理RDD。正是由于一个名为Py4j的库，他们才能实现这一目标。<br /> 这里不介绍PySpark的环境设置，主要介绍一些实例，以便快速上手。</p> <h2> <a id="2_PySpark__SparkContext_68" rel="nofollow"></a>2 PySpark - SparkContext</h2> <p>SparkContext是任何spark功能的入口点。当我们运行任何Spark应用程序时，会启动一个驱动程序，它具有main函数，并且此处启动了SparkContext。然后，驱动程序在工作节点上的执行程序内运行操作。</p> <p>SparkContext使用Py4J启动JVM并创建JavaSparkContext。默认情况下，PySpark将SparkContext作为’sc’提供，因此创建新的SparkContext将不起作用。</p> <h2> <a id="3_PySpark__Sparksession_74" rel="nofollow"></a>3 PySpark - Sparksession</h2> <p>Sparksession是更上层的接口，是对sparkcontext和Spark的封装，目前官方推荐使用SparkSession作为入口，实际上SparkSession中包含了SparkContext中的大部分方法。</p> <p>RDD和DataFrame是Spark中最常用的两种数据集合。Column和Row分别是DataFrame类型中的一列和一行。</p> <p>RDD，弹性分布式数据集，集合内对象分布在不同的节点之上，可以并行执行操作，是spark应用程序的基本数据结构。RDD中的元素类型是非结构化的，可以是任意JVM对象。</p> <p>DataFrame，类似于关系型数据库中的表，相比于RDD，其内部的每一条记录都是结构化的。一般而言，推荐优先使用这种数据结构，可以轻易的在其上使用sql类操作，与hive结合较好。</p> <p>再详细解释下，上面sparksession_read_hive() 这个方法是写入的方法，spark_te()这个方法是读取clickhouse的方法。spark简单语法如下：<br /> SparkSession是新版本推荐的入口api，所有的spark操作都需要SparkSession来执行，首先，创建一个入口类，(类似于python的实例化)<br /> 语法是这样的：SparkSession.builder 然后，有下面几个函数：</p> <ul> <li>.master()： 设置运行模式，即：本地模式还是yarn模式</li> <li>appName()： 顾名思义，设置名字</li> <li>enableHiveSupport() ：这是hive接口函数，如果想要查询hive的表就需要执行这个函数</li> <li>getOrCreate(：这是最终的函数，创建或者获取。</li> </ul> <p>然后如果是同一个数据库拿这个实例直接执行sql就可以了。如果是不同数据库那就需要像我这么写了，spark.write().jdbc()<br /> spark目前好像是与hive和mysql接口集成，即如果读写hive和mysql是不需要jdbc的方式的，其他的都需要。jdbc有四个参数，url table。mode(‘append’,‘overwrite’,‘error’,等) ，properties (连接的配置 ，以字典形式传入，其中‘driver’项是驱动，是固定的，连value一起都是固定传入，其他参数可以酌情使用),<br /> spark还有其他函数，这里就不一一介绍了。</p> <p>再说说踩过的坑，一开始配置好环境，环境配置可以参考<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/mudooo/article/details/94830879"  rel="nofollow">在pycharm中安装spark环境</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_42855570/article/details/115146839"  rel="nofollow">Hadoop安装教程 Mac版</a><br /> 这两个结合着看就行</p> <h2> <a id="1_101" rel="nofollow"></a>坑点1:</h2> <p>报错<img decoding="async" src="http://img.555519.xyz/uploads/20221230/84e2cece848498c3f2f6ea5d360c72d3.jpg" alt="pyspark从hive导出数据到clickhouse"><br /> py4j.protocol.Py4JJavaError: An error occurred while calling o75.jdbc.<br /> java.lang.ClassNotFoundException:ru.yandex.clickhouse.ClickHouseDriver<br /> 没有clickhouse的驱动，去下载一个驱动，放进spark下的jars中解决。</p> <h2> <a id="2_107" rel="nofollow"></a>坑点2:可以读取，不可写入</h2> <p>这里耽误了好久，因为觉得已经能够读取了，那就肯定不是驱动的事，一直在找语法上的错误，最后在网上查到缺少guava-28.0-jre.jar包<br /> 错误信息为：<br /> java.lang.NoClassDefFoundError: com/google/common/escape/Escapers<br /> or<br /> NoClassDefFoundError: Could not initialize class ru.yandex.clickhouse.ClickHouseUtil<br /> 去下载一个放进 spark中的jar下，解决，但是要注意，3.1spark自带一个guava-14.0.jar,但自带的这个jar版本不够，必须放进去更高的版本。测试几次好像最低要guava-16.jar才行。另外，网上有人遇到放进spark的jars路径下无法解决，可以试试其他路径，参考链接：<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_40161254/article/details/107920853"  rel="nofollow">Caused by: java.lang.NoClassDefFoundError: com/google/common/escape/Escapers</a></p> <h2> <a id="3overwrite_116" rel="nofollow"></a>坑点3:不能overwrite</h2> <p>这个坑目前未解决，只要我用overwrite模式，就会报错，错误信息很粗略，改用append模式就能够成功写入，现在采取的方案是在执行spark程序之前先用clickhouse_driver 进行清空表的操作，然后使用append的模式写入。另外说一下，好像好多etl工具的overwrite模式好像都不怎么靠谱，动不动就报错。</p> <p>最后，成功写入</p> <p>补充：在pycharm中添加spark的环境变量：<br /> 和上面文档中提示添加的路径变量没有任何关系，重新梳理一下pycarm中的配置步骤。</p> <h2> <a id="1_125" rel="nofollow"></a>1.</h2> <p>创建项目，指定python解释器的版本</p> <h2> <a id="2_129" rel="nofollow"></a>2.</h2> <p>配置项目依赖，<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/8dfe13de608763a03af2281826049193.jpg" alt="pyspark从hive导出数据到clickhouse"><br /> py4j 将Python代码转换为Java代码的库<br /> pyspark Python的Spark编程依赖库</p> <p>选择Add Content Root，在弹出的文件选择框中，选择Spark安装目录中的python文件夹下的lib目录中的py4j和pyspark的依赖文件，点击OK，将这两个依赖加入到当前项目的依赖库中。</p> <h2> <a id="3_138" rel="nofollow"></a>3.</h2> <p>点击右上角的程序配置，配置环境变量，添加SPARK_HOME值为SPARK安装包的解压路径，PYSAPRK_PYTHON指定PySpark的Python命令，注意python版本为3.6+。<img decoding="async" src="http://img.555519.xyz/uploads/20221230/5d82cac599bd875f5294a414b6561e8f.jpg" alt="pyspark从hive导出数据到clickhouse"></p> <h2> <a id="_141" rel="nofollow"></a>调用</h2> <pre><code class="prism language-powershell">spark-submit <span class="token operator">--</span>master yarn <span class="token operator">--</span>deploy-mode cluster <span class="token operator">--</span>name dm_bi_pharaoh_mkt_lead_detail_a_test_task <span class="token operator">--</span>queue analysis <span class="token operator">--</span>conf spark<span class="token punctuation">.</span>pyspark<span class="token punctuation">.</span>python=python3 <span class="token operator">--</span>driver-<span class="token keyword">class</span><span class="token operator">-</span>path <span class="token operator">/</span>usr/lib/spark-current/driver-jars/ <span class="token operator">--</span>num-executors 8 <span class="token operator">--</span>executor-memory 4g <span class="token operator">--</span>executor-cores 4 <span class="token operator">--</span>driver-memory 4g <span class="token operator">--</span>conf spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>execution<span class="token punctuation">.</span>arrow<span class="token punctuation">.</span>enabled=true <span class="token operator">--</span>conf spark<span class="token punctuation">.</span>kryoserializer<span class="token punctuation">.</span>buffer<span class="token punctuation">.</span>max=2008 <span class="token operator">--</span>conf spark<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>extraClassPath=<span class="token operator">/</span>usr/lib/spark-current/driver-jars/clickhouse-jdbc-0<span class="token punctuation">.</span>2<span class="token punctuation">.</span>4<span class="token punctuation">.</span>jar <span class="token operator">--</span>conf spark<span class="token punctuation">.</span>executor<span class="token punctuation">.</span>extraClassPath=<span class="token operator">/</span>usr/lib/spark-current/driver-jars/clickhouse-jdbc-0<span class="token punctuation">.</span>2<span class="token punctuation">.</span>4<span class="token punctuation">.</span>jar   <span class="token operator">/</span>mnt/disk1/server/code/<span class="token keyword">data</span><span class="token operator">-</span>integration/script/huike/etl/core/dm/bi/bi_pharaoh_mkt_lead_detail_to_clickhouse<span class="token punctuation">.</span>py </code></pre> <h2> <a id="1_147" rel="nofollow"></a>后续补充1</h2> <p>问题：要使用自定义模块，报错找不到模块<br /> 解决：在调用命令里添加 --py-files 参数，把自定义模块的文件（含路径）写在后面，如果有多个用英文逗号隔开。<br /> 问题：要读取配置文件，报错没有section<br /> 解决：实际错误是找不到配置文件， 没有section=空文件=没有文件。在调用命令里添加 --files 参数 把文件写在后面，如果有多个用英文逗号隔开。</p> <p><strong>注意：</strong>–py-files 文件后填写的模块在导入时不需要考虑路径的问题，直接from xxx import Xxxx ， 在–files后写的文件使用时也不需要考虑路径，直接使用文件名即可</p> <p>参考文档<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://wchch.github.io/2018/12/20/%E5%B0%86%E6%95%B0%E6%8D%AE%E9%80%9A%E8%BF%87spark%E4%BB%8Ehive%E5%AF%BC%E5%85%A5%E5%88%B0Clickhouse/"  rel="nofollow">将数据通过spark从hive导入到Clickhouse</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58651.htm">美容美甲化妆纹绣学校（美容美甲化妆纹绣学校那家好）</a></p>
+                                        <p>下一个：<a href="/news/article-59140.htm">河南狗粮品牌大全（河南省狗粮加工机械）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-verge-rev-windows.htm" title="12月7日 | Clash Verge每天更新19.4M/S免费节点订阅链接">12月7日 | Clash Verge每天更新19.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-57429.htm" title="动物医院实践心得怎么写范文大全（动物医院实践心得怎么写范文大全集）">动物医院实践心得怎么写范文大全（动物医院实践心得怎么写范文大全集）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-clash-verge-rev-github.htm" title="1月6日 | Clash Verge每天更新22M/S免费节点订阅链接地址">1月6日 | Clash Verge每天更新22M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37965.htm" title="附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）">附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）</a></li>
+                        <li class="py-2"><a href="/news/article-27478.htm" title="瑞鹏宠物医院工资怎么样（瑞鹏宠物医院工资待遇）">瑞鹏宠物医院工资怎么样（瑞鹏宠物医院工资待遇）</a></li>
+                        <li class="py-2"><a href="/news/article-40442.htm" title="centos离线安装nginx详细教程">centos离线安装nginx详细教程</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-verge-rev-node-share.htm" title="2月11日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址">2月11日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24694.htm" title="分布式服务请求报错：Read timed out executing POST http://businessApi/app/app/login">分布式服务请求报错：Read timed out executing POST http://businessApi/app/app/login</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-clash-verge-rev-node-github.htm" title="1月17日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">1月17日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36980.htm" title="简述动物疫苗的种类及作用（动物疫苗的生产原料有哪些,如何取得）">简述动物疫苗的种类及作用（动物疫苗的生产原料有哪些,如何取得）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
