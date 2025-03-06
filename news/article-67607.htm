@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-67607.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>使用aspnetcore前后端分离开发，你一定要知道这个</title>
+        <meta name="description" content="用过Vue单页面应用开发的，一定都知道Vue-router这个路由组件，它支持hash和history两种模式。 HTML5 History 模式 vue-router&nbsp;默认 hash 模式" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-67607.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="使用aspnetcore前后端分离开发，你一定要知道这个" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/5da29760fc2bd6167d87cbeeb5aabacb.webp" />
+        <meta property="og:release_date" content="2025-03-05T11:11:26" />
+    <meta property="og:updated_time" content="2025-03-05T11:11:26" />
+        <meta property="og:description" content="用过Vue单页面应用开发的，一定都知道Vue-router这个路由组件，它支持hash和history两种模式。 HTML5 History 模式 vue-router&nbsp;默认 hash 模式" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用aspnetcore前后端分离开发，你一定要知道这个">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>使用aspnetcore前后端分离开发，你一定要知道这个</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				</h1> <p>用过Vue单页面应用开发的，一定都知道<code>Vue-router</code>这个路由组件，它支持<code>hash</code>和<code>history</code>两种模式。</p> <h2 id="html5-history-模式">HTML5 History 模式</h2> <p><code>vue-router</code>&nbsp;默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</p> <p>如果不想要很丑的 hash，我们可以用路由的<strong>history 模式</strong>，这种模式充分利用<code>history.pushState</code>&nbsp;API 来完成 URL 跳转而无须重新加载页面。</p> <pre><code>const router = new VueRouter({   mode: 'history',   routes: [...] })</code></pre> <p>当你使用 history 模式时，URL 就像正常的 url，例如<code>http://yoursite.com/user/id</code>，也好看！<br /> 不过这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问<code>http://oursite.com/user/id</code>&nbsp;就会返回 404，这就不好看了。</p> <p>所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个<code>index.html</code>&nbsp;页面，这个页面就是你 app 依赖的页面。</p> </h1> <p>今天我们的目的就是如何使用<code>history</code>模式，让url地址更加简洁美观，为了更完整的演示，从头手把手演示一遍。</p> <h2 id="创建vue项目">创建vue项目</h2> <p>首先安装<code>nodejs</code>，然后执行下面的npm命令创建vue3项目，跟着提示选择是或否即可完成项目的创建。本次创建的项目名称为<code>vue-project</code></p> <pre><code>npm init vue@3</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b1102ff2304c93217055262504135019.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"></p> <h2 id="创建aspnetcore的webapi项目">创建aspnetcore的webapi项目</h2> <p>如下图选择ASP.Net Core WebApi项目，项目名称为<code>TestHistory</code>，目录选择和上面Vue项目同属一个文件夹下。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5a30a17a1233cb342801bbefa77c3b19.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"></p> <h2 id="配置history模式">配置History模式</h2> <h3 id="配置前端">配置前端</h3> <p>在<code>vscode</code>打开前端项目，找到router配置<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1924aa525825b3328458d1844a76d8c3.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 由于这里创建的是Vue3项目模板，模板自动配置好的vuerouter4，<br /> 其实下面这种是一样的。<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://router.vuejs.org/zh/api/#createwebhistory"  target="_blank" rel="nofollow">详情参考</a>,</p> <pre><code>const router = new VueRouter({   mode: 'history',   routes: [...] })</code></pre> <p>如果要使用<code>hash</code>模式，则使用<code>createWebHashHistory</code>函数创建。</p> <h3 id="配置后端">配置后端</h3> <p>如果我们的前端和后端用的是同一个域名，也就是部署在同一个目录下，则应该将前端编译后的Html页面使用<code>aspnetcore</code>的静态资源进行托管，而不是直接放到根目录下。<br /> 后端首先要添加<code>app.UseStaticFiles();</code>以支持静态资源托管，然后创建该中间件默认的静态资源文件目录<code>wwwroot</code>。</p> <h2 id="部署">部署</h2> <p>将webapi项目发布到本地<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7329a4ea89580bcf7d84b5b9035815a4.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> vue项目执行<code>npm run build</code>编译前端代码，将<code>dist</code>目录下的文件拷贝到到webapi发布后的<code>wwwroot</code>目录下，</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/34ec8a4a6b04552e137fef3035875a23.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"></p> <p>IIS新建一个站点，这里使用<code>8080</code>端口<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1fa9d0e9559439e7bd75c9a5dd1840df.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 别忘记安装<code>Hosting Bundle</code>。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a4ff8ad2e83138e185d12b12b0d1824d.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"></p> <p>如果一切顺利，打开<code>http://localhost:8080</code>你应该会看到这个页面。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/561e6a8309421142774dae2ed8b2b91c.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 点击about还会显示下面这个页面，而且地址是<code>http://localhost:8080/about</code>,这不就是<code>history</code>模式的效果吗！<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/055ff79dac6aba140013fb35196e7eaf.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 什么都没做，效果就达到了？</p> <p>别急的得意，在<code>http://localhost:8080/about</code>这个地址下，刷新下网页试试。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/267f216dd502e40983a23098deaebca9.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 卧槽，404了。</p> <p>先解释下为什么会这样，当你访问<code>http://localhost:8080</code>时由于iis默认是设置了默认文档</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/80b6d1057e87c7a31bb9fa6803391f17.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ffe2378a91fee7c38b7b9efe17c310ff.jpg" alt="使用aspnetcore前后端分离开发，你一定要知道这个"><br /> 当找不到你请求的资源时，它会尝试检查目录下的默认文档是否存在，按先后顺序检查，发现存在<code>index.html</code>所以就返回浏览器了，所以能够正常显示；当你点击about时，其实只是触发了页面的一个事件，页面有变化，url也变化了，但浏览器压根没刷新。当你手动刷新<code>http://localhost:8080/about</code>时，就向后端发起这个地址的Get请求，很明显，我们没有写任何<code>Controller</code>来匹配这个路由，<code>wwwroot</code>目录下也不存在<code>about/index.html</code>当然返回404了。</p> </h1> <p>Vuerouter官方文档给出了部分后端服务器的配置方式<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://v3.router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90"  target="_blank" rel="nofollow">后端配置例子</a><br /> 这里只展示aspnetcore常用的服务器</p> <h4 id="nginx">nginx</h4> <pre><code>location / {   try_files $uri $uri/ /index.html; }</code></pre> <h4 id="internet-information-services-iis">Internet Information Services (IIS)</h4> <ol> <li>安装<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.iis.net/downloads/microsoft/url-rewrite"  target="_blank" rel="nofollow">IIS UrlRewrite(opens new window)</a></li> <li>在你的网站根目录中创建一个<code>web.config</code>&nbsp;文件，内容如下：</li> </ol> <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;configuration&gt;   &lt;system.webServer&gt;     &lt;rewrite&gt;       &lt;rules&gt;         &lt;rule name="Handle History Mode and custom 404/500" stopProcessing="true"&gt;           &lt;match url="(.*)" /&gt;           &lt;conditions logicalGrouping="MatchAll"&gt;             &lt;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&gt;             &lt;add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" /&gt;           &lt;/conditions&gt;           &lt;action type="Rewrite" url="/" /&gt;         &lt;/rule&gt;       &lt;/rules&gt;     &lt;/rewrite&gt;   &lt;/system.webServer&gt; &lt;/configuration&gt;</code></pre> <p>nginx的由于没有环境，没有测试，应该没问题，配置也比较简单。<br /> iis的根据文档做一遍，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.iis.net/downloads/microsoft/url-rewrite"  target="_blank" rel="nofollow">UrlRewrite</a>可以理解为是一个中间件，会对请求拦截，对符合规则的url进行路径重写，可行。</p> <p>当然我要做的不是上面的任何一种，因为我们的站点可能会部署到各种各样的服务器，每次换服务器都需要不同的配置来实现，很繁琐，既然我们aspnetcore拥有强大的中间件系统，为什么不让aspnetcore来做这件事呢，不再依赖不同服务器的配置方案，实现一次编码，到处运行，在之前的文章中有介绍过如何处理404<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/springhgui/p/16161134.html"  target="_blank" rel="nofollow">《ASP.NETCore统一处理404错误都有哪些方式？》</a><br /> 那我们就在404的处理逻辑里实现其实就好了。</p> <p>直接上代码</p> <pre><code class="language-c#">app.MapFallback(async (context) =&gt; {     var phpath = Path.Join(app.Environment.WebRootPath, context.Request.Path);     var name = Path.Combine(Path.GetDirectoryName(phpath)!, "index.html");     if (File.Exists(name))     {         context.Response.StatusCode = 200;         await context.Response.SendFileAsync(name);     } });</code></pre> <p>1.当进入404处理逻辑时，首先拼接访问路径<br /> 2.检查访问的路径所属的文件夹下是否存在<code>index.html</code>文件<br /> 3.当文件存在，则修改响应码，返回该文件。<br /> 4.不存在，什么也不干（这里其实可以做个友好提示页面）。<br /> 重新发布，测试，不管如何刷新，都能正常显示了。</p> </h1> <p>Github上获取：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/SpringHgui/TestHistory"  target="_blank" rel="nofollow">https://github.com/SpringHgui/TestHistory</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66971.htm">孩子10几天后才说被猫咬了,打个狂犬疫苗能喝点小酒吗（打了狂犬疫苗六个月后又被猫抓伤了能茶喝吗?）</a></p>
+                                        <p>下一个：<a href="/news/article-67608.htm">动物疫苗在哪里买的到正规的（动物疫苗在哪打）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-60285.htm" title="动物打的疫苗是什么药名（动物用疫苗有哪些类型）">动物打的疫苗是什么药名（动物用疫苗有哪些类型）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-27-free-node-subscribe.htm" title="2月27日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址">2月27日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-today-clash-verge-rev-node.htm" title="1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址">1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39951.htm" title="宠物粮食供应商真的赚钱吗知乎（宠物粮食利润大吗）">宠物粮食供应商真的赚钱吗知乎（宠物粮食利润大吗）</a></li>
+                        <li class="py-2"><a href="/news/article-44908.htm" title="Android 弹窗设计规范">Android 弹窗设计规范</a></li>
+                        <li class="py-2"><a href="/news/article-53014.htm" title="动物免疫接种应注意什么问题 动物免疫接种应注意什么问题呢">动物免疫接种应注意什么问题 动物免疫接种应注意什么问题呢</a></li>
+                        <li class="py-2"><a href="/news/article-38458.htm" title="宠物粮食品牌大全排名图片 宠物粮食品牌大全排名图片及名字">宠物粮食品牌大全排名图片 宠物粮食品牌大全排名图片及名字</a></li>
+                        <li class="py-2"><a href="/news/article-43408.htm" title="优雅处理API统一返回">优雅处理API统一返回</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-clash-verge-rev-node-share.htm" title="1月30日 | Clash Verge每天更新18.8M/S免费节点订阅链接地址">1月30日 | Clash Verge每天更新18.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-node-share-links.htm" title="2月5日 | Clash Verge每天更新18.3M/S免费节点订阅链接地址">2月5日 | Clash Verge每天更新18.3M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
