@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-76186.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SpringBoot——整合druid数据源，以及使用druid数据源监控</title>
+        <meta name="description" content="本文主要记录常用配置，若要进行系统学习参考基于官网文档：https://github.com/alibaba/druid  方式一：SrpingBoot yml配置 该方式高效快捷，适用于实战 1.在" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-76186.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="SpringBoot——整合druid数据源，以及使用druid数据源监控" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/c42820164d4da8fff9b4ab87d823eea7.webp" />
+        <meta property="og:release_date" content="2025-03-18T06:12:13" />
+    <meta property="og:updated_time" content="2025-03-18T06:12:13" />
+        <meta property="og:description" content="本文主要记录常用配置，若要进行系统学习参考基于官网文档：https://github.com/alibaba/druid  方式一：SrpingBoot yml配置 该方式高效快捷，适用于实战 1.在" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot——整合druid数据源，以及使用druid数据源监控">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>SpringBoot——整合druid数据源，以及使用druid数据源监控</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>本文主要记录常用配置，若要进行系统学习参考基于官网文档：https://github.com/alibaba/druid</p> <h2> <a id="SrpingBoot_yml_1" rel="nofollow"></a>方式一：SrpingBoot yml配置</h2> <p>该方式高效快捷，适用于实战<br /> 1.在maven中引入依赖</p> <pre><code class="prism language-xml">		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>druid-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.1.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span> </code></pre> <p>2.在项目yml文件中做以下配置</p> <pre><code class="prism language-yml">  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>     <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/db_account     <span class="token key atrule">username</span><span class="token punctuation">:</span> root     <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span>     <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver <span class="token comment"># 8.0数据库驱动 5.x版本使用 com.mysql.jdbc.Driver</span>     <span class="token key atrule">druid</span><span class="token punctuation">:</span>       <span class="token key atrule">aop-patterns</span><span class="token punctuation">:</span> com.b0.admin.* <span class="token comment">#这个包下面的所有内容都会被监控</span>       <span class="token key atrule">filters</span><span class="token punctuation">:</span> wall<span class="token punctuation">,</span>stat<span class="token punctuation">,</span>slf4j <span class="token comment"># 底层开启功能 stat（sql监控:能够监控到执行的sql语句），wall（防火墙）,slf4j()</span>       <span class="token key atrule">stat-view-servlet</span><span class="token punctuation">:</span> <span class="token comment"># 配置监控页功能</span>         <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>         <span class="token key atrule">login-username</span><span class="token punctuation">:</span> admin <span class="token comment">#配置druid登录账号密码</span>         <span class="token key atrule">login-password</span><span class="token punctuation">:</span> <span class="token number">123456</span>         <span class="token key atrule">reset-enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>       <span class="token key atrule">web-stat-filter</span><span class="token punctuation">:</span> <span class="token comment"># 开启web应用监控</span>         <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>         <span class="token key atrule">url-pattern</span><span class="token punctuation">:</span> /*         <span class="token key atrule">exclusions</span><span class="token punctuation">:</span> <span class="token string">'*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'</span>       <span class="token key atrule">filter</span><span class="token punctuation">:</span>         <span class="token key atrule">stat</span><span class="token punctuation">:</span> <span class="token comment"># 对上面filters里面的stat的详细配置</span>           <span class="token key atrule">slow-sql-millis</span><span class="token punctuation">:</span> <span class="token number">1000</span> <span class="token comment"># 统计慢查询sql</span>           <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>           <span class="token key atrule">log-slow-sql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>         <span class="token key atrule">wall</span><span class="token punctuation">:</span>           <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启防火墙</span>           <span class="token key atrule">config</span><span class="token punctuation">:</span>             <span class="token key atrule">drop-table-allow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 配置不允许删表</span> </code></pre> <p>在浏览器中直接使用 项目启动路径+/druid 即可，eg:http://localhost:8080/druid<br /> 输入上方配置的druid监控系统账号密码使用druid<br /> 进入页面<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/534cbe5dcc2e3071844edd25d696a781.jpg" alt="SpringBoot——整合druid数据源，以及使用druid数据源监控"><br /> 可以查看相关数据源，SQL监控，防火墙等</p> <h2> <a id="Java_45" rel="nofollow"></a>方式二：基于配置文件（此处基于Java配置文件,实战不推荐）</h2> <p>该方式适合学习理解druid执行流程<br /> 1.引入依赖</p> <pre><code class="prism language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>druid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.1.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span> </code></pre> <p>编写Java文件，@Configuration声明该文件为配置文件，类似注册一个.xml文件，@Bean注解声明该方法为一个bean，与xml配置文件中的bean标签等价</p> <pre><code class="prism language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>b0<span class="token punctuation">.</span>admin<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token annotation punctuation">@Configuration</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyDataSourceConfig</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// 默认的配置是若没有数据源则会配置@ConditionalOnMissingBean(type = {"io.r2dbc.spi.ConnectionFactory"})</span>     <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span><span class="token string">"spring.datasource"</span><span class="token punctuation">)</span><span class="token comment">//该注解会将配置文件中的数据绑定</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">DataSource</span> <span class="token function">dataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SQLException</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">DruidDataSource</span> druidDataSource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//        druidDataSource.setUrl();</span>         druidDataSource<span class="token punctuation">.</span><span class="token function">setFilters</span><span class="token punctuation">(</span><span class="token string">"wall,stat"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> druidDataSource<span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token comment">/**      * 配置druid的监控页功能      */</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">ServletRegistrationBean</span> <span class="token function">statViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token class-name">StatViewServlet</span> statViewServlet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StatViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">ServletRegistrationBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">StatViewServlet</span><span class="token punctuation">&gt;</span></span> registrationBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServletRegistrationBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>statViewServlet<span class="token punctuation">,</span><span class="token string">"/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         registrationBean<span class="token punctuation">.</span><span class="token function">addInitParameter</span><span class="token punctuation">(</span><span class="token string">"loginUsername"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         registrationBean<span class="token punctuation">.</span><span class="token function">addInitParameter</span><span class="token punctuation">(</span><span class="token string">"loginPassword"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> registrationBean<span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token comment">/**      * WebStatFilter 用于采集web-jdbc关联监控的数据      */</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">FilterRegistrationBean</span> <span class="token function">webStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token class-name">WebStatFilter</span> webStatFilter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">FilterRegistrationBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WebStatFilter</span><span class="token punctuation">&gt;</span></span> filterRegistrationBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FilterRegistrationBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>webStatFilter<span class="token punctuation">)</span><span class="token punctuation">;</span>         filterRegistrationBean<span class="token punctuation">.</span><span class="token function">setUrlPatterns</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"/*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         filterRegistrationBean<span class="token punctuation">.</span><span class="token function">addInitParameter</span><span class="token punctuation">(</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span><span class="token string">"*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> filterRegistrationBean<span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>此处对应xxxRegistrationBean为原生组件内容，即将原生servlet组件注入到SpringBoot，还需要在应用程序入口加上组件扫描注解：@ServletComponentScan(basePackages = “com.bo.admin”)扫描到该配置文件。<br /> 同方式一相同在浏览器访问地址即可。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76185.htm">JavaScript实现带有开始、暂停、复位的秒表</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-71494.htm" title="孕妇被猫抓流血了,会影响胎儿发育吗（孕妇被猫抓流血了,会影响胎儿发育吗视频）">孕妇被猫抓流血了,会影响胎儿发育吗（孕妇被猫抓流血了,会影响胎儿发育吗视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-clash-verge-rev-github.htm" title="2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址">2月10日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-70180.htm" title="动物医院的logo设计理念（动物医院牌子图片）">动物医院的logo设计理念（动物医院牌子图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-today-clash-verge-rev-node.htm" title="1月26日 | Clash Verge每天更新22.7M/S免费节点订阅链接地址">1月26日 | Clash Verge每天更新22.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-clash-verge-rev-github.htm" title="2月12日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址">2月12日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-node-subscribe-links.htm" title="2月22日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址">2月22日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-63247.htm" title="java 对音频文件降噪_如何对已有音频文件进行降噪处理？">java 对音频文件降噪_如何对已有音频文件进行降噪处理？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-high-speed-nodes.htm" title="1月8日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">1月8日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43936.htm" title="C语言 模拟实现strlen函数详解_C 语言">C语言 模拟实现strlen函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/news/article-51950.htm" title="数据库事务四大特性以及四大隔离级别">数据库事务四大特性以及四大隔离级别</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">53</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

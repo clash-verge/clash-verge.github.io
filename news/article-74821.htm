@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-74821.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>设计模式(9) 观察者模式</title>
+        <meta name="description" content="观察者模式 当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知依赖它的对象。观察者模式属于行为型模式。 介绍 意图：定义对象间的一种" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-74821.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="设计模式(9) 观察者模式" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/be931e3529ae1f739a7fc08b4bc979fd.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:27:58" />
+    <meta property="og:updated_time" content="2025-03-16T10:27:58" />
+        <meta property="og:description" content="观察者模式 当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知依赖它的对象。观察者模式属于行为型模式。 介绍 意图：定义对象间的一种" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="设计模式(9) 观察者模式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>设计模式(9) 观察者模式</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<h3 id="观察者模式">观察者模式</h3> <p>当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知依赖它的对象。观察者模式属于行为型模式。</p> <h4 id="介绍">介绍</h4> <p><strong>意图</strong>：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p> <p><strong>主要解决</strong>：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。</p> <p><strong>何时使用</strong>：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。</p> <p><strong>如何解决</strong>：使用面向对象技术，可以将这种依赖关系弱化。</p> <p>**关键代码v：在抽象类里有一个 ArrayList 存放观察者们。</p> <p><strong>应用实例</strong>： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。</p> <p>优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。</p> <p>缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。</p> <h4 id="使用场景">使用场景</h4> <p>一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。<br /> 一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。<br /> 一个对象必须通知其他对象，而并不知道这些对象是谁。<br /> 需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。<br /> 注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。</p> <h4 id="实现">实现</h4> <p>1，明星效应</p> <pre><code>class Star {     state: string = ''     observers: Array&lt;Fan&gt;      constructor(public name:string) {         this.name = name;         this.observers = [];     }      getState() {         return this.state;     }      setState(state:string) {         this.state = state;         this.notifyAllobservers();     }      attach(observer:Fan) {         this.observers.push(observer);     }      notifyAllobservers() {         if(this.observers.length&gt;0) {             this.observers.forEach(observer =&gt; {                 observer.update();             })         }     } }  class Fan {     constructor(public name:string,public star:Star) {         this.name = name;         this.star = star;         this.star.attach(this);     }      update() {         console.log(`我的明星喜欢${this.star.getState()}，我也喜欢`);     } } let star = new Star('Angular Baby'); let f1 = new Fan('张三',star); star.setState('蓝色');</code></pre> <p>2,jquery Callbacks实现</p> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;     &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;      &lt;/body&gt; &lt;script&gt;     window.jQuery = {         Callbacks() {             let callbacks = [];              function add(fn) {                 callbacks.push(fn);             }              function remove(fn) {                 callbacks = callbacks.filter(item =&gt; item!=fn);             }              function fire(fn) {                 callbacks.forEach(element =&gt; {                     element();                 });             }              return {                 add,                 remove,                 fire             }         }     }     let callbacks = jQuery.Callbacks();     console.log(callbacks);     function a1() {console.log('a1')}     function a2() {console.log('a2')}     function a3() {console.log('a3')}     callbacks.add(a1);     callbacks.add(a2);     callbacks.add(a3);     callbacks.remove(a3);     callbacks.fire(); &lt;/script&gt; &lt;/html&gt;</code></pre> <p>3,creaeStore实现</p> <pre><code>function createStore(reducer) {     let state;     let listeners = [];     function getState() {         return state;     }     function subscribe(listener) {         listeners.push(listener);     }      function dispatch(actions) {         state = reducer(state,action);         listeners.forEach(listener =&gt; listener());     }      return {         getState,         subscribe,         dispatch     } }</code></pre> <p>4,eventEmitter实现</p> <pre><code>class eventEmitter {     events: Array&lt;Array&lt;Function&gt;&gt; = []     constructor() {      }      on(type: any, listener: Function) {         let listeners = this.events[type];         if (listeners) {             listeners.push(listener);         } else {             this.events[type] = [listener];         }     }      emit(type:any,...rest:any) {         let listeners = this.events[type];         let args = Array.prototype.slice.call(arguments).slice(1);         if(listeners) {             listeners.forEach(fn =&gt; {                 fn(...args);             })         }     } }  let emit = new eventEmitter(); emit.on('click',function(a:any,b:any,c:any) {     console.log(a,b,c); })  emit.emit('click',1,2,3);</code></pre> <p>5,发布订阅实现</p> <pre><code>import { join } from "path";  class Agent {     _events: any = {}     constructor() {      }      subscribe(type:string,listener:Function) {         let listeners = this._events[type];         if(listeners) {             this._events[type].push(listener);         } else {             this._events[type] = [listener];         }     }      publish(type:string,...rest:any) {         let listeners = this._events[type];         let args = Array.prototype.slice.call(arguments,1);         if(listeners) {             listeners.forEach((fn:Function) =&gt; fn(...args));         }     } }  //房东 class LandLoad {     constructor(public name:string) {          }     lend(agent:Agent,houseName:string,area:string,money:string) {//向外出租         agent.publish(houseName,area,money);     } }  //租客  class Tenant {     constructor(public name:string) {      }      rent(agent:Agent,houseName: string) {         agent.subscribe(houseName,(area:string,money:string)=&gt;{             console.log(`我看到中介的新房源了 ${area}平方 租金 ${money}元`)         });     } }  let agent = new Agent(); let t1 = new Tenant('张三'); let t2 = new Tenant('李四'); t1.rent(agent,'house'); t2.rent(agent,'home'); let landLoad = new LandLoad('gzq'); landLoad.lend(agent,'home','60','12000');</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74146.htm">[DEBUG] QAT Nginx for docker 部署时&#8221;&#8211;with-ld-opt&#8221;出错</a></p>
+                                        <p>下一个：<a href="/news/article-74822.htm">动物疫苗有哪些品种卖的比较好（动物疫苗生产厂家排名）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-node-share-links.htm" title="1月21日 | Clash Verge每天更新19.1M/S免费节点订阅链接地址">1月21日 | Clash Verge每天更新19.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-56294.htm" title="@RequestBody接受参数报415错误">@RequestBody接受参数报415错误</a></li>
+                        <li class="py-2"><a href="/news/article-51418.htm" title="初中毕业能上兽医学校河南内的（有没有从初中直接上兽医专业的学校）">初中毕业能上兽医学校河南内的（有没有从初中直接上兽医专业的学校）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-clash-verge-rev-github.htm" title="1月7日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">1月7日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-63872.htm" title="Vue中的动态组件（v-bind:is）的使用及组件传值">Vue中的动态组件（v-bind:is）的使用及组件传值</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-free-high-speed-nodes.htm" title="3月15日 | Clash Verge每天更新18.5M/S免费节点订阅链接地址">3月15日 | Clash Verge每天更新18.5M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43936.htm" title="C语言 模拟实现strlen函数详解_C 语言">C语言 模拟实现strlen函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/news/article-62658.htm" title="宠物店打疫苗有疫苗本吗（宠物店里打疫苗给证吗）">宠物店打疫苗有疫苗本吗（宠物店里打疫苗给证吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-clash-verge-rev-nodes.htm" title="2月26日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址">2月26日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-verge-rev-windows.htm" title="1月9日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址">1月9日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">53</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
