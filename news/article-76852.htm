@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-76852.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Docker基础DockerFile文件详解</title>
+        <meta name="description" content="1、DockerFile文件说明  （1）DockerFile文件是什么 Dockerfile是用来构建Docker镜像的文本文件，文本内容包含了一条条构建镜像所需的指令、参数和说明。 即：Docke" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-76852.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="Docker基础DockerFile文件详解" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/cc8f88c3ac81be45a2ed9270900affca.webp" />
+        <meta property="og:release_date" content="2025-03-19T09:09:09" />
+    <meta property="og:updated_time" content="2025-03-19T09:09:09" />
+        <meta property="og:description" content="1、DockerFile文件说明  （1）DockerFile文件是什么 Dockerfile是用来构建Docker镜像的文本文件，文本内容包含了一条条构建镜像所需的指令、参数和说明。 即：Docke" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Docker基础DockerFile文件详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>Docker基础DockerFile文件详解</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header"><span style="font-size: 1.5em;">1、DockerFile文件说明</span></div> </div> <p><strong>（1）DockerFile文件是什么</strong></p> <p>Dockerfile是用来构建Docker镜像的文本文件，文本内容包含了一条条构建镜像所需的指令、参数和说明。</p> <p>即：Dockerfile仅仅是用来制作镜像的源码文件，也可以说成是一个脚本文件。</p> <p><strong>（2）如何查看Docker Hub中镜像的Dockerfile文件</strong></p> <p>进入Docker Hub官网：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hub.docker.com/"  target="_blank" rel="nofollow">https://hub.docker.com/</a></p> <p>我们以CentOS镜像为例。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7275d543906c33622911aa7b4026f7fa.jpg" alt="Docker基础DockerFile文件详解"></p> <p>点击进入镜像，在<code>Supported tags and respective Dockerfile links</code>：支持的标签和相应的Dockerfile链接。</p> <p>如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/aef63030aacbf0b96ca3389482796f56.jpg" alt="Docker基础DockerFile文件详解"></p> <p>点击对应的版本，就会跳转到GitHub中存放CentOS的Dockerfile文件网站，如下图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7c162c772bfc9e749d5c16789f780def.jpg" alt="Docker基础DockerFile文件详解"></p> <p>我们就能够查看镜像对应的Dockerfile文件内容了。</p> <h2 id="2dockerfile构建过程解析">2、Dockerfile构建过程解析</h2> <h3 id="1docker容器构建三步骤">（1）Docker容器构建三步骤</h3> <ul> <li>手动编写一个Dockerfile文件，当然必须要符合<code>file</code>的规范。（编写）</li> <li>有了Dockerfile文件后，直接执行<code>docker build</code>命令，在本地获得一个自定义的Docker镜像。（构建）</li> <li>通过<code>docker run</code>命令启动镜像，获得Docker容器。（运行）</li> </ul> <h3 id="2dockerfile文件的基本结构">（2）Dockerfile文件的基本结构</h3> <p>Dockerfile 一般分为：基础镜像、镜像元信息（作者等信息）、镜像操作指令和容器启动时执行指令。</p> <p>我们以CentOS镜像的Dockerfile文件为例，如下：</p> <pre><code class="language-dockerfile"># 1.基础镜像 FROM scratch  # 2.镜像元信息 MAINTAINER https://github.com/CentOS/sig-cloud-instance-images  # 3、镜像操作指令和参数（重点） ADD centos-6-docker.tar.xz /  LABEL org.label-schema.schema-version="1.0" \     org.label-schema.name="CentOS Base Image" \     org.label-schema.vendor="CentOS" \     org.label-schema.license="GPLv2" \     org.label-schema.build-date="20181006"  # 4.容器启动时执行指令 CMD ["/bin/bash"]</code></pre> <blockquote> <p>提示：</p> <ul> <li>Dockerfile文件中的注释为<code>#</code>。</li> <li><code>FROM scratch</code>：为所有镜像的基础镜像。</li> <li><code>LABEL</code>指令用来给镜像以键值对的形式添加一些元数据（<code>metadata</code>）。其实就是一些标签，可以在<code>inspect</code>命令中看到。</li> <li>很多官方镜像都是基础包，很多功能没有，我们通常会自己搭建自己的镜像！</li> </ul> </blockquote> <h3 id="3dockerfile注意事项">（3）Dockerfile注意事项</h3> <ul> <li>每条保留字指令都必须为大写字母，且后面要跟随至少一个参数，即不能为空。</li> <li>指令按照从上到下，顺序执行。</li> <li>每条指令都会创建一个新的镜像层，并对镜像进行提交。</li> </ul> <h3 id="4docker执行dockerfile的大致流程">（4）Docker执行Dockerfile的大致流程</h3> <ol> <li>Docker从基础镜像运行一个容器。</li> <li>执行一条指令并对容器作出修改。</li> <li>执行类似<code>docker commit</code>的操作，来提交一个新的镇像层。</li> <li>Docker再基于刚提交的镜像运行一个新容器。</li> <li>执行Dockerfile中的下一条指令，依次循环上面步骤，直到所有指令都执行完成。</li> </ol> <h2 id="3总结">3、总结</h2> <p>从应用软件的角度来看，Dockerfile、Docker镜像与Docker容器分别代表软件的三个不同阶段，</p> <ol> <li>Dockerfile是软件的原材料。</li> <li>Docker镜像是软件的交付品。</li> <li>Docker容器则可以认为是软件的运行态。</li> </ol> <p>Dockerfile面向开发，Docker镜像成为交付标准，Docker容器则涉及部署与运维，三者缺一不可，合力充当Docker体系的基石。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7d7480b844b2f844e7c33244c5a7db7b.jpg" alt="Docker基础DockerFile文件详解"></p> <p><strong>说明：</strong></p> <ul> <li><code>Dockerfile</code>：Dockerfile定义了进程需要的一切东西。Dockerfile涉及的内容包括执行代码或者是文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程（当应用进程需要和系统服务和内核进程打交道，这时需要考虑如何设计<code>namespace</code>的权限控制）等等。</li> <li><code>Docker镜像</code>：通过定义好的Dockerfile文件，执行<code>docker build</code>命令，会生成一个Docker镜像，当运行Docker镜像时，会真正开始提供服务。</li> <li><code>Docker容器</code>：容器是直接提供服务。</li> </ul> <h2 id="4dockerfile保留字指令">4、DockerFile保留字指令</h2> <ul> <li><code>FROM</code>：基础镜像，当前新镜像是基于哪个镜像的。</li> <li><code>MAINTAINER</code>：镜像维护者的姓名和邮箱地址。</li> <li><code>RUN</code>：容器构建时需要运行的命令。</li> <li><code>EXPOSE</code>：当前容器对外暴露出的端口（端口映射）。</li> <li><code>WORKDIR</code>：指定在创建容器后，终端默认登陆进来的工作目录，一个落脚点，也就是<code>pwd</code>的位置。</li> <li><code>ENV</code>：用来在构建镜像过程中设置环境变量。 <pre><code class="language-dockerfile">ENV MY_PATH /usr/mytest  # 这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面，指定了环境变量前缀一样；也可以在其它指令中直接使用这些环境变量。 # 比如使用如下方式在DockerFile中使用： WORKDIR $MY_PATH</code></pre> </li> <li><code>ADD</code>：将宿主机目录下的文件拷贝进镜像（添加内容），且<code>ADD</code>命令会自动处理<code>URL</code>和解压<code>tar</code>压缩包。</li> <li><code>COPY</code>：类似<code>ADD</code>，拷贝文件和目录到镜像中。没有解压功能。<br /> 将从构建上下文目录中&lt;源路径&gt;的文件/目录，复制到新一层的镜像内的&lt;目标路径&gt;位置。<br /> 两种写法：</p> <ul> <li><code>COPY src dest</code></li> <li><code>COPY ["src", "dest"]</code></li> </ul> </li> <li><code>VOLUME</code>：容器数据卷，用于数据的保存和持久化工作。</li> <li><code>CMD</code>：指定一个容器启动时要运行的命令。<br /><code>CMD</code>指令的格式和RUN相似，也是两种格式：<br /><code>shell</code>格式：<code>CMD &lt;命令&gt;</code><br /><code>exec</code>格式：<code>CMD ["可执行文件"，"参数1"，"参数2"...]</code><br /> 参数列表格式：<code>CMD ["参数1"，"参数2"...]</code>，在指定了<code>ENTRVPOINT</code>指令后，用<code>CMD</code>指定具体的数。<br /><strong>重点提示：</strong>Dockerfile中可以有多个<code>CMD</code>指令，但只有最后一个生效，<code>CMD</code>也会被<code>docker run</code>之后的参数替换。</li> <li><code>ENTRYPOINT</code>：指定一个容器启动时要运行的命令。<br /><code>ENTRYPOINT</code>的目的和<code>CMD</code>一样，都是在指定容器启动程序及参数，<br /> 但是<code>ENTRYPOINT</code>不会被<code>docker run</code>之后的参数替换，会进行追加。</li> <li><code>ONBUILD</code>：当构建一个被继承的Dockerfile时运行命令，父镜像在被子继承后，父镜像的<code>onbuild</code>被触发（触发指令，类似一个触发器）</li> </ul> <p>DockerFile常用指令如下图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/23fa8031ccfd26bb6f69f65784e42ac5.jpg" alt="Docker基础DockerFile文件详解"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76851.htm">Web前端：JavaScript和Nodejs有什么不同?</a></p>
+                                        <p>下一个：<a href="/news/article-77549.htm">兽用疫苗保存的适宜温度是多少度以上（兽用疫苗常温下能放多久）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-68889.htm" title="深入理解mmap&#8211;内核代码分析及驱动demo示例">深入理解mmap&#8211;内核代码分析及驱动demo示例</a></li>
+                        <li class="py-2"><a href="/news/article-39435.htm" title="常用注解使用总结系列: @Order 注解">常用注解使用总结系列: @Order 注解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-node-share-links.htm" title="3月21日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址">3月21日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-clash-verge-rev-node-github.htm" title="3月12日 | Clash Verge每天更新19M/S免费节点订阅链接地址">3月12日 | Clash Verge每天更新19M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-49351.htm" title="饲料加盟免费代理鱼饲料 鱼饲料代理需要多少钱">饲料加盟免费代理鱼饲料 鱼饲料代理需要多少钱</a></li>
+                        <li class="py-2"><a href="/news/article-49865.htm" title="海贼王455（海贼王45-5）">海贼王455（海贼王45-5）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-25-clash-verge-rev-node-share.htm" title="2月25日 | Clash Verge每天更新19M/S免费节点订阅链接地址">2月25日 | Clash Verge每天更新19M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-44405.htm" title="史上最简便的可以直接用的登录验证码攻略（前后端都有）">史上最简便的可以直接用的登录验证码攻略（前后端都有）</a></li>
+                        <li class="py-2"><a href="/news/article-39952.htm" title="动物疫苗经营许可证怎么申请办理（动物疫苗经营许可证怎么申请办理手续）">动物疫苗经营许可证怎么申请办理（动物疫苗经营许可证怎么申请办理手续）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-node-share-links.htm" title="2月1日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">2月1日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
