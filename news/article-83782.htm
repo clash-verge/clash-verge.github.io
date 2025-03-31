@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-83782.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>【ASP.NET Core】自己编程来生成自签名的服务器证书</title>
+        <meta name="description" content="如果项目不大，或者是客户公司内部使用，或者不想花钱购买证书，又或者用于开发阶段测试……完全可以使用自签名证书。 所谓自签，就是自己给自己签名颁发的证书，自给自足，丰衣足食。 生成证书的方法和工具很多，" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-83782.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="【ASP.NET Core】自己编程来生成自签名的服务器证书" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/26ffd4feab7344bb2c5217dd2f09f0c3.webp" />
+        <meta property="og:release_date" content="2025-03-29T08:59:38" />
+    <meta property="og:updated_time" content="2025-03-29T08:59:38" />
+        <meta property="og:description" content="如果项目不大，或者是客户公司内部使用，或者不想花钱购买证书，又或者用于开发阶段测试……完全可以使用自签名证书。 所谓自签，就是自己给自己签名颁发的证书，自给自足，丰衣足食。 生成证书的方法和工具很多，" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【ASP.NET Core】自己编程来生成自签名的服务器证书">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>【ASP.NET Core】自己编程来生成自签名的服务器证书</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<p>如果项目不大，或者是客户公司内部使用，或者不想花钱购买证书，又或者用于开发阶段测试……完全可以使用自签名证书。</p> <p>所谓自签，就是自己给自己签名颁发的证书，自给自足，丰衣足食。</p> <p>生成证书的方法和工具很多，你可能会想到用以前 .NET Framework SDK工具，你可能想到用 OpenSSL 工具。但是，与其用工具，还不如直接调用 .NET 自身的 API ，在项目中直接创建证书来得方便。密钥随机即可，创建证书后写入到 .pfx 文件中。这样做也很方便，有利于程序搬家。</p> <p>好，鬼话不多说，咱们开始今天的表演。</p> <p>首先，写一个类，简单粗暴易用。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> CerMaker     {</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">async</span> Task CreateSslCertAsync(<span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)"> subName,                                        DateTime bgDate,                                        DateTime endDate,</span><span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)"> outFile,</span><span style="color: rgba(0, 0, 255, 1)">string</span>?<span style="color: rgba(0, 0, 0, 1)"> passWd)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 参数检查</span><span style="color: rgba(0, 0, 255, 1)">if</span>(subName<span style="color: rgba(0, 0, 255, 1)">is</span><span style="color: rgba(0, 0, 255, 1)">null</span> or { Length: &lt;<span style="color: rgba(128, 0, 128, 1)">3</span><span style="color: rgba(0, 0, 0, 1)"> })             {</span><span style="color: rgba(0, 0, 255, 1)">throw</span><span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> ArgumentNullException(nameof(subName));             }</span><span style="color: rgba(0, 0, 255, 1)">if</span>(endDate &lt;=<span style="color: rgba(0, 0, 0, 1)"> bgDate)             {</span><span style="color: rgba(0, 0, 255, 1)">throw</span><span style="color: rgba(0, 0, 255, 1)">new</span> ArgumentException(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">结束日期应大于开始日期</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);             }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 随机密钥</span>             RSA key = RSA.Create(<span style="color: rgba(128, 0, 128, 1)">1024</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 创建CRT</span>             CertificateRequest crt =<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)">(subName, key, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 创建自签名证书</span><span style="color: rgba(0, 0, 255, 1)">var</span> cert =<span style="color: rgba(0, 0, 0, 1)"> crt.CreateSelfSigned(bgDate, endDate);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 将证书写入文件</span><span style="color: rgba(0, 0, 255, 1)">byte</span>[] data =<span style="color: rgba(0, 0, 0, 1)"> cert.Export(X509ContentType.Pfx, passWd);</span><span style="color: rgba(0, 0, 255, 1)">await</span><span style="color: rgba(0, 0, 0, 1)"> File.WriteAllBytesAsync(outFile, data);         }     }</span></pre> </div> <p>一个类，一个静态方法，参数 subName 表示证书的标题文本，一般使用域名，比如 CN=xpxp.org、CN=www.sb.edu.cn 等。</p> <p>参数 bgDate 表示证书有效期的起始日期，一般咱们选生成证书当前时间；</p> <p>参数 endDate 表示证书有效期的终止日期，即过期时间；</p> <p>参数 outFile 表示 .pfx文件的保存路径，相对的绝对的都行，有写权限就行；</p> <p>参数 passWd 表示给.pfx文件加密的密码，可以随便定义。</p> <p>生成的过程如下：</p> <p>1、RSA.Create 方法创建密钥（包含公/私钥），内容是随机生成的，1024指密钥的长度为1024位，你也可以指定为4096位；</p> <p>2、创建一个&nbsp;CertificateRequest 实例：</p> <div class="cnblogs_code"> <pre>  CertificateRequest crt =<span style="color: rgba(0, 0, 255, 1)">new</span>(subName, key, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);</pre> </div> <p>第一个参数传的证书的标题，第二个参数是刚刚随机生成的密钥，第三个参数是哈希算法，此处选的是 SHA256 算法；第四个参数不用多想，就用 PKCS1 就行（这是块填充行为）。</p> <p>3、调用&nbsp;CreateSelfSigned 方法，就能创建证书了；</p> <p>4、调用证书的 Export 方法把其导出为 .pfx 格式的数据；</p> <p>5、把数据写入文件，收工。</p> <p>---------------------------------------------</p> <p>你看，多 Easy 的事，不用费心去找什么工具了，自己动一动手就成了。</p> <p>然后，在 ASP.NET Core 项目里，咱们先检查一下证书文件存不存在，如果不存在，自动生成一个。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 先创建自签名证书</span><span style="color: rgba(0, 0, 255, 1)">const</span><span style="color: rgba(0, 0, 255, 1)">string</span> CER_FILE =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">host.pfx</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">const</span><span style="color: rgba(0, 0, 255, 1)">string</span> PASSWD =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">dagongji</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">const</span><span style="color: rgba(0, 0, 255, 1)">string</span> SUB_NAME =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">CN=万年坑玩具厂.com.cn</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">; DateTime today</span>=<span style="color: rgba(0, 0, 0, 1)"> DateTime.Now; DateTime endday</span>= today.AddDays(<span style="color: rgba(128, 0, 128, 1)">365</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 0, 255, 1)">if</span>(!<span style="color: rgba(0, 0, 0, 1)">File.Exists(CER_FILE)) {</span><span style="color: rgba(0, 0, 255, 1)">await</span><span style="color: rgba(0, 0, 0, 1)"> CerMaker.CreateSslCertAsync(SUB_NAME, today, endday, CER_FILE, PASSWD); }</span></pre> </div> <p>一般来说，项目的证书并不需要换来换去，所以，咱们可以把生成证书的代码写到一个控制台应用项目中，生成一个命令行工具，自己留着用，只需要执行它生成证书文件，再放到 ASP.NET Core 项目的目录下就可以了。</p> <p>在 build 应用程序之前，配置一下 Kestrel 服务器，使用咱们自己生成的证书文件。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">var</span> builder =<span style="color: rgba(0, 0, 0, 1)"> WebApplication.CreateBuilder(args);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 配置证书</span> builder.WebHost.ConfigureKestrel(opt =&gt;<span style="color: rgba(0, 0, 0, 1)"> {     opt.ConfigureHttpsDefaults(cnncop</span>=&gt;<span style="color: rgba(0, 0, 0, 1)">     {<span style="background-color: rgba(255, 255, 0, 1)"><strong>cnncop.ServerCertificate</strong></span></span><span style="background-color: rgba(255, 255, 0, 1)"><strong>=<span style="color: rgba(0, 0, 255, 1)">new</span></strong></span><span style="color: rgba(0, 0, 0, 1)"><span style="background-color: rgba(255, 255, 0, 1)"><strong> X509Certificate2(CER_FILE, PASSWD);</strong></span>     }); });</span><span style="color: rgba(0, 0, 255, 1)">var</span> app = builder.Build();</pre> </div> <p>这是用于独立启动的 ASP.NET Core 应用程序（使用内置的 Kestrel 服务器）。如果你用的 IIS，那么证书是在IIS管理器中配置（IIS管理器有生成自签名证书的功能）；如果你用的是 nginx，也是在服务器的配置文件中配置证书，而不是在 ASP.NET Core 代码中。</p> <p>由于证书是自己签给自己的，不是从权威机构买的，所以，当浏览器访问时，会有不安全提示。只要你确认是你自己的证书，或者客户知道这是他们自家可用的证书就可以了。浏览器肯定不认识自签证书的。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4113148dd8ffa2def9cdc0d233f96c03.jpg" alt="【ASP.NET Core】自己编程来生成自签名的服务器证书"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/bcf6e4caf7d011bad2c5da8506aefc04.jpg" alt="【ASP.NET Core】自己编程来生成自签名的服务器证书"></p> <p>好了，今天这个好用的技巧就分享到这儿了。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83781.htm">BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序</a></p>
+                                        <p>下一个：<a href="/news/article-84512.htm">小猫养成大猫要多久（小猫养成大猫要多久才能长大）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-high-speed-nodes.htm" title="1月8日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">1月8日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-verge-rev-nodes.htm" title="3月27日 | Clash Verge每天更新23M/S免费节点订阅链接地址">3月27日 | Clash Verge每天更新23M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-today-clash-verge-rev-node.htm" title="1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址">1月11日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-clash-verge-rev-node.htm" title="3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67607.htm" title="使用aspnetcore前后端分离开发，你一定要知道这个">使用aspnetcore前后端分离开发，你一定要知道这个</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-high-speed-nodes.htm" title="1月25日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址">1月25日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66971.htm" title="孩子10几天后才说被猫咬了,打个狂犬疫苗能喝点小酒吗（打了狂犬疫苗六个月后又被猫抓伤了能茶喝吗?）">孩子10几天后才说被猫咬了,打个狂犬疫苗能喝点小酒吗（打了狂犬疫苗六个月后又被猫抓伤了能茶喝吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-64481.htm" title="通州区美联众合动物医院（美联众合动物医院京西分院）">通州区美联众合动物医院（美联众合动物医院京西分院）</a></li>
+                        <li class="py-2"><a href="/news/article-65719.htm" title="成都宠物领养公众号（成都宠物领养公众号有哪些）">成都宠物领养公众号（成都宠物领养公众号有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-74822.htm" title="动物疫苗有哪些品种卖的比较好（动物疫苗生产厂家排名）">动物疫苗有哪些品种卖的比较好（动物疫苗生产厂家排名）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

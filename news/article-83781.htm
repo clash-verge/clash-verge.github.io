@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-83781.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序</title>
+        <meta name="description" content="1、BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor都属于Spring的后置处理器，可以实" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-83781.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/5aae7a5ba8613462accfdd102d4117c4.webp" />
+        <meta property="og:release_date" content="2025-03-29T08:59:38" />
+    <meta property="og:updated_time" content="2025-03-29T08:59:38" />
+        <meta property="og:description" content="1、BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor都属于Spring的后置处理器，可以实" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1、BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor都属于Spring的后置处理器，可以实现它们以达到动态注册bean定义，动态修改bean定义，以及动态修改bean。</p> <p>2、BeanDefinitionRegistryPostProcessor继承接口BeanFactoryPostProcessor，该接口新增postProcessBeanDefinitionRegistry方法，方法参数是BeanDefinitionRegistry对象，BeanDefinitionRegistry对象是bean定义的保存中心。</p> <p>3、BeanFactoryPostProcessor是一个接口，它允许自定义修改应用程序上下文的bean定义，在基于bean factory上调整上下文的bean属性值。BeanFactoryPostProcessor可以与bean交互并修改bean定义，但从不使用bean实例。</p> <p>4、BeanPostProcessor也是一个接口，它允许动态修改应用程序上下文的bean，这时候bean已经实例化成功。</p> <p>5、三者执行顺序：BeanDefinitionRegistryPostProcessor优先于BeanFactoryPostProcessor执行，BeanFactoryPostProcessor优先于BeanPostProcessor执行。</p> <p>6、代码示例：</p> <p>BeanDefinitionRegistryPostProcessor实现类</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="361" src="http://img.555519.xyz/uploads/20230217/3735b7f0251d63ad716dd8f6792545f2.jpg"></p> <p>BeanFactoryPostProcessor实现类</p> <p><img decoding="async" alt="" class="has" height="261" src="http://img.555519.xyz/uploads/20230217/e06b8debd9616573d6c8c8010e9e7831.jpg"></p> <p>BeanPostProcessor实现类</p> <p><img decoding="async" alt="" class="has" height="490" src="http://img.555519.xyz/uploads/20230217/3ae0dcc66437d5015e853e440d7cc128.jpg"></p> <p>执行结果：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="228" src="http://img.555519.xyz/uploads/20230217/844adf4d7d06dbd8f5b76c7a7cabc4c1.jpg"></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="161" src="http://img.555519.xyz/uploads/20230217/89950aaaa47c8b2188cce6ac54863560.jpg"></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="157" src="http://img.555519.xyz/uploads/20230217/b56df9d32b8185011946345842b1577d.jpg"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83085.htm">纹绣美甲美睫培训学校哪家好（领绣集团纹绣培训学院）</a></p>
+                                        <p>下一个：<a href="/news/article-83782.htm">【ASP.NET Core】自己编程来生成自签名的服务器证书</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-clash-verge-rev-node.htm" title="3月22日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">3月22日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-node-share.htm" title="3月16日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址">3月16日 | Clash Verge每天更新21.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-74821.htm" title="设计模式(9) 观察者模式">设计模式(9) 观察者模式</a></li>
+                        <li class="py-2"><a href="/news/article-38459.htm" title="公务员2021国考报名人数统计 公务员2021国考报名人数统计表">公务员2021国考报名人数统计 公务员2021国考报名人数统计表</a></li>
+                        <li class="py-2"><a href="/news/article-39436.htm" title="动物医院主管部门是哪里 动物医院主管部门是哪里的">动物医院主管部门是哪里 动物医院主管部门是哪里的</a></li>
+                        <li class="py-2"><a href="/news/article-45399.htm" title="上海宠物医院地址电话大全（上海宠物医院知乎）">上海宠物医院地址电话大全（上海宠物医院知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-clash-verge-rev-github.htm" title="2月14日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址">2月14日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-76185.htm" title="JavaScript实现带有开始、暂停、复位的秒表">JavaScript实现带有开始、暂停、复位的秒表</a></li>
+                        <li class="py-2"><a href="/news/article-43408.htm" title="优雅处理API统一返回">优雅处理API统一返回</a></li>
+                        <li class="py-2"><a href="/news/article-37965.htm" title="附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）">附近美容院美容店在哪优诗美地宣州区（宣城优诗美地物业电话）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
