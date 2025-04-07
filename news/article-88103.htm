@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-88103.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pycharm中pyenv和virtualenv使用详解</title>
+        <meta name="description" content="Pycharm中pyenv和pyvenv使用详解  背景 python多版本控制工具的差异   1、概念理解 2、对应模块的部署以及使用(这里只介绍 virtualenv和pyenv的使用)   2." />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-88103.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="Pycharm中pyenv和virtualenv使用详解" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/be931e3529ae1f739a7fc08b4bc979fd.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:06:49" />
+    <meta property="og:updated_time" content="2025-04-04T09:06:49" />
+        <meta property="og:description" content="Pycharm中pyenv和pyvenv使用详解  背景 python多版本控制工具的差异   1、概念理解 2、对应模块的部署以及使用(这里只介绍 virtualenv和pyenv的使用)   2." />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Pycharm中pyenv和virtualenv使用详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>Pycharm中pyenv和virtualenv使用详解</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>Pycharm中pyenv和pyvenv使用详解</h3> <ul> <li><a href="#_2" rel="nofollow">背景</a></li> <li><a href="#python_6" rel="nofollow">python多版本控制工具的差异</a></li> <li> <ul> <li><a href="#1_11" rel="nofollow">1、概念理解</a></li> <li><a href="#2_virtualenvpyenv_21" rel="nofollow">2、对应模块的部署以及使用(这里只介绍 virtualenv和pyenv的使用)</a></li> <li> <ul> <li><a href="#21_virtualenv_23" rel="nofollow">2.1 virtualenv的安装和使用</a></li> <li><a href="#22_pyenvpyenvvirtualenv_51" rel="nofollow">2.2 pyenv和pyenv-virtualenv的使用(这里实在懒得写了,就用我日常的指令代替,大家自行理会)</a></li> </ul> </li> </ul> </li> </ul> </div> </h1> <p>由于有一次ELK的升级文档写了半天,却忘记保存,以为自动保存的,结果发现没有了,打击了积极心,很久不曾更新这个博客,但是最近开发一个项目,需要python的多环境,使用的技术pyenv和pyvenv,最初几个概念老是搞混,耽误了很多时间,网上各种博客也没有解释清楚(当然也有可能是自己理解有误),这里就把我的一些理解说出来,供大家参考下:</p> </h1> <p>这里介绍几个工具:pyenv、pyvenv、 venv、virtualenv、pyenv-virtualenv</p> <h2><a id="1_11" rel="nofollow"></a>1、概念理解</h2> <p><strong>virtualenv</strong>: 是针对python的包的多版本管理，通过将python包安装到一个模块来作为python的包虚拟环境，通过切换目录来实现不同包环境间的切换。其实不是非常爱捣腾的话,此工具就已经可以应付同python版本多环境问题了,安装使用也非常简单<br /><strong>virtualenvwrapper</strong>: 是一组对virtualenv的扩展（请参阅docs ）。 它给你的命令像mkvirtualenv ， lssitepackages ，特别是在不同的virtualenv目录之间切换的工作。 如果您想要多个virtualenv目录，此工具特别有用,由于我使用的pycharm来开发的,每个项目里面一个,所以这个对我来说没啥用</p> <p><strong>pyenv</strong>: 用于隔离Python版本,这样可以来系统中随意使用python版本,而不至于影响到线上环境<br /><strong>pyenv-virtualenv</strong>: pyenv-virtualenv是与pyenv相同的作者pyenv的插件，可以方便地同时使用pyenv和virtualenv,如果是用vim进行开发的话,那么这个非常的方便,但是由于我使用的是pycharm开发,所以这里我并没有使用.</p> <p><strong>pyvenv</strong>:是Python 3附带的脚本但是 在Python 3.6中弃用 因为它有问题（更不用说令人困惑的名字）。在Python 3.6+中，确切的等价物是 python3 -m venv<br /><strong>venv</strong>: 是Python 3附带的一个包，您可以使用它运行 python3 -m venv （虽然由于某种原因，一些发行版将它分成一个单独的发行版包，例如 python3-venv 在Ubuntu / Debian上）。它的用途与此类似 virtualenv，并以非常类似的方式工作，但它不需要复制Python二进制文件（除了在Windows上）。如果你不需要支持Python 2可以尝试.实际上我部分业务的部署是使用的这个模块</p> <h2><a id="2_virtualenvpyenv_21" rel="nofollow"></a>2、对应模块的部署以及使用(这里只介绍 virtualenv和pyenv的使用)</h2> <h3><a id="21_virtualenv_23" rel="nofollow"></a>2.1 virtualenv的安装和使用</h3> <ul> <li>安装 virtualenv:</li> </ul> <pre><code>pip install virtualenv</code></pre> <ul> <li>使用方法:</li> </ul> <pre><code>#创建 cd project_dir virtualenv venv virtualenv -p /usr/local/bin/python3 venv # 指定python版本  #激活虚拟环境(autoenv感兴趣的人可以试试,自动激活) cd venv source ./bin/activate  #退出虚拟环境 deactivate</code></pre> <ul> <li> <p>pycharm中的使用 (自带了这个模块,只用配置即可)<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/dac36ebd255bbdfcfeaa20b8e48e2447.jpg" alt="Pycharm中pyenv和virtualenv使用详解"></p> <p>我这里用pyenv管理python模块,所以解释器的路径如上图所示,大家可以根据自己的需要在Base interpreter:那栏里填上自己想要的python版本(相当于指令指定python版本),可以放心使用,不会影响到本身的python</p> </li> </ul> <h3><a id="22_pyenvpyenvvirtualenv_51" rel="nofollow"></a>2.2 pyenv和pyenv-virtualenv的使用(这里实在懒得写了,就用我日常的指令代替,大家自行理会)</h3> <pre><code>brew install pyenv brew intall pyenv-virtualenv echo -ne “ export PYENV_ROOT=/usr/local/var/pyenv if which pyenv &gt; /dev/null; then eval "$(pyenv init -)"; fi if which pyenv-virtualenv-init &gt; /dev/null; then eval "$(pyenv virtualenv-init -)"; fi “ &gt;&gt; ~/.zshrc brew link zlib --force #install CFLAGS="-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include" \ LDFLAGS="-L$(brew --prefix openssl)/lib" \ pyenv install -v 3.6.3 pyenv rehash # 卸载 $ pyenv uninstall 2.7.3 #常见错误 1、如果提示没有pip这个指令 pyenv shell 2.7.5 curl https://bootstrap.pypa.io/get-pip.py | python #pyenv常用指令 pyenv virtualenv 2.7.5 env275 pyenv virtualenv-delete env275 $ pyenv shell pypy-2.2.1 $ pyenv shell —unset $ pyenv activate env271 # 退回到系统环境 $ pyenv deactivate</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/0a0e2826d795784b3d955f130a0e6287.jpg" alt="Pycharm中pyenv和virtualenv使用详解"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87369.htm">宠物粮食品牌前十排名图片（宠物粮食品牌起名大全）</a></p>
+                                        <p>下一个：<a href="/news/article-88105.htm">宠物粮食加工厂设备生产厂家排名前十名 宠物粮食加工厂设备生产厂家排名前十名有哪些</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-clash-verge-rev-node.htm" title="3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-82368.htm" title="幼猫一定要跟人睡,不然就一直叫唤是为什么（小奶猫要和人睡）">幼猫一定要跟人睡,不然就一直叫唤是为什么（小奶猫要和人睡）</a></li>
+                        <li class="py-2"><a href="/news/article-83084.htm" title="人用针剂跟畜用针剂一样吗（兽用针和人用针的针同的吗?）">人用针剂跟畜用针剂一样吗（兽用针和人用针的针同的吗?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日 | Clash Verge每天更新21.1M/S免费节点订阅链接地址">3月20日 | Clash Verge每天更新21.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-84512.htm" title="小猫养成大猫要多久（小猫养成大猫要多久才能长大）">小猫养成大猫要多久（小猫养成大猫要多久才能长大）</a></li>
+                        <li class="py-2"><a href="/news/article-67608.htm" title="动物疫苗在哪里买的到正规的（动物疫苗在哪打）">动物疫苗在哪里买的到正规的（动物疫苗在哪打）</a></li>
+                        <li class="py-2"><a href="/news/article-76851.htm" title="Web前端：JavaScript和Nodejs有什么不同?">Web前端：JavaScript和Nodejs有什么不同?</a></li>
+                        <li class="py-2"><a href="/news/article-71494.htm" title="孕妇被猫抓流血了,会影响胎儿发育吗（孕妇被猫抓流血了,会影响胎儿发育吗视频）">孕妇被猫抓流血了,会影响胎儿发育吗（孕妇被猫抓流血了,会影响胎儿发育吗视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-node-share.htm" title="3月2日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址">3月2日 | Clash Verge每天更新18.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-today-clash-verge-rev-node.htm" title="3月30日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址">3月30日 | Clash Verge每天更新18.6M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

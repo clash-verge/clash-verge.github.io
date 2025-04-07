@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-90300.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>python——json，dict之间的转换load,dump, loads, dumps</title>
+        <meta name="description" content="json模块 JSON的介绍：  JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。 JSON是一个标记符的序列。这套标记符包含六个构造字" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-90300.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="python——json，dict之间的转换load,dump, loads, dumps" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/5da29760fc2bd6167d87cbeeb5aabacb.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:01:54" />
+    <meta property="og:updated_time" content="2025-04-07T09:01:54" />
+        <meta property="og:description" content="json模块 JSON的介绍：  JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。 JSON是一个标记符的序列。这套标记符包含六个构造字" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python——json，dict之间的转换load,dump, loads, dumps">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>python——json，dict之间的转换load,dump, loads, dumps</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h2> <a id="json_0" rel="nofollow"></a>json模块</h2> <p><strong>JSON的介绍：</strong></p> <ul> <li>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。</li> <li>JSON是一个标记符的序列。这套标记符包含六个构造字符、字符串、数字和三个字面名。</li> <li>六个构造字符：<strong>[ 左方括号</strong>，<strong>{ 左大括号</strong>， <strong>] 右方括号</strong>， <strong>} 右大括号</strong>，<strong>: 冒号</strong>， <strong>, 逗号</strong> </li> <li>三个字面名：<strong>false、null、true</strong> </li> <li>值：对象、数组、数字、字符串或者三个字面值(false、null、true)中的一个</li> <li>一些合法的JSON的实例（4个都是）：</li> </ul> <blockquote> <p>{“a”: 1, “b”: [1, 2, 3]}<br /> [1, 2, “3”, {“a”: 4}]<br /> 3.14<br /> “plain_text”</p> </blockquote> <p>在一些工作中，我们可能经常需要在python脚本中，导入文件中的json格式的数据，python提供了json模块用来操作</p> <p><strong>json.load(file)</strong><br /> 比如我们将一些配置信息以json的数据格式存入到文件中，当我们调用Python脚本时，需要读取这些配置信息，就可以用json.load(file)这个方法了<br /> config_value.json</p> <pre><code>{   "user": "Jason",   "pass": 123456,   "test_data": [10, 20] } </code></pre> <pre><code>import json  with open("config_value.json", "r") as file: 	dict_data = json.load(file) 	user = dict_data["user"] 	print(type(dict_data)) 	print(dict_data) 	print(user) </code></pre> <p>输出</p> <blockquote> <p>&lt;class ‘dict’&gt;<br /> {‘user’: ‘Jason’, ‘pass’: 123456, ‘test_data’: [10, 20]}<br /> Jason</p> </blockquote> <p>调用json.load(file)时，要注意几点：</p> <ul> <li>file不是直接用“config_value.json”文件，而是需要open后的内容，python识别为字符串，然后传入load中；</li> <li>这里不能用loads，区别在于，load处理读取文件中的字符串，loads直接是处理json格式的字符串</li> </ul> <p>json.load<br /> 载入json文件（字典类型）：读取json文件，将文件中的字符串转化为字典数据结构</p> <p>json.dump<br /> 写入到json文件中（字典类型）：将字典数据结构，写入到文件中</p> <p>json.loads<br /> 将json对象转换为Python对象：将字符串转换为字典</p> <p>json.dumps<br /> 将python对象转换为json对象：将字典转换为字符串</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/a96f3bde773a2e3ba901d5588a60504c.jpg" alt="python——json，dict之间的转换load,dump, loads, dumps"></p> <p>写入文件的时候，千万不要加二进制的b，否则就无法写入，我就是加了b，一直出现byte-like is required的报错。</p> <p>是否加s, 不加s是读取和写入，相当于r w, 加了s是数据类型的转换，字典与字符串之间的转换。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89554.htm">一个高频问题：异步操作会创建线程吗？</a></p>
+                                        <p>下一个：<a href="/news/article-90301.htm">送养协议怎么写才合法一点（送养协议怎么写才合法一点呢）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-66328.htm" title="办理动物疫苗销售需要哪些手续 办理动物疫苗销售需要哪些手续和证件">办理动物疫苗销售需要哪些手续 办理动物疫苗销售需要哪些手续和证件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-clash-verge-rev-nodes.htm" title="3月31日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址">3月31日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77550.htm" title="2020年青浦二中最低录取分数线是多少（2020年青浦二中最低录取分数线是多少分）">2020年青浦二中最低录取分数线是多少（2020年青浦二中最低录取分数线是多少分）</a></li>
+                        <li class="py-2"><a href="/news/article-88838.htm" title="动物疫苗上市企业有哪些股票代码（利好消息频传,这些动物疫苗股值得关注）">动物疫苗上市企业有哪些股票代码（利好消息频传,这些动物疫苗股值得关注）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-clash-verge-rev-node.htm" title="3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">3月5日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67608.htm" title="动物疫苗在哪里买的到正规的（动物疫苗在哪打）">动物疫苗在哪里买的到正规的（动物疫苗在哪打）</a></li>
+                        <li class="py-2"><a href="/news/article-87368.htm" title="畜牧兽医站能给猫打疫苗吗（畜牧兽医站能给猫打疫苗吗现在）">畜牧兽医站能给猫打疫苗吗（畜牧兽医站能给猫打疫苗吗现在）</a></li>
+                        <li class="py-2"><a href="/news/article-88837.htm" title="动物使用疫苗时应注意哪些事项 动物使用疫苗时应注意哪些事项呢">动物使用疫苗时应注意哪些事项 动物使用疫苗时应注意哪些事项呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-clash-verge-rev-node-github.htm" title="3月11日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址">3月11日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-75493.htm" title="宠物回收平台有声波探测仪 宠物回收app">宠物回收平台有声波探测仪 宠物回收app</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
