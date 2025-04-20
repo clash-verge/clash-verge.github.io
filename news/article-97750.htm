@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-97750.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>函数的返回值存储问题</title>
+        <meta name="description" content="我们往往将函数里面的某个变量作为函数的返回值，但是我们知道，函数内部定义的变量生命周期只存在于函数体内，出了这个函数生命周期就结束了，  将其作为返回值，难道不会出问题吗？ 如果不会出问题，那这个返回" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-97750.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="函数的返回值存储问题" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/cc8f88c3ac81be45a2ed9270900affca.webp" />
+        <meta property="og:release_date" content="2025-04-17T09:00:28" />
+    <meta property="og:updated_time" content="2025-04-17T09:00:28" />
+        <meta property="og:description" content="我们往往将函数里面的某个变量作为函数的返回值，但是我们知道，函数内部定义的变量生命周期只存在于函数体内，出了这个函数生命周期就结束了，  将其作为返回值，难道不会出问题吗？ 如果不会出问题，那这个返回" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="函数的返回值存储问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>函数的返回值存储问题</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>我们往往将函数里面的某个变量作为函数的返回值，但是我们知道，函数内部定义的变量生命周期只存在于函数体内，出了这个函数生命周期就结束了，</p> <ul> <li>将其作为返回值，难道不会出问题吗？</li> <li>如果不会出问题，那这个返回值存储在哪里呢？</li> <li>之所以不会出问题，是因为什么呢，难道被作为返回值的变量存储位置发生了变化？</li> <li>返回值的存储位置是固定的吗？</li> <li>能够存储多大容量的返回值？</li> </ul> <p>带着上面的疑问，我准备研究一下。</p> <p> 调用函数时，函数的返回值存放的位置具体在哪里呢？按照概念来说，函数的返回值应该放在被调用函数运行结束之后，主调函数可以有效访问的地方，也就是说，函数返回值应当存放在主调函数开辟的栈空间</p> <p>但是，计算机硬件的飞速发展使得CPU的通用寄存器字长在不断增长，个数也不断增多，因此在很多情况下，函数的返回值直接被存放在了CPU的通用寄存器中，而并非一定需要计算机的内存空间</p> <p>具体类型的返回值的存放位置如下所示：</p> <p>char（8bit）：寄存器a1<br /> short（16bit）：寄存器ax<br /> int（32bit）：寄存器eax<br /> double（64bit）：协处理器堆栈<br /> 指针、引用：寄存器eax<br /> 类的对象且体积超过64bit：主调函数会在函数栈上创建临时对象存放<br /> &nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96983.htm">动物疫苗需要冷藏吗多久（动物疫苗保质期多久）</a></p>
+                                        <p>下一个：<a href="/news/article-97752.htm">什么是JavaSpring框架?</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-clash-verge-rev-github.htm" title="3月25日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址">3月25日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-80991.htm" title="动物疫苗价格表图片大全大图及价格 动物疫苗价格表图片大全大图及价格查询">动物疫苗价格表图片大全大图及价格 动物疫苗价格表图片大全大图及价格查询</a></li>
+                        <li class="py-2"><a href="/news/article-80267.htm" title="动物医院好评模板范文怎么写（好的动物医院）">动物医院好评模板范文怎么写（好的动物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-74146.htm" title="[DEBUG] QAT Nginx for docker 部署时&#8221;&#8211;with-ld-opt&#8221;出错">[DEBUG] QAT Nginx for docker 部署时&#8221;&#8211;with-ld-opt&#8221;出错</a></li>
+                        <li class="py-2"><a href="/news/article-94794.htm" title="动物防疫站卖疫苗吗（动物防疫中心可以打疫苗吗）">动物防疫站卖疫苗吗（动物防疫中心可以打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/news/article-79601.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/news/article-80992.htm" title="附近动物诊所24小时电话（24小时动物医院电话）">附近动物诊所24小时电话（24小时动物医院电话）</a></li>
+                        <li class="py-2"><a href="/news/article-75493.htm" title="宠物回收平台有声波探测仪 宠物回收app">宠物回收平台有声波探测仪 宠物回收app</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-today-clash-verge-rev-node.htm" title="4月15日 | Clash Verge每天更新21.4M/S免费节点订阅链接地址">4月15日 | Clash Verge每天更新21.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-node-share-links.htm" title="3月21日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址">3月21日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
