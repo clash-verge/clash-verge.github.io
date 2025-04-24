@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-102146.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>HDFS Quotas Guide（HDFS配额指南）</title>
+        <meta name="description" content="Name Quota示例  Space Quota示例 目录  			   HDFS Quotas Guide官网链接2.9.2版本HDFS Quotas Guide官网链接2.7.1版本 简介：Ha" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-102146.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="HDFS Quotas Guide（HDFS配额指南）" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/c42820164d4da8fff9b4ab87d823eea7.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:42:39" />
+    <meta property="og:updated_time" content="2025-04-23T08:42:39" />
+        <meta property="og:description" content="Name Quota示例  Space Quota示例 目录  			   HDFS Quotas Guide官网链接2.9.2版本HDFS Quotas Guide官网链接2.7.1版本 简介：Ha" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HDFS Quotas Guide（HDFS配额指南）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>HDFS Quotas Guide（HDFS配额指南）</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> Name Quota示例</li> <li><i class="be be-arrowright"></i> Space Quota示例</li> </ul><span class="log-zd"><span class="log-close"><i class="be be-cross"></i><strong>目录</strong></span></span></div>  			</div> <div id="content_views" class="htmledit_views"> <article class="_2rhmJa" style="font-size: 16px;" rel="nofollow"> <p>HDFS Quotas Guide官网链接2.9.2版本<br />HDFS Quotas Guide官网链接2.7.1版本</p> <p>简介：Hadoop提供两种配额（quota）模式，name quota和space quota。name quota限制路径的文件（含文件夹）数目，space quota限制的”磁盘”占用空间。可以通过此功能实现团队的存储使用管理。</p> </h1> <ul> <li>Set the name quota to be N for each directory. Best effort for each directory, with faults reported if N is not a positive long integer, the directory does not exist or it is a file, or the directory would immediately exceed the new quota.<br /><code>$ hadoop dfsadmin -setQuota &lt;max_number&gt; &lt;directory&gt;</code> </li> <li>Remove any name quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -setSpaceQuota &lt;max_size&gt; &lt;directory&gt;</code> </li> <li>Remove any name quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -clrQuota &lt;directory&gt;</code> </li> <li>Remove any space quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -clrSpaceQuota &lt;directory&gt;</code> </li> </ul> <span class="directory"></span><h4 id="title-0">Name Quota示例</h4> <p>首先测试name quota，进行如下操作：</p> <ul> <li>准备hdfs路径，设置name quota，文件数量限制为5</li> </ul> <pre class="has"><code class="shell">$hdfs dfs -mkdir /name_quota $hdfs dfsadmin -setQuota 5 /name_quota</code></pre> <pre class="has"><code>$touch 1 $hdfs dfs -copyFromLocal 1 /name_quota/1 $hdfs dfs -copyFromLocal 1 /name_quota/2 $hdfs dfs -copyFromLocal 1 /name_quota/3 $hdfs dfs -copyFromLocal 1 /name_quota/4 $hdfs dfs -copyFromLocal 1 /name_quota/5 copyFromLocal: The NameSpace quota (directories and files) of directory /name_quota is exceeded: quota=5 file count=6</code></pre> <p>创建一个临时文件“1“，并将它复制到指定hdfs路径下，发现，当复制到第5个时失败，提示显示达到quota限制，说明quota生效，同时，我们设置quota_max_num为5，但只放了4个文件就满了，说明这个数字限制是包含文件夹的。<br /> 实际上是可以理解的，在HDFS中，无论文件和文件夹的基本抽象是一样的，占用基本同样的元数据信息，name quota实际上是元数据信息的配额。</p> <span class="directory"></span><h4 id="title-1">Space Quota示例</h4> <ul> <li>创建测试路径并设置space quota</li> </ul> <pre class="has"><code class="shell">$hdfs dfs -mkdir /space_quota $hdfs dfsadmin -setSpaceQUota 50m /space_quota</code></pre> <pre class="has"><code class="shell">$mkfile 10m 10m $hdfs dfs -copyFromLocal 10m /space_quota/10m_1</code></pre> <p>利用mkfile命令创建一个大小10m的文件（我用的是Mac，Linux系统使用dd命令创建指定大小文件），预期是在这个hdfs路径下可以存放5个10m的文件，第六个会超出，但实际情况是，第一个就失败了，报错如下：<br /><code>Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.protocol.DSQuotaExceededException): The DiskSpace quota of /space_quota is exceeded: quota = 52428800 B = 50 MB but diskspace consumed = 134217728 B = 128 MB</code><br /> 看提示就理解，因为HDFS是以block为单位进行实际存储的，对于一个10m的文件，仍然会打成一个block存储，我的HDFS block size是128m，所以space quota配置50m，一个block也放不下，自然失败，因此进行一下改动，重新设置：</p> <pre class="has"><code class="shell">$hdfs dfsadmin -setSpaceQUota 1024m /space_quota $mkfile 128m 128m $ hdfs dfs -copyFromLocal 128m /space_quota/128m_1 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_2 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_3 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_4 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_5 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_6 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_7 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_8 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_9</code></pre> <p>1024m的配额，可以放8个128m文件，在放第九个时，报错，核心信息如下：</p> <p><code>18/05/18 16:13:01 WARN hdfs.DFSClient: DataStreamer Exception org.apache.hadoop.hdfs.protocol.DSQuotaExceededException: The DiskSpace quota of /space_quota is exceeded: quota = 1073741824 B = 1 GB but diskspace consumed = 1207959552 B = 1.13 GB</code><br /> 符合预期，成功限制了规定路径下的存储空间配额。</p> <p>另外，经过测试（示例不详述），name quota和space quota可以同时作用于同一路径。</p> </article> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102145.htm">c++堆内存默认大小_线上内存暴涨问题定位和解决</a></p>
+                                        <p>下一个：<a href="/news/article-102944.htm">springboot集成elasticsearch注意事项</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-98457.htm" title="0基础学MySQL数据库—从小白到大牛（1）初识数据库">0基础学MySQL数据库—从小白到大牛（1）初识数据库</a></li>
+                        <li class="py-2"><a href="/news/article-81632.htm" title="VUE中前端mock假数据的办法">VUE中前端mock假数据的办法</a></li>
+                        <li class="py-2"><a href="/news/article-78912.htm" title="妙三多是几联疫苗（妙三多是三联吗）">妙三多是几联疫苗（妙三多是三联吗）</a></li>
+                        <li class="py-2"><a href="/news/article-93274.htm" title="宠物食品加工厂要投资多少钱 宠物食品加工厂要投资多少钱呢">宠物食品加工厂要投资多少钱 宠物食品加工厂要投资多少钱呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-node-share.htm" title="4月2日 | Clash Verge每天更新21M/S免费节点订阅链接地址">4月2日 | Clash Verge每天更新21M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-80992.htm" title="附近动物诊所24小时电话（24小时动物医院电话）">附近动物诊所24小时电话（24小时动物医院电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-today-clash-verge-rev-node.htm" title="3月10日 | Clash Verge每天更新23M/S免费节点订阅链接地址">3月10日 | Clash Verge每天更新23M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-clash-verge-rev-node-github.htm" title="3月12日 | Clash Verge每天更新19M/S免费节点订阅链接地址">3月12日 | Clash Verge每天更新19M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-99209.htm" title="2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）">2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-node-share-links.htm" title="4月20日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址">4月20日 | Clash Verge每天更新22.6M/S免费节点订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

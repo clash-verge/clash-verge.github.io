@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clash-verge.github.io/news/article-102145.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>c++堆内存默认大小_线上内存暴涨问题定位和解决</title>
+        <meta name="description" content="前因： 因为REST规范，定义资源获取接口使用GET请求，参数拼接在url上。 如果按上述定义，当参数过长，超过tomcat默认配置 max-http-header-size ：8kb 会报一下错误信" />
+        <link rel="icon" href="/assets/website/img/clash_verge/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clash-verge.github.io/news/article-102145.htm" />
+    <meta property="og:site_name" content="Clash Verge免费节点分享站" />
+    <meta property="og:title" content="c++堆内存默认大小_线上内存暴涨问题定位和解决" />
+    <meta property="og:image" content="https://clash-verge.github.io/uploads/20240802-1/9c5f0b78125b32a63611b6c1b5e3574c.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:42:38" />
+    <meta property="og:updated_time" content="2025-04-23T08:42:38" />
+        <meta property="og:description" content="前因： 因为REST规范，定义资源获取接口使用GET请求，参数拼接在url上。 如果按上述定义，当参数过长，超过tomcat默认配置 max-http-header-size ：8kb 会报一下错误信" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="c++堆内存默认大小_线上内存暴涨问题定位和解决">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clash_verge/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clash_verge/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMXY0BFY8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMXY0BFY8K');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+                        <a href="/"><span class="logo">Clash Verge</span></a>
+                        
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>c++堆内存默认大小_线上内存暴涨问题定位和解决</h1>
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= About Video Section ======= -->
+        <section id="about-video" class="about-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Verge Rev节点订阅站" data-url="https://clashvergerev.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p><strong>前因：</strong></p> <p>因为REST规范，定义资源获取接口使用GET请求，参数拼接在url上。</p> <p>如果按上述定义，当参数过长，超过tomcat默认配置 max-http-header-size ：8kb</p> <p>会报一下错误信息：</p> <p>Request header is too large</p> <p>可以修改springboot配置，调整请求头大小</p> <pre class="has"><code>server:     max-http-header-size: xxx  复制代码</code></pre> <p><strong>后果：</strong></p> <p>**如果max-http-header-size设置过大，会导致接口吞吐下降，jvm <strong>oom</strong>，内存泄漏。<br />**</p> <p>因为tomcat 会用HeapByteBuffer 预分配请求头内存大小，在堆上分配。</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/c289779e914a6609e4d9a1b1cb354aa1.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>请求和响应都是一样的配置，每次请求处理预先分配，2倍配置值内存大小在 jvm 堆中</p> <p>请求过多，导致线上内存暴涨，老年代有3GB多。使用jmap dump线上内存数据，使用 JProfiler 分析。</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/65bda0aa64460658efd792986d186621.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/c70723c97272afb1bf717fbe632940f9.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>符合配置大小和源码对象</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/833889e9111a90e182c95dea14af016e.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>数组有3GB，和老年代和eden区总和大小相近。</p> <p>-XX:PretenureSizeThreshold jvm参数用来设置默认值，当<strong>数组</strong>或对象大小超过这个设定值，直接在 Old Gen 老年代分配；默认值0，当超过eden区的大小的时候，直接分配到old区。</p> <p>使用 java -XX:+PrintCommandLineFlags -version</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/f37f14b46a0f74d691eba55660927b69.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>发现并没有使用-XX:PretenureSizeThreshold参数，所以是</p> <p>max-http-header-size设置过大，eden区分配不够，直接分配到old区，堆区内存不够，自动扩容，导致old区数据越来越多，频繁触发FullGC。</p> <p>JVM初始分配的内存由-Xms指定，默认是物理内存的1/64；JVM最大分配的内存由-Xmx指定，默认是物理内存的1/4。默认空余堆内存小 于40%时，JVM就会增大堆直到-Xmx的最大限制；空余堆内存大于70%时，JVM会减少堆直到-Xms的最小限制。因此服务器一般设置-Xms、 -Xmx相等以避免在每次GC后调整堆的大小。</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/33377e8ff9ea9aed12fe8a78cb155653.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/16c990ec856ee20877731496133babac.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/53e0d2c4933e307386e84eb9a2bd2272.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>其中http-nio-9005-exec-线程有146个，和前面配置需要分配的20M内存请求，相乘的数据与3000MB相近。</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/a1f134e1aa69e9b14a16c2e89bae5517.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>tomcat任务线程池 最大线程数200，存活时间60s</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20230108/bd55836da88b06320fd3d482cc41ef53.jpg" alt="c++堆内存默认大小_线上内存暴涨问题定位和解决"> </div> <p>因为TaskQueue 重写了offer方法，在线程池大小小于最大线程数时，任务不会放入任务队列，只会交给现有线程执行；存活时间60s，只有当线程空闲60s才会被回收，也就是**60秒内请求要小于当前线程数，**才会有空闲线程。这就导致了线程不能及时被回收。请求数下降，但是内存还是居高不下。</p> <p><strong>解决方案：</strong></p> <p>max-http-header-size修改为默认值，接口请求方式修改为POST，请求参数放置于body</p> </div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101375.htm">动物医院实践心得2500字怎么写的啊（动物医院实训总结）</a></p>
+                                        <p>下一个：<a href="/news/article-102146.htm">HDFS Quotas Guide（HDFS配额指南）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72824.htm" title="宠物店一只狗要多少钱 宠物店一只狗要多少钱人民币">宠物店一只狗要多少钱 宠物店一只狗要多少钱人民币</a></li>
+                        <li class="py-2"><a href="/news/article-67607.htm" title="使用aspnetcore前后端分离开发，你一定要知道这个">使用aspnetcore前后端分离开发，你一定要知道这个</a></li>
+                        <li class="py-2"><a href="/news/article-83781.htm" title="BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序">BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor以及BeanPostProcessor执行先后顺序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-clash-verge-rev-node.htm" title="3月22日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址">3月22日 | Clash Verge每天更新22.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-88838.htm" title="动物疫苗上市企业有哪些股票代码（利好消息频传,这些动物疫苗股值得关注）">动物疫苗上市企业有哪些股票代码（利好消息频传,这些动物疫苗股值得关注）</a></li>
+                        <li class="py-2"><a href="/news/article-97750.htm" title="函数的返回值存储问题">函数的返回值存储问题</a></li>
+                        <li class="py-2"><a href="/news/article-93909.htm" title="动物疫苗证在哪里办的呀（动物疫苗经营许可证在哪里办）">动物疫苗证在哪里办的呀（动物疫苗经营许可证在哪里办）</a></li>
+                        <li class="py-2"><a href="/news/article-89554.htm" title="一个高频问题：异步操作会创建线程吗？">一个高频问题：异步操作会创建线程吗？</a></li>
+                        <li class="py-2"><a href="/news/article-99209.htm" title="2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）">2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-81633.htm" title="宠物猫咪驱虫多少钱一针（猫猫驱虫价格）">宠物猫咪驱虫多少钱一针（猫猫驱虫价格）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Video Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">Clash Verge免费节点分享站</a> 版权所有 Powered by WordPress
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clash_verge/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/clash_verge/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clash_verge/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
