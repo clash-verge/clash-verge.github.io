@@ -1,4 +1,4 @@
-# 10月13日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址  更新时间 2025-10-13 05:15:28
+# 10月19日 | Clash Verge每天更新18.5M/S免费节点订阅链接地址  更新时间 2025-10-19 08:23:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clash-verge.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/10/0-20251013.yaml
-- https://clash-verge.github.io/uploads/2025/10/1-20251013.yaml
-- https://clash-verge.github.io/uploads/2025/10/2-20251013.yaml
-- https://clash-verge.github.io/uploads/2025/10/3-20251013.yaml
-- https://clash-verge.github.io/uploads/2025/10/4-20251013.yaml
+- https://clash-verge.github.io/uploads/2025/10/0-20251019.yaml
+- https://clash-verge.github.io/uploads/2025/10/1-20251019.yaml
+- https://clash-verge.github.io/uploads/2025/10/2-20251019.yaml
+- https://clash-verge.github.io/uploads/2025/10/3-20251019.yaml
+- https://clash-verge.github.io/uploads/2025/10/4-20251019.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/10/0-20251013.txt
-- https://clash-verge.github.io/uploads/2025/10/1-20251013.txt
-- https://clash-verge.github.io/uploads/2025/10/2-20251013.txt
-- https://clash-verge.github.io/uploads/2025/10/3-20251013.txt
-- https://clash-verge.github.io/uploads/2025/10/4-20251013.txt
+- https://clash-verge.github.io/uploads/2025/10/0-20251019.txt
+- https://clash-verge.github.io/uploads/2025/10/1-20251019.txt
+- https://clash-verge.github.io/uploads/2025/10/2-20251019.txt
+- https://clash-verge.github.io/uploads/2025/10/3-20251019.txt
+- https://clash-verge.github.io/uploads/2025/10/4-20251019.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/10/20251013.json
+- https://clash-verge.github.io/uploads/2025/10/20251019.json
 
 ## 更多Clash节点订阅 ：
 
