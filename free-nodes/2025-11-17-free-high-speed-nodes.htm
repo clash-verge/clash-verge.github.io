@@ -126,32 +126,13 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2025-11-15-today-clash-verge-rev-node.htm">11月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址</a></p>
+        <p>下一个：<a href="/free-nodes/2025-11-18-clash-verge-rev-github.htm">11月18日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
     <div class="panel-body">
-        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
-    <div class="panel-body">
-        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Android 手机上使用 Clash for Android？</h5></div>
-    <div class="panel-body">
-        Clash for Android 是专为移动设备开发的客户端，安装后导入订阅链接即可使用。用户可设置代理模式（全局、规则、自定义）并查看实时流量信息。它的电量消耗较低，适合长期后台运行。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Vmess 是什么协议？</h5></div>
-    <div class="panel-body">
-        Vmess 是 V2Ray 的核心传输协议之一，提供高效的加密通信。它在客户端与服务器之间建立安全通道，支持多种传输方式，如 TCP、WebSocket 和 gRPC 等。由于其加密特性，Vmess 常用于绕过网络限制与防火墙检测。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
-    <div class="panel-body">
-        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
+        XTLS 降低加密开销，减少握手次数，适合高延迟或不稳定的移动网络。结合策略组和多出口节点，可提升访问速度和连接稳定性，确保用户体验流畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以与其他代理客户端共存吗？</h5></div>
@@ -159,9 +140,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         可以。Nekobox 与 Shadowsocks、Clash 等客户端互不干扰，可以同时运行。用户可通过策略组或分流规则选择使用节点，实现灵活的网络管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何管理多协议节点？</h5></div>
+    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
     <div class="panel-body">
-        Nekobox 可同时管理 Shadowsocks、VMess、Trojan 等多协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
+        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
@@ -169,14 +155,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
+    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
     <div class="panel-body">
-        XTLS 降低加密开销，减少握手次数，适合高延迟或不稳定的移动网络。结合策略组和多出口节点，可提升访问速度和连接稳定性，确保用户体验流畅。<hr />    </div>
+        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 如何管理多协议节点？</h5></div>
     <div class="panel-body">
-        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。    </div>
+        Nekobox 可同时管理 Shadowsocks、VMess、Trojan 等多协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
+    <div class="panel-body">
+        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Vmess 是什么协议？</h5></div>
+    <div class="panel-body">
+        Vmess 是 V2Ray 的核心传输协议之一，提供高效的加密通信。它在客户端与服务器之间建立安全通道，支持多种传输方式，如 TCP、WebSocket 和 gRPC 等。由于其加密特性，Vmess 常用于绕过网络限制与防火墙检测。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Android 手机上使用 Clash for Android？</h5></div>
+    <div class="panel-body">
+        Clash for Android 是专为移动设备开发的客户端，安装后导入订阅链接即可使用。用户可设置代理模式（全局、规则、自定义）并查看实时流量信息。它的电量消耗较低，适合长期后台运行。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -205,16 +206,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-clash-verge-rev-nodes.htm" title="10月11日 | Clash Verge每天更新19.2M/S免费节点订阅链接地址">10月11日 | Clash Verge每天更新19.2M/S免费节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-5-clash-verge-rev-node-share.htm" title="10月5日 | Clash Verge每天更新21.6M/S免费节点订阅链接地址">10月5日 | Clash Verge每天更新21.6M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-16-clash-verge-rev-node-share.htm" title="10月16日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址">10月16日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-today-clash-verge-rev-node.htm" title="11月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址">11月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-clash-verge-rev-node.htm" title="11月14日 | Clash Verge每天更新19.9M/S免费节点订阅链接地址">11月14日 | Clash Verge每天更新19.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-3-clash-verge-rev-nodes.htm" title="10月3日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址">10月3日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-2-node-share.htm" title="11月2日 | Clash Verge每天更新22.9M/S免费节点订阅链接地址">11月2日 | Clash Verge每天更新22.9M/S免费节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-8-today-clash-verge-rev-node.htm" title="11月8日 | Clash Verge每天更新22.7M/S免费节点订阅链接地址">11月8日 | Clash Verge每天更新22.7M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-10-node-share-links.htm" title="11月10日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址">11月10日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-9-free-subscribe-node.htm" title="10月9日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址">10月9日 | Clash Verge每天更新18.9M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-today-clash-verge-rev-node.htm" title="11月1日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址">11月1日 | Clash Verge每天更新22.4M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-clash-verge-rev-node-github.htm" title="10月31日 | Clash Verge每天更新18M/S免费节点订阅链接地址">10月31日 | Clash Verge每天更新18M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-subscribe-node.htm" title="11月12日 | Clash Verge每天更新20.6M/S免费节点订阅链接地址">11月12日 | Clash Verge每天更新20.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-15-clash-verge-rev-node-share.htm" title="10月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址">10月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-clash-verge-rev-node-share.htm" title="11月6日 | Clash Verge每天更新20M/S免费节点订阅链接地址">11月6日 | Clash Verge每天更新20M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-clash-verge-rev-node.htm" title="11月11日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">11月11日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-19-clash-verge-rev-node-share.htm" title="10月19日 | Clash Verge每天更新18.7M/S免费节点订阅链接地址">10月19日 | Clash Verge每天更新18.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-27-today-clash-verge-rev-node.htm" title="10月27日 | Clash Verge每天更新22.3M/S免费节点订阅链接地址">10月27日 | Clash Verge每天更新22.3M/S免费节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -226,7 +227,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>

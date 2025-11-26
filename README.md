@@ -1,4 +1,4 @@
-# 11月17日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址  更新时间 2025-11-17 19:35:38
+# 11月26日 | Clash Verge每天更新22.2M/S免费节点订阅链接地址  更新时间 2025-11-26 08:23:32
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clash-verge.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/11/0-20251117.yaml
-- https://clash-verge.github.io/uploads/2025/11/1-20251117.yaml
-- https://clash-verge.github.io/uploads/2025/11/2-20251117.yaml
-- https://clash-verge.github.io/uploads/2025/11/3-20251117.yaml
-- https://clash-verge.github.io/uploads/2025/11/4-20251117.yaml
+- https://clash-verge.github.io/uploads/2025/11/0-20251126.yaml
+- https://clash-verge.github.io/uploads/2025/11/1-20251126.yaml
+- https://clash-verge.github.io/uploads/2025/11/2-20251126.yaml
+- https://clash-verge.github.io/uploads/2025/11/3-20251126.yaml
+- https://clash-verge.github.io/uploads/2025/11/4-20251126.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/11/0-20251117.txt
-- https://clash-verge.github.io/uploads/2025/11/1-20251117.txt
-- https://clash-verge.github.io/uploads/2025/11/2-20251117.txt
-- https://clash-verge.github.io/uploads/2025/11/3-20251117.txt
-- https://clash-verge.github.io/uploads/2025/11/4-20251117.txt
+- https://clash-verge.github.io/uploads/2025/11/0-20251126.txt
+- https://clash-verge.github.io/uploads/2025/11/1-20251126.txt
+- https://clash-verge.github.io/uploads/2025/11/2-20251126.txt
+- https://clash-verge.github.io/uploads/2025/11/3-20251126.txt
+- https://clash-verge.github.io/uploads/2025/11/4-20251126.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clash-verge.github.io/uploads/2025/11/20251117.json
+- https://clash-verge.github.io/uploads/2025/11/20251126.json
 
 ## 更多Clash节点订阅 ：
 
