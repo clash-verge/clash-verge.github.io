@@ -213,14 +213,34 @@ A4: 更新Clash时，您需要重新下载最新版本并重复汉化步骤。�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan TLS 伪装如何降低被封锁风险？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 节点延迟排序如何提升访问体验？</h5></div>
     <div class="panel-body">
-        通过选择真实可访问的域名并安装有效证书，Trojan 流量可完全模拟 HTTPS 请求。这样可隐藏流量特征，降低被封锁和 DPI 检测的可能性，保证节点长期可用。<hr />    </div>
+        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
+    <div class="panel-body">
+        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何优化视频播放？</h5></div>
+    <div class="panel-body">
+        通过分流规则，将流媒体域名匹配到高速节点，而其他流量走备用节点。保证视频播放流畅，同时节约带宽资源，提升整体网络速度和体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用如何提升短连接性能？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan TLS 伪装如何降低被封锁风险？</h5></div>
+    <div class="panel-body">
+        通过选择真实可访问的域名并安装有效证书，Trojan 流量可完全模拟 HTTPS 请求。这样可隐藏流量特征，降低被封锁和 DPI 检测的可能性，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 使用 AEAD 加密对安全性有何帮助？</h5></div>
@@ -233,29 +253,9 @@ A4: 更新Clash时，您需要重新下载最新版本并重复汉化步骤。�
         Mihomo 的日志默认关闭以节省性能。若需调试，可在配置文件中启用 `log-level: debug` 参数，日志将输出详细连接信息与错误提示，便于排查问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何优化视频播放？</h5></div>
-    <div class="panel-body">
-        通过分流规则，将流媒体域名匹配到高速节点，而其他流量走备用节点。保证视频播放流畅，同时节约带宽资源，提升整体网络速度和体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
     <div class="panel-body">
         启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 节点延迟排序如何提升访问体验？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
-    <div class="panel-body">
-        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 的订阅更新支持自动导入节点吗？</h5></div>
@@ -289,16 +289,16 @@ A4: 更新Clash时，您需要重新下载最新版本并重复汉化步骤。�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-12-5-free-node-subscribe.htm" title="12月5日 | Clash Verge每天更新19M/S免费节点订阅链接地址">12月5日 | Clash Verge每天更新19M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-10-clash-verge-rev-nodes.htm" title="12月10日 | Clash Verge每天更新20M/S免费节点订阅链接地址">12月10日 | Clash Verge每天更新20M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-clash-verge-rev-node-share.htm" title="11月6日 | Clash Verge每天更新20M/S免费节点订阅链接地址">11月6日 | Clash Verge每天更新20M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-clash-verge-rev-node-share.htm" title="11月22日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">11月22日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-18-clash-verge-rev-github.htm" title="11月18日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">11月18日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-2-free-node-subscribe.htm" title="12月2日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址">12月2日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-14-free-node-subscribe.htm" title="12月14日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址">12月14日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-13-free-node-subscribe.htm" title="12月13日 | Clash Verge每天更新20.2M/S免费节点订阅链接地址">12月13日 | Clash Verge每天更新20.2M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-4-free-node-subscribe.htm" title="12月4日 | Clash Verge每天更新18M/S免费节点订阅链接地址">12月4日 | Clash Verge每天更新18M/S免费节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-12-15-clash-verge-rev-node-github.htm" title="12月15日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址">12月15日 | Clash Verge每天更新22.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-free-node-subscribe-links.htm" title="11月9日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址">11月9日 | Clash Verge每天更新20.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-10-clash-verge-rev-nodes.htm" title="12月10日 | Clash Verge每天更新20M/S免费节点订阅链接地址">12月10日 | Clash Verge每天更新20M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-21-today-clash-verge-rev-node.htm" title="11月21日 | Clash Verge每天更新19.2M/S免费节点订阅链接地址">11月21日 | Clash Verge每天更新19.2M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-clash-verge-rev-nodes.htm" title="11月30日 | Clash Verge每天更新20.8M/S免费节点订阅链接地址">11月30日 | Clash Verge每天更新20.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-free-node-subscribe.htm" title="12月4日 | Clash Verge每天更新18M/S免费节点订阅链接地址">12月4日 | Clash Verge每天更新18M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-25-free-node-subscribe.htm" title="12月25日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址">12月25日 | Clash Verge每天更新20.3M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-20-free-node-subscribe.htm" title="12月20日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址">12月20日 | Clash Verge每天更新19.6M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-free-node-subscribe.htm" title="12月2日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址">12月2日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-today-clash-verge-rev-node.htm" title="11月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址">11月15日 | Clash Verge每天更新19.7M/S免费节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -310,7 +310,7 @@ A4: 更新Clash时，您需要重新下载最新版本并重复汉化步骤。�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
