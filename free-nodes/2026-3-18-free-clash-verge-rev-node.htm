@@ -275,24 +275,14 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
     <div class="panel-body">
-        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
+        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
-        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Rule Provider 功能有哪些好处？</h5></div>
-    <div class="panel-body">
-        Rule Provider 可通过远程订阅自动更新规则和节点，减少手动维护。结合策略组，可实现分流规则和节点的自动同步，保证分流效率和网络可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
-    <div class="panel-body">
-        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
+        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
@@ -300,14 +290,29 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，提升吞吐量和连接稳定性，优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 可以结合规则实现广告屏蔽吗？</h5></div>
+    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
     <div class="panel-body">
-        可以。Surfboard 支持通过规则文件匹配广告域名或 URL，将其阻断或重定向。结合策略组定期更新规则，可以实现自动广告屏蔽，提升网页浏览体验并节省带宽。<hr />    </div>
+        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
+    <div class="panel-body">
+        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Rule Provider 功能有哪些好处？</h5></div>
+    <div class="panel-body">
+        Rule Provider 可通过远程订阅自动更新规则和节点，减少手动维护。结合策略组，可实现分流规则和节点的自动同步，保证分流效率和网络可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 使用透明代理时如何避免 DNS 泄露？</h5></div>
     <div class="panel-body">
         在 Mellow 中启用 fake-ip 或内置 DNS 解析功能，并将上游 DNS 指定为 DoH/DoT 服务，确保所有 DNS 请求通过代理转发而非本地解析，从而避免 ISP 或本地网络捕获实际访问域名。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
+    <div class="panel-body">
+        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的延迟检测如何帮助节点选择？</h5></div>
@@ -317,12 +322,7 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 节点测速结合策略组的作用？</h5></div>
     <div class="panel-body">
-        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页、视频和游戏流量走低延迟节点，提高访问速度和连接稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
-    <div class="panel-body">
-        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。    </div>
+        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页、视频和游戏流量走低延迟节点，提高访问速度和连接稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -351,16 +351,16 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-23-free-high-speed-nodes.htm" title="3月23日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址">3月23日 | Clash Verge每天更新21.7M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-11-free-node-subscribe.htm" title="3月11日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址">3月11日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-2-free-subscribe-node.htm" title="3月2日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址">3月2日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-15-node-share-links.htm" title="1月15日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址">1月15日 | Clash Verge每天更新20.9M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-25-node-share-links.htm" title="2月25日 | Clash Verge每天更新19.5M/S免费节点订阅链接地址">2月25日 | Clash Verge每天更新19.5M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-26-free-node-subscribe.htm" title="1月26日 | Clash Verge每天更新20.6M/S免费节点订阅链接地址">1月26日 | Clash Verge每天更新20.6M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-17-latest-clash-verge-rev-node.htm" title="2月17日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址">2月17日 | Clash Verge每天更新22.5M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-9-free-subscribe-node.htm" title="3月9日 | Clash Verge每天更新23M/S免费节点订阅链接地址">3月9日 | Clash Verge每天更新23M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-21-clash-verge-rev-node-share.htm" title="3月21日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址">3月21日 | Clash Verge每天更新20.4M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-28-clash-verge-rev-node-github.htm" title="3月28日 | Clash Verge每天更新18.7M/S免费节点订阅链接地址">3月28日 | Clash Verge每天更新18.7M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-25-clash-verge-rev-node.htm" title="3月25日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址">3月25日 | Clash Verge每天更新19.8M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-15-clash-verge-rev-node-share.htm" title="3月15日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">3月15日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-26-free-subscribe-node.htm" title="3月26日 | Clash Verge每天更新20.5M/S免费节点订阅链接地址">3月26日 | Clash Verge每天更新20.5M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-16-clash-verge-rev-nodes.htm" title="1月16日 | Clash Verge每天更新19.4M/S免费节点订阅链接地址">1月16日 | Clash Verge每天更新19.4M/S免费节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-20-free-subscribe-node.htm" title="1月20日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址">1月20日 | Clash Verge每天更新21.3M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-6-free-high-speed-nodes.htm" title="3月6日 | Clash Verge每天更新19.9M/S免费节点订阅链接地址">3月6日 | Clash Verge每天更新19.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-29-clash-verge-rev-node-share.htm" title="3月29日 | Clash Verge每天更新19.1M/S免费节点订阅链接地址">3月29日 | Clash Verge每天更新19.1M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-10-free-subscribe-node.htm" title="3月10日 | Clash Verge每天更新21.9M/S免费节点订阅链接地址">3月10日 | Clash Verge每天更新21.9M/S免费节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-2-clash-verge-rev-node-share.htm" title="4月2日 | Clash Verge每天更新22M/S免费节点订阅链接地址">4月2日 | Clash Verge每天更新22M/S免费节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -372,13 +372,10 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
             </li>
                     </ul>
     </div>
