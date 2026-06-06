@@ -1,4 +1,4 @@
-# 6月1日 | Clash Verge每天更新18.8M/S免费节点订阅链接地址  更新时间 2026-06-01 09:37:29
+# 6月6日 | Clash Verge每天更新19M/S免费节点订阅链接地址  更新时间 2026-06-06 09:13:27
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clash-verge.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clash-verge.github.io/uploads/2026/06/0-20260601.yaml
-- https://clash-verge.github.io/uploads/2026/06/1-20260601.yaml
-- https://clash-verge.github.io/uploads/2026/06/2-20260601.yaml
-- https://clash-verge.github.io/uploads/2026/06/3-20260601.yaml
-- https://clash-verge.github.io/uploads/2026/06/4-20260601.yaml
+- https://clash-verge.github.io/uploads/2026/06/0-20260606.yaml
+- https://clash-verge.github.io/uploads/2026/06/1-20260606.yaml
+- https://clash-verge.github.io/uploads/2026/06/2-20260606.yaml
+- https://clash-verge.github.io/uploads/2026/06/3-20260606.yaml
+- https://clash-verge.github.io/uploads/2026/06/4-20260606.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clash-verge.github.io/uploads/2026/06/0-20260601.txt
-- https://clash-verge.github.io/uploads/2026/06/1-20260601.txt
-- https://clash-verge.github.io/uploads/2026/06/2-20260601.txt
-- https://clash-verge.github.io/uploads/2026/06/3-20260601.txt
-- https://clash-verge.github.io/uploads/2026/06/4-20260601.txt
+- https://clash-verge.github.io/uploads/2026/06/0-20260606.txt
+- https://clash-verge.github.io/uploads/2026/06/1-20260606.txt
+- https://clash-verge.github.io/uploads/2026/06/2-20260606.txt
+- https://clash-verge.github.io/uploads/2026/06/3-20260606.txt
+- https://clash-verge.github.io/uploads/2026/06/4-20260606.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clash-verge.github.io/uploads/2026/06/20260601.json
+- https://clash-verge.github.io/uploads/2026/06/20260606.json
 
 ## 更多Clash节点订阅 ：
 
